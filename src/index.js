@@ -5,11 +5,15 @@ import { BrowserRouter } from 'react-router-dom';
 import App from 'App';
 
 import './index.css';
+import { Provider } from 'react-redux';
+import { store } from './shared/service/redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/KidsLike">
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter basename="/KidsLike">
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );

@@ -1,0 +1,52 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "First name",
+      "lastName": "Last name",
+      "position": "Front-End Developer ",
+      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
+      "photo": "../../assets/images/contacts/contact-1.jpg"
+    },
+    {
+      "id": 2,
+      "firstName": "First name",
+      "lastName": "Last name",
+      "position": "Front-End Developer ",
+      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
+      "photo": "../../assets/images/contacts/contact-2.jpg"
+    },
+    {
+      "id": 3,
+      "firstName": "First name",
+      "lastName": "Last name",
+      "position": "Front-End Developer ",
+      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
+      "photo": "../../assets/images/contacts/contact-3.jpg"
+    },
+    {
+      "id": 4,
+      "firstName": "First name",
+      "lastName": "Last name",
+      "position": "Front-End Developer ",
+      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
+      "photo": "../../assets/images/contacts/contact-4.jpg"
+    },
+    {
+      "id": 5,
+      "firstName": "First name",
+      "lastName": "Last name",
+      "position": "Front-End Developer ",
+      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
+      "photo": "../../assets/images/contacts/contact-5.jpg"
+    },
+    {
+      "id": 6,
+      "firstName": "First name",
+      "lastName": "Last name",
+      "position": "Front-End Developer ",
+      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
+      "photo": "../../assets/images/contacts/contact-6.jpg"
+    }
+  ]
+}

@@ -13,16 +13,16 @@ const ContactItem = ({ item }) => {
   const photos = [img1, img2, img3, img4, img5, img6];
 
   return (
-    <div className={s.wrapper}>
+    <li className={s.wrapper}>
       <img src={photos[item.id - 1]} alt="our teammate" />
       <div className={s.description}>
-        <p>
+        <p className={s.name}>
           {item.firstName} {item.lastName}
         </p>
-        <p>{item.position}</p>
-        <p>{item.about}</p>
+        <p className={s.position}>{item.position}</p>
+        <p className={s.about}>{item.about}</p>
       </div>
-    </div>
+    </li>
   );
 };
 

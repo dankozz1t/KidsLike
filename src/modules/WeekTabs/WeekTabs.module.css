@@ -7,6 +7,10 @@
 .weekTabs {
   padding-left: 48px;
   padding-top: 140px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
 }
 
 .weekTabs__item:not(:last-child) {

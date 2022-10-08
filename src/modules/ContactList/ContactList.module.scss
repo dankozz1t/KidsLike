@@ -1,0 +1,9 @@
+.contactList {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 32px;
+  grid-row-gap: 20px;
+  padding: 0;
+  margin: 0;
+}

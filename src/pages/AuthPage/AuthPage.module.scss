@@ -1,0 +1,6 @@
+@import 'src/shared/styles/variables.scss';
+.main {
+  display: flex;
+  justify-content: space-between;
+  width: $desktop;
+}

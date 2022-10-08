@@ -1,0 +1,23 @@
+@import 'src/shared/styles/variables.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 99px;
+  height: calc(100% - 71px);
+  background-image: url('../../../assets/images/main-page/no-tasks.png');
+  background-repeat: no-repeat;
+  background-position: 0 300px;
+  background-size: contain;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: $primary-text-color;
+}

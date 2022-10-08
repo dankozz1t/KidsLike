@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import s from './WeekTabs.module.css';
+import s from './WeekTabs.module.scss';
 
 const daysOfWeek = [
   'Monday',

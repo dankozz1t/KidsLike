@@ -7,7 +7,6 @@ import Button from 'shared/components/Button';
 import { useNavigate } from 'react-router-dom';
 import GoogleIcon from 'shared/components/Google/GoogleIcon';
 
-
 import { createUserService } from 'shared/service/auth.service';
 
 const emailRegexp = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -69,10 +68,14 @@ const Login = () => {
   };
 
   const login = async () => {
-    validateForm();
+    const resultValidate = validateForm();
+
+    if (!resultValidate) {
+      return;
+    }
 
     try {
-      dispatch(loginThunk(user)).unwrap();
+      await dispatch(loginThunk(user)).unwrap();
       toast.success('Success');
       navigate('/', { replace: true });
       setUser(initialValue);
@@ -97,7 +100,7 @@ const Login = () => {
         </p>
         <label className={s.label__input}>
           {emailRequared ? (
-            <span className={s.label}>
+            <span className={s.label__text}>
               <span className={s.error}>*</span>Email:
             </span>
           ) : (
@@ -120,7 +123,7 @@ const Login = () => {
         </label>
         <label className={s.label__input}>
           {passwordRequared ? (
-            <span className={s.label}>
+            <span className={s.label__text}>
               <span className={s.error}>*</span>Password:
             </span>
           ) : (

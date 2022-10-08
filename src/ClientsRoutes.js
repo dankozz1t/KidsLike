@@ -11,7 +11,7 @@ import PrivateRoute from 'shared/components/PrivateRoute';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const MainPage = lazy(() => import('pages/MainPage'));
-const AuthPage = lazy(()=> import('pages/AuthPage') )
+const AuthPage = lazy(() => import('pages/AuthPage'));
 
 const ClientsRoutes = () => {
   return (
@@ -20,9 +20,15 @@ const ClientsRoutes = () => {
       <Container>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/" element={<PublicRoute redirectTo="/" />}>
+            <Route path="/" element={<PublicRoute redirectTo="/auth" />}>
               <Route index element={<HomePage />} />
-              <Route path="/auth" element={<AuthPage />} />
+            </Route>
+
+            <Route
+              path="/auth"
+              element={<PublicRoute restricted redirectTo="/" />}
+            >
+              <Route index element={<AuthPage />} />
             </Route>
 
             <Route path="/main" element={<PrivateRoute redirectTo="/" />}>

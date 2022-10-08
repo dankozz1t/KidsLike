@@ -1,0 +1,19 @@
+* {
+  font-family: 'Montserrat';
+  font-style: normal;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.23;
+  margin-bottom: 8px;
+}
+
+.slogan {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}

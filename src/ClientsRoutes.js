@@ -8,6 +8,7 @@ import Loader from 'shared/components/Loader';
 
 import PublicRoute from 'shared/components/PublicRoute';
 import PrivateRoute from 'shared/components/PrivateRoute';
+import ContactPage from 'pages/ContactPage';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const MainPage = lazy(() => import('pages/MainPage'));
@@ -22,6 +23,7 @@ const ClientsRoutes = () => {
           <Routes>
             <Route path="/" element={<PublicRoute redirectTo="/auth" />}>
               <Route index element={<HomePage />} />
+              <Route path='contacts' index element={<ContactPage />} />
             </Route>
 
             <Route

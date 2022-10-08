@@ -1,5 +1,5 @@
 import React from 'react';
-import Auth from 'shared/components/Auth';
+import AuthForm from 'shared/components/AuthForm';
 
 import s from './HomePage.module.css';
 
@@ -8,7 +8,7 @@ const HomePage = () => {
     <>
       {' '}
       <h1 className={s.title}>HomePage</h1>
-      <Auth />
+      <AuthForm />
     </>
   );
 };

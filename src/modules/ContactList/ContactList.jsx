@@ -2,7 +2,7 @@ import React from 'react';
 import ContactItem from './ContactItem';
 import contactList from './Contacts.json';
 
-import s from './ContactList.module.css';
+import s from './ContactList.module.scss';
 
 const ContactList = () => {
   const { contacts } = contactList;

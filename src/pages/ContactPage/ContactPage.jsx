@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactList from 'modules/ContactList';
-import s from './ContactPage.module.css';
+import s from './ContactPage.module.scss';
 
 const ContactPage = () => {
   return (

@@ -11,7 +11,7 @@ const daysOfWeek = [
   'Sunday',
 ];
 
-function WeekTabs() {
+const WeekTabs = () => {
   const [selectedRadio, setSelectedRadio] = useState('Monday');
 
   const isRadioSelected = value => selectedRadio === value;

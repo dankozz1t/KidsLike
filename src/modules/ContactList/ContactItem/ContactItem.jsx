@@ -7,7 +7,7 @@ import img4 from '../../../assets/images/contacts/contact-4.jpg';
 import img5 from '../../../assets/images/contacts/contact-5.jpg';
 import img6 from '../../../assets/images/contacts/contact-6.jpg';
 
-import s from './ContactItem.module.css';
+import s from './ContactItem.module.scss';
 
 const ContactItem = ({ item }) => {
   const photos = [img1, img2, img3, img4, img5, img6];

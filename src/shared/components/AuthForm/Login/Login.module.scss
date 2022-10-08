@@ -1,4 +1,8 @@
-.wrapper {
+@import 'src/shared/styles/variables.scss';
+
+.boxButton {
+  display: flex;
+  gap: 8px;
 }
 
 .form {
@@ -7,18 +11,18 @@
   min-width: 400px;
   min-height: 468px;
 
-  background-color: white;
+  background-color: $primary-bg-color;
   border-radius: 6px;
-  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero__title {
-  max-width: 314px;
+  max-width: 360px;
   font-weight: 600;
   font-size: 30px;
   line-height: 37px;
 
-  color: #000000;
+  color: $primary-text-color;
 
   margin-bottom: 32px;
 }
@@ -31,7 +35,7 @@
   text-align: center;
   letter-spacing: 0.04em;
 
-  color: #858598;
+  color: $secondary-text-color;
   margin-bottom: 35px;
 }
 
@@ -42,7 +46,7 @@
   line-height: 15px;
   letter-spacing: 0.04em;
 
-  color: #858598;
+  color: $secondary-text-color;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -53,14 +57,14 @@
   line-height: 17px;
   letter-spacing: 0.04em;
 
-  color: #a6abb9;
+  color: $tertiary-text-color;
 
   margin-bottom: 8px;
 }
 
 .input {
   display: block;
-  width: 314px;
+  width: 100%;
   border: none;
 
   background: #f6f7fb;

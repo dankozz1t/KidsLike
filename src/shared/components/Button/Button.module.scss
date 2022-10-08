@@ -1,3 +1,5 @@
+@import 'src/shared/styles/variables.scss';
+
 .btn {
   display: inline-block;
   min-width: 153px;
@@ -7,13 +9,12 @@
   border-radius: 6px;
 
   color: white;
-  background-color: rgba(255, 188, 51, 1);
+  background-color: $secondary-bg-color;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 
   transition: all ease-in 150ms;
 
   &:hover {
-    background-color: rgb(216, 151, 21);
+    background-color: $secondary-bg-color;
   }
 }
-

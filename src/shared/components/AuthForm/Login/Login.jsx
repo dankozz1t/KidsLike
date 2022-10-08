@@ -48,7 +48,7 @@ const Login = () => {
   };
 
   return (
-    <div className={s.wrapper}>
+    <div>
       <h1 className={s.hero__title}>
         Do your homework, get some great prizes!
       </h1>
@@ -91,14 +91,8 @@ const Login = () => {
           />
         </label>
 
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            width: '100',
-          }}
-        >
-          <Button  type="button" onClick={login}>
+        <div className={s.boxButton}>
+          <Button type="button" onClick={login}>
             Log In
           </Button>
           <Button type="button" onClick={registration}>

@@ -23,7 +23,6 @@
   line-height: 37px;
 
   color: $primary-text-color;
-
   margin-bottom: 32px;
 }
 
@@ -51,15 +50,37 @@
   margin-bottom: 20px;
 }
 
-.label {
+.label__text {
   display: inline-block;
+  width: 100%;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.04em;
 
   color: $tertiary-text-color;
-
   margin-bottom: 8px;
+}
+
+.label__input {
+  position: relative;
+  display: block;
+}
+
+.error {
+  color: $error;
+}
+
+.text__req {
+  position: absolute;
+  z-index: 5;
+  top: 70px;
+  left: 5px;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.04em;
+  color: $error;
 }
 
 .input {
@@ -82,9 +103,4 @@
   &:focus {
     border: solid 1px rgba(22, 225, 97, 0.35);
   }
-}
-
-.btn_google {
-  background-color: #f6f7fb;
-  color: #000000;
 }

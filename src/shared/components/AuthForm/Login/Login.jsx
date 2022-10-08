@@ -1,18 +1,41 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { loginThunk, registerThunk } from 'redux/auth/auth.thunk';
+import { toast } from 'react-toastify';
+import { loginThunk } from 'redux/auth/auth.thunk';
 import s from './Login.module.scss';
 import Button from 'shared/components/Button';
+import { useNavigate } from 'react-router-dom';
+import GoogleIcon from 'shared/components/Google/GoogleIcon';
+import { createUserService } from 'shared/service/auth.service';
+
+const emailRegexp = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+const initialValue = {
+  email: '',
+  password: '',
+};
 
 const Login = () => {
   const dispatch = useDispatch();
-
-  const initialValue = {
-    email: '',
-    password: '',
-  };
-
+  const navigate = useNavigate();
   const [user, setUser] = useState(initialValue);
+  const [emailRequared, setEmailRequared] = useState(false);
+  const [passwordRequared, setPasswordRequared] = useState(false);
+
+  const validateForm = () => {
+    if (!emailRegexp.test(user.email)) {
+      return setEmailRequared(true);
+    }
+
+    if (user.email.length < 3 || user.email.length > 254) {
+      return;
+    }
+
+    if (user.password.length < 8 || user.password.length > 100) {
+      return setPasswordRequared(true);
+    }
+
+    return true;
+  };
 
   const handleChangeUser = ev => {
     const { name, value } = ev.target;
@@ -20,30 +43,40 @@ const Login = () => {
   };
 
   const registration = async () => {
-    if (user.email === '' || user.password === '') {
+    const resultValidate = validateForm();
+
+    if (!resultValidate) {
       return;
     }
 
-    try {
-      await dispatch(registerThunk(user));
-      setUser(initialValue);
-      // navigate('/', { replace: true });
-    } catch (error) {
-      // toast.error('Try Again');
-    }
+    createUserService(user)
+      .then(() => {
+        toast.success('Congratulations on Your successful registration');
+        dispatch(loginThunk(user)).unwrap();
+        setUser(initialValue);
+      })
+      .then(() => navigate('/', { replace: true }))
+      .catch(er => {
+        if (er.response.status === 409) {
+          return toast.error('User with this email already exists');
+        }
+        if (er.response.status === 403) {
+          return toast.error('Password is wrong');
+        }
+      });
   };
 
   const login = async () => {
-    if (user.email === '' && user.password === '') {
-      return;
-    }
+    validateForm();
+
     try {
-      await dispatch(loginThunk(user));
+      const r = await dispatch(loginThunk(user)).unwrap();
+      console.log('r: ', r);
+      toast.success('Success');
+      navigate('/', { replace: true });
       setUser(initialValue);
-      // navigate('/', { replace: true });
     } catch (error) {
-      console.log(error);
-      // toast.error('Try Again');
+      toast.error('Try Again');
     }
   };
 
@@ -55,33 +88,44 @@ const Login = () => {
 
       <form className={s.form}>
         <p className={s.title}>You can login with Google Account:</p>
-        <Button
-          type="button"
-          onClick={login}
-          // className={s.btn__google}
-          style={{ backgroundColor: '#F6F7FB', color: 'black' }}
-        >
-          Google
+        <Button type="button" onClick={login} classAccent="grey">
+          <GoogleIcon />
         </Button>
         <p className={s.text}>
           Or log in with e-mail and password after registering:
         </p>
-        <label>
-          <span className={s.label}>E-mail:</span>
+        <label className={s.label__input}>
+          {emailRequared ? (
+            <span className={s.label}>
+              <span className={s.error}>*</span>Email:
+            </span>
+          ) : (
+            <span className={s.label__text}>Email:</span>
+          )}
           <input
-            placeholder="your@email.com"
+            placeholder="Email..."
             className={s.input}
             type="email"
             name="email"
             value={user.email}
+            pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
             required
             onChange={handleChangeUser}
           />
+          {emailRequared ? (
+            <p className={s.text__req}>Email should have correct format</p>
+          ) : null}
         </label>
-        <label>
-          <span className={s.label}>Password:</span>
+        <label className={s.label__input}>
+          {passwordRequared ? (
+            <span className={s.label}>
+              <span className={s.error}>*</span>Password:
+            </span>
+          ) : (
+            <span className={s.label__text}>Password:</span>
+          )}
           <input
-            placeholder="••••••••"
+            placeholder="Password..."
             className={s.input}
             type="password"
             name="password"
@@ -89,6 +133,9 @@ const Login = () => {
             required
             onChange={handleChangeUser}
           />
+          {passwordRequared ? (
+            <p className={s.text__req}>Password is wrong</p>
+          ) : null}
         </label>
 
         <div className={s.boxButton}>

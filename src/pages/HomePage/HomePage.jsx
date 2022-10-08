@@ -1,9 +1,12 @@
 import React from 'react';
-
-import s from './HomePage.module.css';
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { getLoggedIn } from 'redux/auth/auth.selector';
 
 const HomePage = () => {
-  return <h1 className={s.title}>HomePage</h1>;
+  const isLoggedIn = useSelector(getLoggedIn);
+
+  return isLoggedIn ? <Navigate to={'/main'} /> : <Navigate to={'/auth'} />;
 };
 
 export default HomePage;

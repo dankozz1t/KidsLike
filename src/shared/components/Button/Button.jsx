@@ -1,9 +1,9 @@
 import React from 'react';
-import './Button.css';
+import s from './Button.module.scss';
 import classNames from 'classnames';
 
 const Button = ({ children, className, onClick, ...rest }) => {
-  const classes = classNames('btn', className);
+  const classes = classNames(s.btn, className);
 
   return (
     <button onClick={onClick} className={classes} {...rest}>

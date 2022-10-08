@@ -6,6 +6,8 @@ import s from './Login.module.scss';
 import Button from 'shared/components/Button';
 import { useNavigate } from 'react-router-dom';
 import GoogleIcon from 'shared/components/Google/GoogleIcon';
+
+
 import { createUserService } from 'shared/service/auth.service';
 
 const emailRegexp = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -70,8 +72,7 @@ const Login = () => {
     validateForm();
 
     try {
-      const r = await dispatch(loginThunk(user)).unwrap();
-      console.log('r: ', r);
+      dispatch(loginThunk(user)).unwrap();
       toast.success('Success');
       navigate('/', { replace: true });
       setUser(initialValue);
@@ -103,7 +104,8 @@ const Login = () => {
             <span className={s.label__text}>Email:</span>
           )}
           <input
-            placeholder="Email..."
+            placeholder="your@email.com
+            "
             className={s.input}
             type="email"
             name="email"
@@ -125,7 +127,7 @@ const Login = () => {
             <span className={s.label__text}>Password:</span>
           )}
           <input
-            placeholder="Password..."
+            placeholder="fjsd6ywe3"
             className={s.input}
             type="password"
             name="password"

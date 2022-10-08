@@ -67,7 +67,7 @@
 }
 
 .error {
-  color: $error;
+  color: $error-text;
 }
 
 .text__req {
@@ -80,7 +80,7 @@
   font-size: 10px;
   line-height: 12px;
   letter-spacing: 0.04em;
-  color: $error;
+  color: $error-text;
 }
 
 .input {

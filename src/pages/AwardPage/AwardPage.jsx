@@ -20,17 +20,19 @@ const AwardPage = () => {
     <p className={s.awardName}>{award.name}</p>
   </li>);
 
-return (
-  <>
-    <h1>AwardPage</h1>
-    <button type='button' onClick={() => setOpen(true)} >Open</button>
-    <Modal open={open} onClose={() => setOpen(false)}>
-      {<img className={s.modalcat} src={modalcat} alt="modalcat" />}
-      {modalTitle}
-      <ul className={s.awardList}>{awardsList}</ul>
-    </Modal>
-  </>
-);
+  return (
+    <>
+      <h1>AwardPage</h1>
+      <button type='button' onClick={() => setOpen(true)} >Open</button>
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <div className={s.container}>
+          {<img className={s.modalcat} src={modalcat} alt="modalcat" />}
+          {modalTitle}
+          <ul className={s.awardList}>{awardsList}</ul>
+        </div>
+      </Modal>
+    </>
+  );
 };
 
 export default AwardPage;

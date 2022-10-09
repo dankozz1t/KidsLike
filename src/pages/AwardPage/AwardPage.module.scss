@@ -1,3 +1,26 @@
+.modal_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 608px;
+  height: 375px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .modalcat {
   width: 200px;
   position: absolute;
@@ -6,12 +29,13 @@
 }
 
 .modalTitle {
-  margin-bottom: 22px;
+  margin-bottom: 32px;
 }
 .awardList {
   display: flex;
   gap: 24px;
   margin-bottom: 40px;
+  margin-top: 0;
   padding: 0px;
 }
 

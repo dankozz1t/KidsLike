@@ -32,7 +32,7 @@ const Modal = (props) => {
                 <div className={s.modal_card}>
                     <img className={s.modal_close} onClick = {onBtnClose} src={modalClose} alt="modalClose" />
                     {props.children}
-                </div>
+                    </div>
             </div>,
             element);
     }

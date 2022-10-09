@@ -13,6 +13,7 @@ import ContactPage from 'pages/ContactPage';
 const HomePage = lazy(() => import('pages/HomePage'));
 const MainPage = lazy(() => import('pages/MainPage'));
 const AuthPage = lazy(() => import('pages/AuthPage'));
+const AwardPage = lazy(() => import('pages/AwardPage'));
 
 const ClientsRoutes = () => {
   return (
@@ -35,6 +36,10 @@ const ClientsRoutes = () => {
 
             <Route path="/main" element={<PrivateRoute redirectTo="/" />}>
               <Route index element={<MainPage />} />
+            </Route>
+
+            <Route path="/award" >
+              <Route index element={<AwardPage />} />
             </Route>
           </Routes>
         </Suspense>

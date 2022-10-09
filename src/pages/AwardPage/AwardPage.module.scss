@@ -1,0 +1,51 @@
+.modalcat {
+  width: 200px;
+  position: absolute;
+  left: 204px;
+  bottom: 260px;
+}
+
+.modalTitle {
+  margin-bottom: 22px;
+}
+.awardList {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+  padding: 0px;
+}
+
+.awardItem {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.awardImage {
+  border: 5px solid #ffbc33;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.awardName {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #000000;
+  text-align: center;
+  width: 100px;
+  margin-top: 16px;
+}

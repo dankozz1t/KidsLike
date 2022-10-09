@@ -14,6 +14,7 @@ const HomePage = lazy(() => import('pages/HomePage'));
 const MainPage = lazy(() => import('pages/MainPage'));
 const AuthPage = lazy(() => import('pages/AuthPage'));
 const AwardPage = lazy(() => import('pages/AwardPage'));
+const PlanningPage = lazy(() => import('pages/PlanningPage'));
 
 const ClientsRoutes = () => {
   return (
@@ -40,6 +41,10 @@ const ClientsRoutes = () => {
 
             <Route path="/award" >
               <Route index element={<AwardPage />} />
+            </Route>
+
+            <Route path="/planning" >
+              <Route index element={<PlanningPage />} />
             </Route>
           </Routes>
         </Suspense>

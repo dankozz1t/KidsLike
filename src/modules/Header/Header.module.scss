@@ -1,4 +1,10 @@
-.title {
-  color: red;
-  font-size: 40px;
+.header {
+  display: flex;
+  margin: 0 16px;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
 }
+// .logo {
+//   margin-right: 129px;
+// }

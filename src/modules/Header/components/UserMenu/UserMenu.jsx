@@ -8,6 +8,7 @@ import { getUser } from 'redux/auth/auth.selector';
 import { useDispatch } from 'react-redux';
 import { logoutAction } from 'redux/auth/auth.slice';
 import { token } from 'shared/service/http/http';
+import VerticalBar from 'shared/components/VerticalBar/VerticalBar';
 
 const UserMenu = () => {
   const { email, balance } = useSelector(getUser);
@@ -27,22 +28,22 @@ const UserMenu = () => {
         <NavLink to="/auth" className={s.link}>
           Main
         </NavLink>
-        <span className={s.verticalBar}>&#124;</span>
+        <VerticalBar classFor="Header" />
         <NavLink to="/contacts" className={s.link}>
           Planning
         </NavLink>
-        <span className={s.verticalBar}>&#124;</span>
+        <VerticalBar classFor="Header" />
         <NavLink to="/contacts" className={s.link}>
           Award
         </NavLink>
-        <span className={s.verticalBar}>&#124;</span>
+        <VerticalBar classFor="Header" />
         <NavLink to="/contacts" className={s.link}>
           Contact
         </NavLink>
       </nav>
       <div className={s.box}>
         <UserInfo email={email} />
-        <span className={s.verticalBar}>&#124;</span>
+        <VerticalBar classFor="Header" />
         <button
           className={s.btnlogout}
           type="button"

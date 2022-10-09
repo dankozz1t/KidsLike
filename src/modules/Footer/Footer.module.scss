@@ -8,18 +8,23 @@
   //   border-left: 1px solid #858598;
   color: #858598;
 
-  &::before {
-    content: '';
-    display: block;
-    background-color: red;
-    width: 1px;
-    height: 11px;
-    margin: 0 8px;
-  }
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   background-color: red;
+  //   width: 1px;
+  //   height: 11px;
+  //   margin: 0 8px;
+  // }
 }
-.div {
+.box {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-right: 16px;
   margin-bottom: 40px;
+  gap: 8px;
+}
+.bar {
+  color: red;
 }

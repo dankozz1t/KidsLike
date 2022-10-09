@@ -1,11 +1,11 @@
 import React from 'react';
-import { ReactComponent as LogoFooter } from 'assets/images/icon/icon-logo-footer.svg';
 import s from './Footer.module.scss';
+import Logo from 'shared/components/Logo';
 
 const Footer = () => {
   return (
     <div className={s.div}>
-      <LogoFooter />
+      <Logo classFor="Footer" />
       <p className={s.title}>Making the life of parents and children isy :)</p>
       <p className={s.title}>2020</p>
     </div>

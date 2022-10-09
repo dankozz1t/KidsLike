@@ -1,26 +1,22 @@
 import React from 'react';
-import { ReactComponent as LogoHeader } from 'assets/images/icon/icon-logo-header.svg';
+import { ReactComponent as LogoVictory } from 'assets/images/icon/icon-logo-victory.svg';
 import { Link } from 'react-router-dom';
+import s from './Logo.module.scss';
 
-const Logo = () => {
+const Logo = ({ classFor }) => {
+  let classText = null;
+  let classIcon = null;
+  if (classFor === 'Header') {
+    classText = s.titleLogoHeader;
+  } else if (classFor === 'Footer') {
+    classText = s.titleLogoFooter;
+    classIcon = s.icon;
+  }
   return (
-    <Link to="/">
-      <LogoHeader />
+    <Link to="/" className={s.box}>
+      <p className={classText}>KidsLike</p>
+      <LogoVictory className={classIcon} />
     </Link>
-<<<<<<< Updated upstream
-
-    // <>
-    //   {/* <a class="logo__title" href="./index.html">
-    //     KidsLike
-    //   </a>
-    //   <a className="logo__link" href="./index.html">
-    //     <svg className="logo__icon header--animals" width="24" height="24">
-    //       <use href="/src/images/icon.svg#icon-film"></use>
-    //     </svg>
-    //   </a> */}
-    // </>
-=======
->>>>>>> Stashed changes
   );
 };
 

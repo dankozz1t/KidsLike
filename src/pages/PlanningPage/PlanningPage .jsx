@@ -7,9 +7,19 @@ import modalEditInput from 'image/modal-image/edit-24px 2.svg';
 import s from './PlanningPage.module.scss';
 
 const PlanningPage = () => {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [taskName, setTaskName] = useState("");
+  const [reward, setReward] = useState("");
 
+  const onHandleChangeTaskName = (e) => {
+    setTaskName(e.target.value);
+  };
+  
+  const onHandleChangeReward = (e) => {
+    setReward(e.target.value);
+  };
 
+  
   return (
     <>
       <h1>planning</h1>
@@ -27,6 +37,8 @@ const PlanningPage = () => {
                   className={s.modalInput}
                   type="text"
                   placeholder="Add task..."
+                  value={taskName}
+              onChange={onHandleChangeTaskName}
                 />
               </label>
             </div>
@@ -35,8 +47,10 @@ const PlanningPage = () => {
                 <img className={s.modalEditInput} src={modalEditInput} alt="modalEditInput" />
                 <input
                   className={s.modalInput}
-                  type="text"
+                  type="number"
                   placeholder="Add points..."
+                  value={reward}
+              onChange={onHandleChangeReward}
                 />
               </label>
             </div>
@@ -44,8 +58,6 @@ const PlanningPage = () => {
                 Ок
               </button>
           </form>
-
-
         </div>
       </Modal>
     </>

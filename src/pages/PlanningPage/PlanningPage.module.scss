@@ -50,8 +50,7 @@
 }
 
 .modalButton {
-  // align-self: center;
-  width: min-content;
+  // width: min-content;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -66,5 +65,4 @@
   font-size: 14px;
   line-height: 1.21;
   letter-spacing: 0.04em;
-  // color: ${({ colors }) => colors.primaryTextColor};
 }

@@ -14,6 +14,7 @@ const AwardPage = () => {
     { image: '#/https', name: 'present' },
     { image: '#/https', name: 'PARTY WITH FRIENDS' },
   ];
+  
 
   let awardsList = awards.map((award) => <li className={s.awardItem}>
   <div  className={s.awardImage}>{award.image}</div>  

@@ -1,4 +1,5 @@
-import { getCurrentDay } from 'redux/userInfo/week.selectors';
+
+import { getCurrentDay } from 'redux/auth/auth.selector';
 import s from './CurrentDay.module.scss';
 
 const CurrentDay = () => {

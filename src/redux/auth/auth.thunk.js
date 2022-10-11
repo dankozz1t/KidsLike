@@ -33,6 +33,25 @@ export const loginThunk = createAsyncThunk(
   }
 );
 
-export const getUserThunk = createAsyncThunk('auth/info', async () => {
-  return await getUserService();
-});
+// export const getUserThunk = createAsyncThunk('auth/info', async () => {
+//   return await getUserService();
+// });
+
+export const getUserInfo = createAsyncThunk('user/getInfo', async (_,{ rejectWithValue, getState }) =>{
+  console.log('start');
+  try {
+    const currentToken = getState().auth.token;
+    if (!currentToken) {
+      return rejectWithValue();
+    }
+    token.set(currentToken);
+    const {data} = await getUserService();
+    console.log(data, 'response');
+    return data;
+  } catch (error) {
+    token.unset();
+    console.log('error in operations')
+    return rejectWithValue(error.response.data.message);
+
+  }
+})

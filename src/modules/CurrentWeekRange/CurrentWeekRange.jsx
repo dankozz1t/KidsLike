@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
-import { getWeekRange } from 'redux/userInfo/week.selectors';
+import { getWeekRange } from 'redux/auth/auth.selector';
+
 import s from './CurrentWeekRange.module.scss';
 
 const CurrentWeekRange = () => {

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getUserThunk, loginThunk, registerThunk} from './auth.thunk';
+import { getUserInfo, loginThunk, registerThunk} from './auth.thunk';
 import authInitialState from './auth.initial-state';
 
 const authSlice = createSlice({
@@ -14,22 +14,24 @@ const authSlice = createSlice({
       state.status = true;
       state.token = payload.token;
       state.user = payload.user;
+      state.week = payload.week;
     },
     [registerThunk.rejected]: state => {
       state.status = false;
     },
-    [getUserThunk.fulfilled]: (state, { payload }) => {
+    [getUserInfo.fulfilled]: (state, { payload }) => {
       state.status = true;
-      state.token = payload.token;
       state.user = payload.user;
+      state.week = payload.week;
     },
-    [getUserThunk.rejected]: state => {
+    [getUserInfo.rejected]: state => {
       state.status = false;
     },
     [loginThunk.fulfilled]: (state, { payload }) => {
       state.status = true;
       state.token = payload.token;
       state.user = payload.user;
+      state.week = payload.week;
     },
     [loginThunk.rejected]: state => {
       state.status = false;

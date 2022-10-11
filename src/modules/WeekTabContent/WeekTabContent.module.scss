@@ -1,0 +1,50 @@
+@import 'src/shared/styles/variables.scss';
+
+.wrapper {
+  width: calc(100% - 229px);
+  padding-top: 32px ;
+  padding-bottom: 47px;
+
+  background-color: $main-content-bg-color;
+}
+
+.wrapper__header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 107px;
+  padding-right: 16px;
+}
+
+.weekTabInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.weekTabInfo__week {
+  margin-bottom: 32px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: $primary-text-color;
+}
+
+.weekTabInfo__dayWrapper {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.04em;
+
+  color: $tertiary-text-color;
+}
+
+.weekTabInfo__day {
+  margin-left: 20px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.2em;
+
+  color: $primary-text-color;
+}

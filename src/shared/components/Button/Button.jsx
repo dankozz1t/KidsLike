@@ -1,9 +1,14 @@
 import React from 'react';
-import s from './Button.module.scss';
-import classNames from 'classnames';
+import styles from './Button.module.scss';
+import classNames from 'classnames/bind';
 
-const Button = ({ children, className, onClick, ...rest }) => {
-  const classes = classNames(s.btn, className);
+const cx = classNames.bind(styles);
+
+const Button = ({ children, classAccent = 'yellow', onClick, ...rest }) => {
+  const classes = cx({
+    btn: true,
+    [classAccent]: true,
+  });
 
   return (
     <button onClick={onClick} className={classes} {...rest}>

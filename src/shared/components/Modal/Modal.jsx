@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useMemo } from "react";
 import { createPortal } from "react-dom";
 import s from './modal.module.scss';
-import modalClose from 'image/modal-image/modal-close.svg';
+import modalClose from 'assets/images/modal-image/modal-close.svg';
 
 const modalRootElement = document.querySelector("#modal");
 

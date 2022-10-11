@@ -25,20 +25,20 @@ const UserMenu = () => {
         <span className={s.balance}>{balance}</span>
       </div>
       <nav className={s.navigation}>
-        <NavLink to="/auth" className={s.link}>
+        <NavLink to="/main" className={s.link}>
           Main
         </NavLink>
         <VerticalBar classFor="Header" />
-        <NavLink to="/contacts" className={s.link}>
+        <NavLink to="/planning" className={s.link}>
           Planning
         </NavLink>
         <VerticalBar classFor="Header" />
-        <NavLink to="/contacts" className={s.link}>
+        <NavLink to="/award" className={s.link}>
           Award
         </NavLink>
         <VerticalBar classFor="Header" />
         <NavLink to="/contacts" className={s.link}>
-          Contact
+          Contacts
         </NavLink>
       </nav>
       <div className={s.box}>

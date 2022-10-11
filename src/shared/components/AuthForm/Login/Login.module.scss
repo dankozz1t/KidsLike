@@ -13,7 +13,7 @@
 
   background-color: $primary-bg-color;
   border-radius: 6px;
-  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 6px 15px $secondary-text-color;
 }
 
 .hero__title {
@@ -87,20 +87,19 @@
   display: block;
   width: 100%;
   border: none;
+  outline: none;
 
-  background: #f6f7fb;
-  box-shadow: inset 0px 1px 1px rgba(159, 159, 159, 0.15);
+  color: $secondary-text-color;
+
+  background-color: $tertiary-bg-color;
+  box-shadow: inset 0px 1px 5px #9f9f9f26;
   border: solid 1px transparent;
 
   padding: 12px 10px;
   margin-bottom: 24px;
 
-  &:hover {
-    border: solid 1px rgba(159, 159, 159, 0.35);
-  }
-
   &:active,
   &:focus {
-    border: solid 1px rgba(22, 225, 97, 0.35);
+    border: solid 1px $secondary-text-color;
   }
 }

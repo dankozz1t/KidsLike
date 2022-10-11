@@ -1,13 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { loginThunk } from 'redux/auth/auth.thunk';
+import { loginThunk, registerThunk } from 'redux/auth/auth.thunk';
 import s from './Login.module.scss';
 import Button from 'shared/components/Button';
 import { useNavigate } from 'react-router-dom';
 import GoogleIcon from 'shared/components/Google/GoogleIcon';
-
-import { createUserService } from 'shared/service/auth.service';
 
 const emailRegexp = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 const initialValue = {
@@ -50,21 +48,14 @@ const Login = () => {
       return;
     }
 
-    createUserService(user)
-      .then(() => {
-        toast.success('Congratulations on Your successful registration');
-        dispatch(loginThunk(user)).unwrap();
-        setUser(initialValue);
-      })
-      .then(() => navigate('/', { replace: true }))
-      .catch(er => {
-        if (er.response.status === 409) {
-          return toast.error('User with this email already exists');
-        }
-        if (er.response.status === 403) {
-          return toast.error('Password is wrong');
-        }
-      });
+    try {
+      await dispatch(registerThunk(user)).unwrap();
+      toast.success('Congratulations on Your successful registration');
+      navigate('/', { replace: true });
+      setUser(initialValue);
+    } catch (error) {
+      toast.error(error);
+    }
   };
 
   const login = async () => {
@@ -80,7 +71,7 @@ const Login = () => {
       navigate('/', { replace: true });
       setUser(initialValue);
     } catch (error) {
-      toast.error('Try Again');
+      toast.error(error);
     }
   };
 

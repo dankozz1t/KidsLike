@@ -1,0 +1,26 @@
+@import 'src/shared/styles/variables.scss';
+
+.titleLogoHeader {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  color: $primary-text-color;
+}
+.titleLogoFooter {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  color: $secondary-text-color;
+}
+.box {
+  display: flex;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.icon {
+  height: 12px;
+  width: 12px;
+}

@@ -39,11 +39,11 @@ const ClientsRoutes = () => {
               <Route index element={<MainPage />} />
             </Route>
 
-            <Route path="/award" >
+            <Route path="/award" element={<PrivateRoute redirectTo="/" />}>
               <Route index element={<AwardPage />} />
             </Route>
 
-            <Route path="/planning" >
+            <Route path="/planning" element={<PrivateRoute redirectTo="/" />}>
               <Route index element={<PlanningPage />} />
             </Route>
           </Routes>

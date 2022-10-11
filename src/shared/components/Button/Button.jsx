@@ -4,8 +4,7 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const Button = ({ children, classAccent = "yellow", onClick, ...rest }) => {
-
+const Button = ({ children, classAccent = 'yellow', onClick, ...rest }) => {
   const classes = cx({
     btn: true,
     [classAccent]: true,

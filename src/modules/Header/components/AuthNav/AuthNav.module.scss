@@ -1,0 +1,18 @@
+@import 'src/shared/styles/variables.scss';
+
+.navigation {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.link {
+  text-decoration: none;
+  color: $secondary-text-color;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+}
+.verticalBar {
+  color: $secondary-text-color;
+}

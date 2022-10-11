@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card';
+
 import s from './CardsList.module.scss';
 
 const CardsList = ({ tasks }) => {

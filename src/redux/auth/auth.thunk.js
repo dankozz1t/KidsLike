@@ -1,6 +1,24 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { token } from 'shared/service/http/http';
-import { loginUserService, getUserService } from 'shared/service/auth.service';
+import {
+  loginUserService,
+  getUserService,
+  createUserService,
+} from 'shared/service/auth.service';
+
+export const registerThunk = createAsyncThunk(
+  'auth/register',
+  async (body, { rejectWithValue }) => {
+
+    try {
+      const { data } = await createUserService(body);
+      token.set(data.token);
+      return data;
+    } catch(error) {
+      return rejectWithValue(error.response.data.message);
+    }
+  }
+);
 
 export const loginThunk = createAsyncThunk(
   'auth/login',
@@ -9,8 +27,8 @@ export const loginThunk = createAsyncThunk(
       const { data } = await loginUserService(body);
       token.set(data.token);
       return data;
-    } catch {
-      return rejectWithValue();
+    } catch(error) {
+      return rejectWithValue(error.response.data.message);
     }
   }
 );

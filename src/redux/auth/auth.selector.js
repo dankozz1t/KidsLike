@@ -48,24 +48,26 @@ export const getWeekRange = createSelector(
 );
 
 export const getDates = createSelector(
-  [selectStartWeekDate],
-  (start) => {
-    const datesArray = [];
-    let date = new Date(start);
-    datesArray.push((new Date(start)).toISOString().split('T')[0]);
-    console.log(date, 'date');
+  [selectStartWeekDate, selectEndWeekDate],
+  (start, end) => {
+    const startDate = new Date(start);
+    const endDate = new Date(end);
 
-    for (let i = 0; i < 6; i += 1) {
-      datesArray.push((new Date(date.setDate(date.getDate() + 1))).toISOString().split('T')[0]);
-    }
-    console.log(datesArray);
+    const obj = {};
+    while (startDate <= endDate) {
+      let dayNow = startDate;
 
-    const datesObj = {
-      "Monday": datesArray[0],
-      "Monday": datesArray[1],
+      const day = new Date(dayNow).toISOString().split('T')[0];
+      const week = new Date(dayNow).toLocaleString('en-US', {
+        weekday: 'long',
+      });
+
+      obj[week] = day;
+
+      dayNow = startDate.setDate(startDate.getDate() + 1);
     }
-    // console.log(datesArray[0])
+
+    console.log(obj);
+    return obj;
   }
 );
-
-// const startWeekday = new Date(date).toLocaleString('en-US',{weekday: 'long'});

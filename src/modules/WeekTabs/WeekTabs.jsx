@@ -4,19 +4,10 @@ import { useSearchParams } from 'react-router-dom';
 
 import s from './WeekTabs.module.scss';
 
-// const daysOfWeek = [
-//   'Monday',
-//   'Tuesday',
-//   'Wednesday',
-//   'Thursday',
-//   'Friday',
-//   'Saturday',
-//   'Sunday',
-// ];
 
 // const QUERY_DAY = 'day';
 
-const WeekTabs = ({daysOfWeek}) => {
+const WeekTabs = ({weekDays}) => {
   const currentWeekDay =  new Date().toLocaleString('en-US',{weekday: 'long'});
   const [selectedRadio, setSelectedRadio] = useState(currentWeekDay);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -39,7 +30,7 @@ const WeekTabs = ({daysOfWeek}) => {
   return (
     <div className={s.box}>
       <ul className={s.weekTabs}>
-        {daysOfWeek.map(day => (
+        {weekDays.map(day => (
           <li className={s.weekTabs__item} key={day}>
             <input
               id={day}

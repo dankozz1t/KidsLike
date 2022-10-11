@@ -1,13 +1,21 @@
 import React from 'react';
-import Container from 'shared/components/Container';
+import Logo from 'shared/components/Logo';
+import { useSelector } from 'react-redux';
+import { getLoggedIn } from 'redux/auth/auth.selector';
+import UserMenu from './components/UserMenu/UserMenu';
+import AuthNav from './components/AuthNav/AuthNav';
 
-import s from './Header.module.css';
+import s from './Header.module.scss';
 
 const Header = () => {
+  const isLoggedIn = useSelector(getLoggedIn);
+  console.log(isLoggedIn);
   return (
-    <Container>
-      <h1 className={s.title}>Header</h1>
-    </Container>
+    <header className={s.header}>
+      <Logo classFor="Header" />
+
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+    </header>
   );
 };
 

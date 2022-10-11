@@ -1,0 +1,21 @@
+@import 'src/shared/styles/variables.scss';
+
+.btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: $primary-bg-color;
+}
+
+.btn__error {
+  background-color: $error;
+}
+
+.btn__success {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: $success;
+}

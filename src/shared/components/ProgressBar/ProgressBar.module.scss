@@ -1,0 +1,53 @@
+@import 'src/shared/styles/variables.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.pointsInfo {
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  letter-spacing: 0.04em;
+  color: $tertiary-text-color;
+}
+
+.points {
+  margin-left: 12px;
+}
+
+.progressWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.pointsAmount {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+  letter-spacing: 0.2em;
+  color: $primary-text-color;
+}
+
+.collectedPoints {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+  letter-spacing: 0.2em;
+  color: $primary-text-color;
+}
+
+.progressTool {
+  display: block;
+  width: 280px;
+  height: 6px;
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+}

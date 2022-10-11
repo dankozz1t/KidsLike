@@ -1,0 +1,22 @@
+@import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
+
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include media(mobile-only) {
+    max-width: $mobile;
+  }
+
+  @include media(tablet) {
+    max-width: $tablet;
+  }
+
+  @include media(desktop) {
+    max-width: $desktop;
+  }
+}

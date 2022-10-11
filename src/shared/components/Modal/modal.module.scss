@@ -1,0 +1,32 @@
+.modal_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_card {
+  position: relative;
+  background: #ffffff;
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+.modal_close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 14px;
+}
+
+.modal_close:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}

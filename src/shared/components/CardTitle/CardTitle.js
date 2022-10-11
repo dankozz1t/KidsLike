@@ -1,4 +1,5 @@
 import React from 'react';
+
 import s from './CardTitle.module.scss';
 
 const CardTitle = ({ title }) => (

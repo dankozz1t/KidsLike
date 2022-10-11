@@ -1,0 +1,56 @@
+@import 'src/shared/styles/variables.scss';
+
+.box {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.label {
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.icon {
+  display: inline-block;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 2px;
+  border: 1px solid $primary-bg-color;
+
+  margin-right: 10px;
+
+  background-color: transparent;
+  transition: background-color 250ms ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.input:checked ~ .icon {
+  border: 1px solid $primary-bg-color;
+  background-color: $primary-bg-color;
+
+  background-image: url('../../../assets/images/icon/icon-choice.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

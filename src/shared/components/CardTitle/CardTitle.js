@@ -1,9 +1,9 @@
 import React from 'react';
-import s from './CardTitle.module.css';
+import s from './CardTitle.module.scss';
 
-const CardTitle = ({ task }) => (
+const CardTitle = ({ title }) => (
   <div>
-    <span className={s.card_title}>{task.title}</span>
+    <span className={title}>{title}</span>
   </div>
 );
 

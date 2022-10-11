@@ -9,10 +9,8 @@ const CurrentWeekRange = () => {
 
   const getCurrentWeekRange = () => {
     if (typeof weekRange.currentMonth === 'object') {
-      console.log('diff months');
       return `Week: ${weekRange.startDate} ${weekRange.currentMonth[0]} - ${weekRange.endDate} ${weekRange.currentMonth[1]}`;
     }
-    console.log('same months');
     return `Week: ${weekRange.startDate}-${weekRange.endDate}
     ${weekRange.currentMonth}`;
   };

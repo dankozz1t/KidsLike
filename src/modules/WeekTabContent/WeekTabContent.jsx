@@ -4,14 +4,14 @@ import ProgressBar from 'shared/components/ProgressBar';
 import NoTasks from './NoTasks';
 import s from './WeekTabContent.module.scss';
 
-const WeekTabContent = () => {
+const WeekTabContent = ({selectedDate}) => {
 
   return (
     <div className={s.wrapper}>
       <div className={s.wrapper__header}>
         <div className={s.weekTabInfo}>
           <CurrentWeekRange/>
-          <CurrentDay/>
+          <CurrentDay selectedDate={selectedDate}/>
         </div>
         <ProgressBar />
       </div>

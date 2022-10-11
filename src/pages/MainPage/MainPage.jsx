@@ -15,18 +15,15 @@ const QUERY_DAY = 'day';
 const MainPage = () => {
   const dispatch = useDispatch();
   const dates = useSelector(getDates);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const selectedDay = searchParams.get(QUERY_DAY);
-  console.log(selectedDay)
 
   useEffect(() => {
-    console.log('dispatch');
     dispatch(getUserInfo());
   }, [dispatch]);
 
   const weekDays = useMemo(()=>{
-    console.log('useMemo weekDays');
     return Object.keys(dates)
   },[dates])
 
@@ -35,7 +32,7 @@ const MainPage = () => {
       <h1 className={s.title}>MainPage</h1>
       <div className={s.wrapper}>
         <WeekTabs weekDays ={weekDays}/>
-        <WeekTabContent />
+        <WeekTabContent selectedDate ={dates[selectedDay]}/>
       </div>
     </>
   );

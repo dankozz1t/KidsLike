@@ -1,10 +1,10 @@
 import React from 'react';
 
-const CardBody = ({ task }) => (
+const CardBody = ({ img, alt}) => (
   <img 
   className="card__image" 
-  src={task.imageUrl} 
-  alt={task.title} />
+  src={img}
+  alt={alt} />
 );
 
 export default CardBody;

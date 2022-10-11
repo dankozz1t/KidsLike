@@ -1,14 +1,15 @@
 import React from 'react';
-import CardBody from '../CardBody/CardBody';
-import CardFooter from '../CardFooter/CardFooter';
+import CardBody from '../CardBody';
+import CardFooter from '../CardFooter';
 
 const Card = ({ ...task }) => {
-  const { imgName, ...taskInfo } = task;
+  const { imgUrl, ...taskInfo } = task;
   const { title } = taskInfo;
+
 
   return (
     <article>
-      <CardBody img={imgName} alt={title} />
+      <CardBody img={imgUrl} alt={title} />
       <CardFooter {...taskInfo} />
     </article>
   );

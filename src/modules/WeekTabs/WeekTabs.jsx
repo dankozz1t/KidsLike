@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
 import s from './WeekTabs.module.scss';
 
 const daysOfWeek = [
@@ -11,13 +14,25 @@ const daysOfWeek = [
   'Sunday',
 ];
 
+// const QUERY_DAY = 'day';
+
 const WeekTabs = () => {
-  const [selectedRadio, setSelectedRadio] = useState('Monday');
+  const currentWeekDay =  new Date().toLocaleString('en-US',{weekday: 'long'});
+  const [selectedRadio, setSelectedRadio] = useState(currentWeekDay);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const isRadioSelected = value => selectedRadio === value;
 
+  useEffect(()=>{
+      setSearchParams({day: currentWeekDay});
+    }
+  ,[])
+
+
   const handleChange = event => {
     const { value } = event.target;
+    console.log(value)
+    setSearchParams({day: value})
     setSelectedRadio(value);
   };
 

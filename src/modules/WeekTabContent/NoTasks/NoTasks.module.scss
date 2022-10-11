@@ -1,4 +1,5 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .wrapper {
   display: flex;
@@ -6,9 +7,11 @@
   align-items: center;
   margin-top: 99px;
   height: calc(100% - 71px);
+
+  // height: calc(100vh - 71px);
   background-image: url('../../../assets/images/main-page/no-tasks.png');
   background-repeat: no-repeat;
-  background-position: 0 300px;
+  background-position: center;
   background-size: contain;
 }
 

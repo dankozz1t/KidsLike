@@ -1,11 +1,24 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .box {
-  display: flex;
+  @include media(mobile){
+
+  }
+  @include media(tablet){
+    display: flex;
+    height: 70px;
+
+  background-color: $secondary-bg-color;
+  }
+  @include media(desktop){
+    display: flex;
   padding-top: 140px;
   height: 100vh;
   width: 229px;
   background-color: $secondary-bg-color;
+  }
+
 }
 
 .weekTabs {
@@ -21,7 +34,11 @@
   opacity: 0;
   position: fixed;
   width: 0;
-
+  @include media(mobile-only){
+    &:checked + .weekTabs__label {
+      background-color: $secondary-bg-color;
+    }
+  }
   &:checked + .weekTabs__label {
     background-color: $primary-bg-color;
   }
@@ -37,6 +54,9 @@
   border-radius: 6px 0px 0px 6px;
 
   background-color: rgba(255, 255, 255, 0.5);
+  @include media(mobile-only){
+    background-color: rgba(255, 187, 51, 0.5);
+  }
 
   &:hover,
   &:focus {

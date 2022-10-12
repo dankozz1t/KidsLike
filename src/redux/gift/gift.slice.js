@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getGiftsThunk, buyGiftsThunk } from './gift.thunk';
 import giftInitialState from './gift.initial-state';
 
-const taskSlice = createSlice({
+const giftSlice = createSlice({
   name: 'gift',
   initialState: giftInitialState,
 
@@ -32,4 +32,4 @@ const taskSlice = createSlice({
   }
 });
 
-export const taskReducer = taskSlice.reducer;
+export const giftReducer = giftSlice.reducer;

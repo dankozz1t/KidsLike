@@ -9,7 +9,6 @@ import s from './Header.module.scss';
 
 const Header = () => {
   const isLoggedIn = useSelector(getLoggedIn);
-  console.log(isLoggedIn);
   return (
     <header className={s.header}>
       <Logo classFor="Header" />

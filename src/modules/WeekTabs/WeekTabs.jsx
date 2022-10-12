@@ -8,6 +8,7 @@ const WeekTabs = ({ weekDays }) => {
     weekday: 'long',
   });
   const [selectedRadio, setSelectedRadio] = useState(currentWeekDay);
+  // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams();
 
   const isRadioSelected = value => selectedRadio === value;

@@ -2,17 +2,15 @@
 @import 'src/shared/styles/mixin.scss';
 
 .wrapper {
-
-  @include media(mobile){
+  @include media(mobile) {
     display: flex;
     flex-direction: column;
   }
-  @include media(desktop){
+  @include media(desktop) {
     display: flex;
     flex-direction: row;
-  justify-content: flex-start;
+    justify-content: flex-start;
   }
-
 }
 
 .title {
@@ -27,4 +25,13 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+.box {
+  width: calc(100% - 229px);
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 47px;
+  background-color: $main-content-bg-color;
+  padding-bottom: 40px;
 }

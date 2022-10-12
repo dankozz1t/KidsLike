@@ -2,11 +2,7 @@
 @import 'src/shared/styles/mixin.scss';
 
 .wrapper {
-  width: calc(100% - 229px);
-  padding-top: 32px;
-  padding-bottom: 47px;
-
-  background-color: $main-content-bg-color;
+  height: 100%;
 }
 
 .wrapper__header {

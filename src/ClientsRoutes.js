@@ -18,8 +18,8 @@ const PlanningPage = lazy(() => import('pages/PlanningPage'));
 const ClientsRoutes = () => {
   return (
     <>
+      <Header />
       <Container>
-        <Header />
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<PublicRoute redirectTo="/auth" />}>

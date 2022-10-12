@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getUserThunk, loginThunk } from '../auth/auth.thunk';
-import { createTaskThunk, addTaskToProvidedDaysThunk, toggleTaskStatusThunk } from '../task/task.thunk';
+import { getUserInfoThunk, loginThunk } from '../auth/auth.thunk';
+import {
+  createTaskThunk,
+  addTaskToProvidedDaysThunk,
+  toggleTaskStatusThunk,
+} from '../task/task.thunk';
 import taskInitialState from './task.initial-state';
 
 const taskSlice = createSlice({
@@ -8,7 +12,7 @@ const taskSlice = createSlice({
   initialState: taskInitialState,
 
   extraReducers: {
-    [getUserThunk.fulfilled]: (state, { payload }) => {
+    [getUserInfoThunk.fulfilled]: (state, { payload }) => {
       state.balance = payload.user.balance;
       state.rewardsGained = payload.week.rewardsGained;
       state.rewardsPlanned = payload.week.rewardsPlanned;
@@ -40,7 +44,7 @@ const taskSlice = createSlice({
       state.tasks.map((task, idx) => {
         if (task._id === payload.updatedTask.id) {
           state.tasks[idx].days = payload.updatedTask.days;
-        };
+        }
       });
       state.isLoading = false;
     },
@@ -57,7 +61,7 @@ const taskSlice = createSlice({
       state.tasks.map((task, idx) => {
         if (task._id === payload.updatedTask.id) {
           state.tasks[idx].days = payload.updatedTask.days;
-        };
+        }
       });
       state.isLoading = false;
     },

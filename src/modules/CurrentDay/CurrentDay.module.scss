@@ -1,0 +1,20 @@
+@import 'src/shared/styles/variables.scss';
+
+.weekTabInfo__dayWrapper {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+
+  color: $tertiary-text-color;
+}
+
+.weekTabInfo__day {
+  margin-left: 20px;
+
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+
+  color: $primary-text-color;
+}

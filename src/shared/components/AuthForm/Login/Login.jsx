@@ -83,9 +83,12 @@ const Login = () => {
 
       <form className={s.form}>
         <p className={s.title}>You can login with Google Account:</p>
-        <Button type="button" onClick={login} classAccent="grey">
-          <GoogleIcon />
-        </Button>
+        <a href="https://kidslike-v1-backend.goit.global/auth/google">
+          <Button type="button" classAccent="grey">
+            <GoogleIcon />
+          </Button>
+        </a>
+
         <p className={s.text}>
           Or log in with e-mail and password after registering:
         </p>

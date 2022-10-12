@@ -1,3 +1,5 @@
+@import 'src/shared/styles/variables.scss';
+
 .card_footer {
     display: flex;
     -webkit-box-pack: justify;
@@ -5,7 +7,6 @@
     -webkit-box-align: center;
     align-items: center;
     padding: 14px 20px;
-    background-color: rgb(255, 188, 51);
+    background-color: $secondary-bg-color;
     border-radius: 0px 0px 6px 6px;
-  }
-  
+}

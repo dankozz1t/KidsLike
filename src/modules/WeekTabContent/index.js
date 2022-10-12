@@ -1,1 +1,1 @@
-export {default} from './WeekTabContent';
+export { default } from './WeekTabContent.jsx';

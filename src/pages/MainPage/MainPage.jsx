@@ -15,6 +15,7 @@ const QUERY_DAY = 'day';
 const MainPage = () => {
   const dispatch = useDispatch();
   const dates = useSelector(getDates);
+
   const [searchParams] = useSearchParams();
 
   const selectedDay = searchParams.get(QUERY_DAY);

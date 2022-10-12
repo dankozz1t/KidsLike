@@ -23,28 +23,28 @@ const PlanningPage = () => {
             {
               _id: '1',
               title: 'Test',
-              imgUrl:
+              imageUrl:
                 'https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png',
               reward: '3',
             },
             {
               _id: '2',
               title: 'Test Test',
-              imgUrl:
+              imageUrl:
                 'https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png',
               reward: '1',
             },
             {
               _id: '3',
               title: 'Test Test Test',
-              imgUrl:
+              imageUrl:
                 'https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png',
               reward: '5',
             },
             {
               _id: '4',
               title: 'NE TEST',
-              imgUrl:
+              imageUrl:
                 'https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png',
               reward: '6',
             },

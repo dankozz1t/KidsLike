@@ -28,8 +28,6 @@ const persistedReducer = persistReducer(authPersistConfig, rootReducer);
 export const store = configureStore({
   reducer: persistedReducer,
 
-  // devTools: process.env.NODE_ENV === 'development',
-
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {

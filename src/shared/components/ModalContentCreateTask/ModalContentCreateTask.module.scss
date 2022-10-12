@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 300px;
+  // justify-content: flex-end;
+  align-items: center;
+  background-color: #ffbc33;
+  border-radius: 6px;
+}
+
+.modalImage {
+  width: 20px;
+  position: absolute;
+  top: 97px;
+  right: 16px;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  padding: 0 27px;
+  margin-top: 10px;
+}
+.modalInputLabel {
+  display: flex;
+  margin-top: 10px;
+}
+.modalEditInput {
+  width: 24px;
+}
+
+.addTask {
+  border-bottom: #ffffff 1px solid;
+}
+
+.modalInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #ffbc33;
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.modalButton {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 17px;
+
+  background-color: #ffffff;
+  border-color: transparent;
+  border-radius: 6px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+}

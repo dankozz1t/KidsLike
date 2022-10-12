@@ -1,0 +1,18 @@
+@import 'src/shared/styles/variables.scss';
+
+.box {
+  height: 228px;
+  padding: 15px 35px 9px 33px;
+  border-radius: 6px;
+  background-color: $card-bg-color;
+  color: $primary-bg-color;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  margin-bottom: 12px;
+}

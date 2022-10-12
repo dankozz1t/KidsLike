@@ -1,8 +1,10 @@
 import React from 'react';
 
-const CardTitle = ({ task }) => (
+import s from './CardTitle.module.scss';
+
+const CardTitle = ({ title }) => (
   <div>
-    <span>{task.title}</span>
+    <span className={title}>{title}</span>
   </div>
 );
 

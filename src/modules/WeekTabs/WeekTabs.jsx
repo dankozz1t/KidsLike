@@ -1,25 +1,28 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import s from './WeekTabs.module.scss';
 
-const WeekTabs = ({weekDays}) => {
-  const currentWeekDay =  new Date().toLocaleString('en-US',{weekday: 'long'});
+const WeekTabs = ({ weekDays }) => {
+  const currentWeekDay = new Date().toLocaleString('en-US', {
+    weekday: 'long',
+  });
   const [selectedRadio, setSelectedRadio] = useState(currentWeekDay);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const isRadioSelected = value => selectedRadio === value;
 
-  useEffect(()=>{
-      setSearchParams({day: currentWeekDay});
-    }
-  ,[])
-
+  useEffect(
+    () => {
+      setSearchParams({ day: currentWeekDay });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   const handleChange = event => {
     const { value } = event.target;
-    setSearchParams({day: value})
+    setSearchParams({ day: value });
     setSelectedRadio(value);
   };
 
@@ -45,6 +48,6 @@ const WeekTabs = ({weekDays}) => {
       </ul>
     </div>
   );
-}
+};
 
 export default WeekTabs;

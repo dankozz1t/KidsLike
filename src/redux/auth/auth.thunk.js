@@ -9,12 +9,11 @@ import {
 export const registerThunk = createAsyncThunk(
   'auth/register',
   async (body, { rejectWithValue }) => {
-
     try {
       const { data } = await createUserService(body);
       token.set(data.token);
       return data;
-    } catch(error) {
+    } catch (error) {
       return rejectWithValue(error.response.data.message);
     }
   }
@@ -27,24 +26,26 @@ export const loginThunk = createAsyncThunk(
       const { data } = await loginUserService(body);
       token.set(data.token);
       return data;
-    } catch(error) {
+    } catch (error) {
       return rejectWithValue(error.response.data.message);
     }
   }
 );
 
-export const getUserInfo = createAsyncThunk('user/getInfo', async (_,{ rejectWithValue, getState }) =>{
-  try {
-    const currentToken = getState().auth.token;
-    if (!currentToken) {
-      return rejectWithValue();
+export const getUserInfoThunk = createAsyncThunk(
+  'user/getInfo',
+  async (_, { rejectWithValue, getState }) => {
+    try {
+      const currentToken = getState().auth.token;
+      if (!currentToken) {
+        return rejectWithValue();
+      }
+      token.set(currentToken);
+      const { data } = await getUserService();
+      return data;
+    } catch (error) {
+      token.unset();
+      return rejectWithValue(error.response.data.message);
     }
-    token.set(currentToken);
-    const {data} = await getUserService();
-    return data;
-  } catch (error) {
-    token.unset();
-    return rejectWithValue(error.response.data.message);
-
   }
-})
+);

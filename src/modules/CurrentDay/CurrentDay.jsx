@@ -1,9 +1,7 @@
-
 import s from './CurrentDay.module.scss';
 
-const CurrentDay = ({selectedDate}) => {
-
-   const getCurrentDay = (date) => {
+const CurrentDay = ({ selectedDate }) => {
+  const getCurrentDay = date => {
     const day = new Date(date).toLocaleString('en-GB', {
       weekday: 'long',
       day: 'numeric',

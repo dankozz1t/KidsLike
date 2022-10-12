@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { authReducer } from './auth/auth.slice';
-// import weekReducer from './userInfo/week.slice';
 import { persistReducer } from 'redux-persist';
 import {
   FLUSH,
@@ -22,8 +21,6 @@ const persistedUserReducer = persistReducer(authPersistConfig, authReducer);
 
 const rootReducer = combineReducers({
   auth: persistedUserReducer,
-  // week: weekReducer,
-
 });
 
 export const store = configureStore({

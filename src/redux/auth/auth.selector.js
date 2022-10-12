@@ -8,9 +8,6 @@ export const getUser = state => state.auth.user;
 export const selectStartWeekDate = state => state?.auth?.week?.startWeekDate;
 export const selectEndWeekDate = state => state?.auth?.week?.endWeekDate;
 
-
-
-// memoization
 export const getWeekRange = createSelector(
   [selectStartWeekDate, selectEndWeekDate],
   (start, end) => {

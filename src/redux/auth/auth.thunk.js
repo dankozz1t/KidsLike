@@ -36,16 +36,21 @@ export const loginThunk = createAsyncThunk(
 
 export const getUserInfoThunk = createAsyncThunk(
   'user/getInfo',
-  async (_, { rejectWithValue, getState }) => {
+  async (tokenParams, { rejectWithValue, getState }) => {
+    let stateToken = tokenParams;
     try {
-      const currentToken = getState().auth.token;
+      if (!tokenParams) {
+        const currentToken = getState().auth.token;
 
-      if (currentToken) {
-        token.set(currentToken);
+        if (!currentToken) {
+          return rejectWithValue();
+        }
+
+        stateToken = currentToken;
       }
-
+      token.set(stateToken);
       const { data } = await getUserService();
-      return data;
+      return { ...data, token: stateToken };
     } catch (error) {
       token.unset();
       return rejectWithValue(error.response.data.message);

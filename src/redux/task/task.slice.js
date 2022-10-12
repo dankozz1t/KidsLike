@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getUserInfoThunk, loginThunk } from '../auth/auth.thunk';
-import { createTaskThunk, addTaskToProvidedDaysThunk, toggleTaskStatusThunk } from '../task/task.thunk';
+import {
+  createTaskThunk,
+  addTaskToProvidedDaysThunk,
+  toggleTaskStatusThunk,
+} from '../task/task.thunk';
 import taskInitialState from './task.initial-state';
 
 const taskSlice = createSlice({
@@ -40,7 +44,7 @@ const taskSlice = createSlice({
       state.tasks.map((task, idx) => {
         if (task._id === payload.updatedTask.id) {
           state.tasks[idx].days = payload.updatedTask.days;
-        };
+        }
       });
       state.isLoading = false;
     },
@@ -57,7 +61,7 @@ const taskSlice = createSlice({
       state.tasks.map((task, idx) => {
         if (task._id === payload.updatedTask.id) {
           state.tasks[idx].days = payload.updatedTask.days;
-        };
+        }
       });
       state.isLoading = false;
     },

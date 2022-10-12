@@ -7,15 +7,15 @@ const WeekTabs = ({ weekDays }) => {
   const currentWeekDay = new Date().toLocaleString('en-US', {
     weekday: 'long',
   });
-  const [selectedRadio, setSelectedRadio] = useState(currentWeekDay);
-  // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedRadio, setSelectedRadio] = useState(searchParams.get('day') || currentWeekDay );
+
 
   const isRadioSelected = value => selectedRadio === value;
 
   useEffect(
     () => {
-      setSearchParams({ day: currentWeekDay });
+      setSearchParams({ day: selectedRadio });
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []

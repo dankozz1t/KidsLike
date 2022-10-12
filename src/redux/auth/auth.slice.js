@@ -21,7 +21,6 @@ const authSlice = createSlice({
     },
     [getUserInfoThunk.fulfilled]: (state, { payload }) => {
       state.status = true;
-      state.token = payload.token;
       state.user = payload.user;
       state.week = payload.week;
     },

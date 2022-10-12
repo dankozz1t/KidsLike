@@ -9,7 +9,6 @@ const PlanningPage = () => {
   return (
     <>
       <h1>planning</h1>
-      <button type='button' onClick={() => setOpen(true)} >Open</button>
       <Modal open={open} onClose={() => setOpen(false)}>
         <ModalContentCreateTask />
       </Modal>

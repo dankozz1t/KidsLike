@@ -18,9 +18,14 @@ const WeekTabContent = ({ selectedDate }) => {
         </div>
         <ProgressBar />
       </div>
-      <div className={s.cards_wrapper}>
-        {tasks.length ? <CardsList tasks={tasks} /> : <NoTasks />}
-      </div>
+
+      {tasks.length ? (
+        <div className={s.cards_wrapper}>
+          <CardsList tasks={tasks} />
+        </div>
+      ) : (
+        <NoTasks />
+      )}
     </div>
   );
 };

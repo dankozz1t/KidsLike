@@ -1,19 +1,30 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import CardTitle from '../CardTitle';
 import PointAmount from '../PointAmount';
-import s from './CardFooter.module.scss'
+import TaskToggle from '../TaskToggle';
+
+import s from './CardFooter.module.scss';
 
 const CardFooter = ({ ...taskInfo }) => {
-    const { title, reward } = taskInfo;
+  const { title, reward } = taskInfo;
+  const { pathname } = useLocation();
 
-    return (
-      <div className={s.card_footer}>
-        <div>
-          <CardTitle title={title} />
-          <PointAmount point={reward} />
-        </div>
-      </div>
-    );
+  const renderElement = () => {
+    if (pathname === '/main') {
+      return <TaskToggle />;
+    }
   };
-  
-  export default CardFooter;
+
+  return (
+    <div className={s.card_footer}>
+      <div>
+        <CardTitle title={title} />
+        <PointAmount point={reward} />
+      </div>
+      <>{renderElement()}</>
+    </div>
+  );
+};
+
+export default CardFooter;

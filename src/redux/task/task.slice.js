@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getUserThunk, loginThunk } from '../auth/auth.thunk';
+import { getUserInfoThunk, loginThunk } from '../auth/auth.thunk';
 import { createTaskThunk, addTaskToProvidedDaysThunk, toggleTaskStatusThunk } from '../task/task.thunk';
 import taskInitialState from './task.initial-state';
 
@@ -8,7 +8,7 @@ const taskSlice = createSlice({
   initialState: taskInitialState,
 
   extraReducers: {
-    [getUserThunk.fulfilled]: (state, { payload }) => {
+    [getUserInfoThunk.fulfilled]: (state, { payload }) => {
       state.balance = payload.user.balance;
       state.rewardsGained = payload.week.rewardsGained;
       state.rewardsPlanned = payload.week.rewardsPlanned;

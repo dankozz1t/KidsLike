@@ -39,7 +39,7 @@ export const getUserInfoThunk = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     try {
       const currentToken = getState().auth.token;
-      
+
       if (currentToken) {
         token.set(currentToken);
       }
@@ -47,7 +47,7 @@ export const getUserInfoThunk = createAsyncThunk(
       const { data } = await getUserService();
       return data;
     } catch (error) {
-      // token.unset();
+      token.unset();
       return rejectWithValue(error.response.data.message);
     }
   }

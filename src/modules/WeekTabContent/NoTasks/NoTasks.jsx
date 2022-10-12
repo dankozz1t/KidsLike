@@ -6,6 +6,7 @@ const NoTasks = () => {
     <div className={s.wrapper}>
       <h2 className={s.title}>No tasks on this day</h2>
       <Button>Schedule tasks</Button>
+      <div className={s.noTasks}></div>
     </div>
   )
 }

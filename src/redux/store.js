@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { authReducer } from './auth/auth.slice';
+import { taskReducer } from './task/task.slice';
 import { persistReducer } from 'redux-persist';
 import {
   FLUSH,
@@ -17,14 +18,15 @@ const authPersistConfig = {
   storage,
 };
 
-const persistedUserReducer = persistReducer(authPersistConfig, authReducer);
-
 const rootReducer = combineReducers({
-  auth: persistedUserReducer,
+  auth: authReducer,
+  task: taskReducer,
 });
 
+const persistedReducer = persistReducer(authPersistConfig, rootReducer);
+
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: persistedReducer,
 
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

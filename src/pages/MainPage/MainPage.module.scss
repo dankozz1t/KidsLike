@@ -1,8 +1,18 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .wrapper {
-  display: flex;
+
+  @include media(mobile){
+    display: flex;
+    flex-direction: column;
+  }
+  @include media(desktop){
+    display: flex;
+    flex-direction: row;
   justify-content: flex-start;
+  }
+
 }
 
 .title {

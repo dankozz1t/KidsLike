@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import CardTitle from '../CardTitle';
 import PointAmount from '../PointAmount';
 import TaskToggle from '../TaskToggle';
+
 import s from './CardFooter.module.scss';
 
 const CardFooter = ({ ...taskInfo }) => {

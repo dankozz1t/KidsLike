@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Footer from 'modules/Footer';
 import Header from './modules/Header';
 
 import Container from 'shared/components/Container';
@@ -51,7 +50,6 @@ const ClientsRoutes = () => {
             </Route>
           </Routes>
         </Suspense>
-        <Footer />
       </Container>
     </>
   );

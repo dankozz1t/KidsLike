@@ -6,8 +6,8 @@ import modalClose from 'assets/images/modal-image/modal-close.svg';
 
 const modalRootElement = document.querySelector("#modal");
 
-const Modal = (props) => {
-    const { open, onClose } = props;
+const Modal = ({children, onClose, open}) => {
+   
 
     const element = useMemo(() => document.createElement('div'), []);
 
@@ -31,7 +31,7 @@ const Modal = (props) => {
             <div className={s.modal_background} onClick = {handleClick} >
                 <div className={s.modal_card}>
                     <img className={s.modal_close} onClick = {onBtnClose} src={modalClose} alt="modalClose" />
-                    {props.children}
+                    {children}
                     </div>
             </div>,
             element);

@@ -1,1 +1,1 @@
-export { default } from './PlanningPage '
+export { default } from './PlanningPage'

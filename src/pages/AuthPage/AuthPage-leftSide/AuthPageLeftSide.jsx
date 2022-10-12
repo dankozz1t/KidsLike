@@ -8,10 +8,18 @@ import s from './AuthPage-leftSide.module.scss';
 const AuthPageLeftSide = () => {
   return (
     <div className={s.block}>
-      <img className={s.img1} src={img1} alt="joystick" />
-      <img className={s.img2} src={img2} alt="home1" />
-      <img className={s.img3} src={img3} alt="robot" />
-      <img className={s.img4} src={img4} alt="home2" />
+      <div className={s.thumb__img1}>
+        <img className={s.img1} src={img1} alt="joystick" />
+      </div>
+      <div className={s.thumb__img2}>
+        <img className={s.img2} src={img2} alt="home1" />
+      </div>
+      <div className={s.thumb__img3}>
+        <img className={s.img3} src={img3} alt="robot" />
+      </div>
+      <div className={s.thumb__img4}>
+        <img className={s.img4} src={img4} alt="home2" />
+      </div>
     </div>
   );
 };

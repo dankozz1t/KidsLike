@@ -21,6 +21,8 @@ const ClientsRoutes = () => {
         <Header />
         <Suspense fallback={<Loader />}>
           <Routes>
+
+
             <Route path="/" element={<PublicRoute redirectTo="/auth" />}>
               <Route index element={<HomePage />} />
             </Route>

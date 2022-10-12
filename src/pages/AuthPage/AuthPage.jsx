@@ -7,7 +7,9 @@ const AuthPage = () => {
   return (
     <main className={s.main}>
       <AuthPageLeftSide className={s.left__side} />
-      <AuthForm className={s.right__side} />
+      <div className={s.right__side}>
+        <AuthForm />
+      </div>
     </main>
   );
 };

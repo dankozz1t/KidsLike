@@ -1,7 +1,7 @@
 import { publicApi, privateApi } from './http/http';
 
-export const getUserService = async () => {
-  return await privateApi.get('/user/info');
+export const getUserService = async (token) => {
+  return await privateApi.get('/user/info', {headers: {Authorization: `Bearer ${token}`}} );
 };
 
 export const createUserService = async body => {

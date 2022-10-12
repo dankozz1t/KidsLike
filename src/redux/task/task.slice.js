@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { buyGiftsThunk } from '../gift/gift.thunk';
 import { getUserInfoThunk, loginThunk } from '../auth/auth.thunk';
 import {
   createTaskThunk,
@@ -12,6 +13,9 @@ const taskSlice = createSlice({
   initialState: taskInitialState,
 
   extraReducers: {
+    [buyGiftsThunk.fulfilled]: (state, { payload }) => {
+      state.balance = payload.updatedBalance;
+    },
     [getUserInfoThunk.fulfilled]: (state, { payload }) => {
       state.balance = payload.user.balance;
       state.rewardsGained = payload.week.rewardsGained;
@@ -29,7 +33,7 @@ const taskSlice = createSlice({
     },
     [createTaskThunk.fulfilled]: (state, { payload }) => {
       console.log(payload);
-      state.push(payload);
+      state.tasks.push(payload);
       state.isLoading = false;
     },
     [createTaskThunk.rejected]: state => {

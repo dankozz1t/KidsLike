@@ -1,6 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { authReducer } from './auth/auth.slice';
 import { taskReducer } from './task/task.slice';
+import { giftReducer } from './gift/gift.slice'
 import { persistReducer } from 'redux-persist';
 import {
   FLUSH,
@@ -21,6 +22,7 @@ const authPersistConfig = {
 const rootReducer = combineReducers({
   auth: authReducer,
   task: taskReducer,
+  gift: giftReducer
 });
 
 const persistedReducer = persistReducer(authPersistConfig, rootReducer);

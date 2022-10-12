@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { loginThunk, registerThunk } from 'redux/auth/auth.thunk';
 import s from './Login.module.scss';
 import Button from 'shared/components/Button';
+
 import { useNavigate } from 'react-router-dom';
 import GoogleIcon from 'shared/components/Google/GoogleIcon';
 
@@ -88,7 +89,6 @@ const Login = () => {
             <GoogleIcon />
           </Button>
         </a>
-
         <p className={s.text}>
           Or log in with e-mail and password after registering:
         </p>

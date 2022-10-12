@@ -14,9 +14,9 @@ export const getDaysTasks = createSelector(
     for (let i = 0; i < tasks.length; i++) {
       const currentTask = tasks[i];
 
-      const activeTasks = currentTask.days.find(({ date, isActive }) => {
-        return date === currentDate && isActive;
-      });
+      const activeTasks = currentTask.days.find(
+        ({ date, isActive }) => date === currentDate && isActive
+      );
 
       if (activeTasks) {
         tasksDay.push({

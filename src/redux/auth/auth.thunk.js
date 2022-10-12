@@ -4,7 +4,6 @@ import {
   loginUserService,
   getUserService,
   createUserService,
-  // getGoogleService
 } from 'shared/service/auth.service';
 
 export const registerThunk = createAsyncThunk(
@@ -25,7 +24,6 @@ export const loginThunk = createAsyncThunk(
   async (body, { rejectWithValue }) => {
     try {
       const { data } = await loginUserService(body);
-      console.log('data: ', data);
       token.set(data.token);
       return data;
     } catch (error) {

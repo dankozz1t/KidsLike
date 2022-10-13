@@ -15,36 +15,36 @@ const DaysList = ({ _id, daysList, setShow }) => {
   const handleChange = event => {
     setIsLoading(true);
     const { name } = event.target;
-    (async () =>
-      setSelectedRadio(prevState =>
-        prevState.map(item =>
-          item.day === name ? { ...item, isChecked: !item.isChecked } : item
-        )
-      ))()
-      .then(() => {})
-      .finally(() => {
-        const isCheckedArray = selectedRadio.map(day => {
-          if (day.day === name) {
-            day.isChecked = !day.isChecked;
-          }
-          return day.isChecked;
-        });
 
-        dispatch(
-          addTaskToProvidedDaysThunk({
-            id: _id,
-            body: {
-              days: isCheckedArray,
-            },
-          })
-        )
-          .unwrap()
-          .then(() => {
-            setShow(false);
-          })
-          .finally(() => {
-            setIsLoading(false);
-          });
+    const isCheckedArray = selectedRadio.map(day => {
+      const newDay = { ...day };
+
+      if (newDay.day === name) {
+        newDay.isChecked = !newDay.isChecked;
+      }
+      return newDay.isChecked;
+    });
+
+    dispatch(
+      addTaskToProvidedDaysThunk({
+        id: _id,
+        body: {
+          days: isCheckedArray,
+        },
+      })
+    )
+      .unwrap()
+      .then(() => {
+        setSelectedRadio(prevState =>
+          prevState.map(item =>
+            item.day === name ? { ...item, isChecked: !item.isChecked } : item
+          )
+        );
+
+        setShow(false);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 

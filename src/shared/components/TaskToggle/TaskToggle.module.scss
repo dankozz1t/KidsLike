@@ -37,11 +37,11 @@
   transition: 0.4s;
 }
 
-.checkbox:checked+.slider {
+.checkbox:checked + .slider {
   background-color: $success;
 }
 
-.checkbox:checked+.slider:before {
+.checkbox:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
@@ -74,4 +74,11 @@
   left: 70%;
   transform: translate(-50%, -50%);
   fill: $primary-bg-color;
+}
+
+.loader {
+  z-index: 2;
+  position: relative;
+  top: -25px;
+  left: -25px;
 }

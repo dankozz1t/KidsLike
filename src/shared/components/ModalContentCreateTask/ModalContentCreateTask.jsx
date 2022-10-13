@@ -4,12 +4,13 @@ import modalImage from 'assets/images/modal-image/modal-image.svg';
 import modalEditInput from 'assets/images/modal-image/edit-24px 2.svg';
 import s from './ModalContentCreateTask.module.scss';
 import { useRef } from "react";
-import { privateApi, token } from 'shared/service/http/http';
+import { useDispatch } from "react-redux";
+import { createTaskThunk } from "redux/task/task.thunk";
 
 
 const ModalContentCreateTask = () => {
 
-
+const dispatch = useDispatch()
     const imageInputRef = useRef(null)
 
     const [taskName, setTaskName] = useState("");
@@ -30,23 +31,22 @@ const ModalContentCreateTask = () => {
 
     const onHandleSubmit = (e) => {
         e.preventDefault();
-
-        if (image.size > 204800) {
-            return
-        }
-
+        
+        
+        // if (image.size > 204800) {
+        //     return
+        // }
+        
         const body = new FormData()
-
+        
         body.append('title', taskName)
         body.append('reward', reward)
         body.append('file', image)
-
-        privateApi.post('/task', body, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'multipart/form-data',
-            }
-        })
+        console.log(taskName);
+        console.log(reward);
+        console.log(image);
+        dispatch(createTaskThunk(body));
+        console.log(body);
         setTaskName('');
         setReward('');
     };

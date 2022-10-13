@@ -18,7 +18,7 @@ const Card = ({ ...task }) => {
 Card.propTypes = {
   task: PropTypes.arrayOf(
     PropTypes.shape({
-      imgUrl: PropTypes.string.isRequired,
+      imageUrl: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
     })
   ),

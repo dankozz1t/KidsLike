@@ -10,8 +10,11 @@ import { ReactComponent as IconDanger } from 'assets/images/icon/icon-danger.svg
 import { ReactComponent as IconOk } from 'assets/images/icon/icon-ok.svg';
 import { ReactComponent as IconAdd } from 'assets/images/icon/icon-add.svg';
 
+import { shallowEqual, useSelector } from 'react-redux';
+
 import s from './CardFooter.module.scss';
 import DaysList from '../DaysList';
+import { getDaysList } from 'redux/task/task.selector';
 
 const daysList = [
   { day: 'Mo', status: false },
@@ -36,18 +39,20 @@ const CardFooter = ({ ...taskInfo }) => {
 
   const [searchParams] = useSearchParams();
 
+  const daysList = useSelector(state => getDaysList(state, _id), shallowEqual);
+
   const [show, setShow] = useState(false);
 
   const handleIconAddClick = () => {
     setShow(!show);
-
-    if (show) {
-      console.log('Send');
-    }
   };
 
   const renderElement = () => {
     if (pathname === '/main') {
+      const currentWeekDay = new Date().toLocaleString('en-US', {
+        weekday: 'long',
+      });
+
       if (currentWeekDay === searchParams.get('day')) {
         return <TaskToggle _id={_id} isCompleted={isCompleted} />;
       }
@@ -56,7 +61,7 @@ const CardFooter = ({ ...taskInfo }) => {
     } else if (pathname === '/planning') {
       return (
         <>
-          {show && <DaysList daysList={daysList} />}
+          {show && <DaysList setShow={setShow} _id={_id} daysList={daysList} />}
           <button type="button" className={s.icon} onClick={handleIconAddClick}>
             {show ? <IconOk /> : <IconAdd />}
           </button>

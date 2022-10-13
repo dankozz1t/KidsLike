@@ -43,12 +43,7 @@ const taskSlice = createSlice({
     },
     [addTaskToProvidedDaysThunk.fulfilled]: (state, { payload }) => {
       state.rewardsPlanned = payload.updatedWeekPlannedRewards;
-      // eslint-disable-next-line array-callback-return
-      state.tasks.map((task, idx) => {
-        if (task._id === payload.updatedTask.id) {
-          state.tasks[idx].days = payload.updatedTask.days;
-        }
-      });
+      state.tasks = payload.data;
       state.isLoading = false;
     },
     [addTaskToProvidedDaysThunk.rejected]: state => {

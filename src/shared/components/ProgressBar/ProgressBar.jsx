@@ -1,12 +1,13 @@
 import s from './ProgressBar.module.scss';
 import { Progress } from 'react-sweet-progress';
+import { shallowEqual, useSelector } from 'react-redux';
+import { getRewardsGained, getRewardsPlanned } from 'redux/task/task.selector';
+
 import 'react-sweet-progress/lib/style.css';
-// import { useState } from 'react';
-import { useSelector } from 'react-redux';
 
 const ProgressBar = () => {
-  const points = useSelector(state => state.task.rewardsGained) + 6;
-  const plannedPoints = useSelector(state => state.task.rewardsPlanned) + 10;
+  const points = useSelector(getRewardsGained || 0, shallowEqual);
+  const plannedPoints = useSelector(getRewardsPlanned || 0, shallowEqual);
 
   let percent;
 

@@ -51,8 +51,8 @@ export const toggleTaskStatusThunk = createAsyncThunk(
 
       return {
         data,
-        updatedBalance: response.updatedBalance,
-        updatedWeekGainedRewards: response.updatedWeekGainedRewards,
+        updatedBalance: response.data.updatedBalance,
+        updatedWeekGainedRewards: response.data.updatedWeekGainedRewards,
       };
     } catch (e) {
       return rejectWithValue();

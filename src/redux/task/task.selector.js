@@ -31,3 +31,12 @@ export const getDaysTasks = createSelector(
     return tasksDay;
   }
 );
+
+export const getAllTasks = createSelector([getTasks], tasks =>
+  tasks.map(({ _id, imageUrl, reward, title }) => ({
+    _id,
+    imageUrl,
+    reward,
+    title,
+  }))
+);

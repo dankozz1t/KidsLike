@@ -3,17 +3,7 @@ import { useState } from 'react';
 import s from './DaysList.module.scss';
 import CheckBox from 'shared/components/CheckBox/CheckBox.jsx';
 
-const daysList = [
-  { day: 'Mo', status: false },
-  { day: 'Tu', status: false },
-  { day: 'We', status: false },
-  { day: 'Th', status: false },
-  { day: 'Fr', status: false },
-  { day: 'Sa', status: false },
-  { day: 'Su', status: false },
-];
-
-const DaysList = () => {
+const DaysList = ({ daysList }) => {
   const [selectedRadio, setSelectedRadio] = useState(daysList);
 
   const handleChange = event => {

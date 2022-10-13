@@ -7,6 +7,7 @@ import WeekTabs from 'modules/WeekTabs';
 
 import { getDates } from 'redux/auth/auth.selector';
 import { getUserInfoThunk } from 'redux/auth/auth.thunk';
+import Footer from 'modules/Footer';
 
 import s from './MainPage.module.scss';
 
@@ -33,7 +34,10 @@ const MainPage = () => {
       <h1 className={s.title}>MainPage</h1>
       <div className={s.wrapper}>
         <WeekTabs weekDays={weekDays} />
-        <WeekTabContent selectedDate={dates[selectedDay]} />
+        <div className={s.box}>
+          <WeekTabContent selectedDate={dates[selectedDay]} />
+          <Footer />
+        </div>
       </div>
     </>
   );

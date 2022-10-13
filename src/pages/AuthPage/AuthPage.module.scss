@@ -3,11 +3,16 @@
 .main {
   display: flex;
   justify-content: space-between;
-  width: $desktop;
+  background-color: #fafafa;
 }
 
+.right__side {
+  display: flex;
+  flex-direction: column;
+}
 
-.right__side{
+.form {
   padding-top: 50px;
   padding-right: 123px;
+  margin-bottom: 40px;
 }

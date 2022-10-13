@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import s from './TaskToggle.module.scss';
 import { ReactComponent as CheckSymbol } from './images/check-symbol.svg';
 import { ReactComponent as Attention } from './images/attention.svg';
@@ -19,4 +20,9 @@ const TaskToggle = ({ id }) => {
     </label>
   );
 };
+
+TaskToggle.propTypes = {
+  id: PropTypes.string,
+}
+
 export default TaskToggle;

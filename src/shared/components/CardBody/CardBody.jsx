@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import s from './CardBody.module.scss'
 
 const CardBody = ({ img, alt}) => (
@@ -7,5 +8,10 @@ const CardBody = ({ img, alt}) => (
   src={img}
   alt={alt} />
 );
+
+CardBody.propTypes = {
+  img : PropTypes.string.isRequired,
+  alt : PropTypes.string.isRequired,
+}
 
 export default CardBody;

@@ -1,12 +1,9 @@
 import React from 'react';
-// import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Card from '../Card';
 import s from './CardsList.module.scss';
 
 const CardsList = ({ tasks }) => {
-  // const location = useLocation().pathname;
-  // console.log(location);
-
   return (
     <ul className={s.cards_list}>
       {tasks.map(task => {
@@ -19,6 +16,15 @@ const CardsList = ({ tasks }) => {
       })}
     </ul>
   );
+};
+
+CardsList.propTypes = {
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  task: PropTypes.arrayOf(),
 };
 
 export default CardsList;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CardTitle from '../CardTitle';
@@ -7,8 +7,21 @@ import TaskToggle from '../TaskToggle';
 
 import { ReactComponent as IconSuccess } from 'assets/images/icon/icon-success.svg';
 import { ReactComponent as IconDanger } from 'assets/images/icon/icon-danger.svg';
+import { ReactComponent as IconOk } from 'assets/images/icon/icon-ok.svg';
+import { ReactComponent as IconAdd } from 'assets/images/icon/icon-add.svg';
 
 import s from './CardFooter.module.scss';
+import DaysList from '../DaysList';
+
+const daysList = [
+  { day: 'Mo', status: false },
+  { day: 'Tu', status: false },
+  { day: 'We', status: false },
+  { day: 'Th', status: false },
+  { day: 'Fr', status: false },
+  { day: 'Sa', status: false },
+  { day: 'Su', status: false },
+];
 
 const CardFooter = ({ ...taskInfo }) => {
   const { _id, title, reward, isCompleted } = taskInfo;
@@ -17,7 +30,18 @@ const CardFooter = ({ ...taskInfo }) => {
   const currentWeekDay = new Date().toLocaleString('en-US', {
     weekday: 'long',
   });
+
   const [searchParams] = useSearchParams();
+
+  const [show, setShow] = useState(false);
+
+  const handleIconAddClick = () => {
+    setShow(!show);
+
+    if (show) {
+      console.log('Send');
+    }
+  };
 
   const renderElement = () => {
     if (pathname === '/main') {
@@ -26,6 +50,15 @@ const CardFooter = ({ ...taskInfo }) => {
       }
 
       return isCompleted ? <IconSuccess /> : <IconDanger />;
+    } else if (pathname === '/planning') {
+      return (
+        <>
+          {show && <DaysList daysList={daysList} />}
+          <button type="button" className={s.icon} onClick={handleIconAddClick}>
+            {show ? <IconOk /> : <IconAdd />}
+          </button>
+        </>
+      );
     }
   };
 

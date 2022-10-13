@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
 import ModalContentCreateTask from 'shared/components/ModalContentCreateTask';
 import CardsList from 'shared/components/CardsList';
 import Modal from 'shared/components/Modal';
 
 import s from './PlanningPage.module.scss';
+import { getAllTasks } from 'redux/task/task.selector';
 
 const PlanningPage = () => {
+  const tasks = useSelector(getAllTasks, shallowEqual);
   const [open, setOpen] = useState(false);
 
   return (
@@ -18,38 +21,7 @@ const PlanningPage = () => {
         <ModalContentCreateTask />
       </Modal>
       <div className={s.cards_wrapper}>
-        <CardsList
-          tasks={[
-            {
-              _id: '1',
-              title: 'Test',
-              imageUrl:
-                'https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png',
-              reward: 3,
-            },
-            {
-              _id: '2',
-              title: 'Test Test',
-              imageUrl:
-                'https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png',
-              reward: 1,
-            },
-            {
-              _id: '3',
-              title: 'Test Test Test',
-              imageUrl:
-                'https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png',
-              reward: 5,
-            },
-            {
-              _id: '4',
-              title: 'NE TEST',
-              imageUrl:
-                'https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png',
-              reward: 6,
-            },
-          ]}
-        />
+        <CardsList tasks={tasks} />
       </div>
     </>
   );

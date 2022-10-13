@@ -6,7 +6,6 @@ export const getUserService = async () => {
 
 export const createUserService = async body => {
   return await publicApi.post('/auth/register', body);
-
 };
 
 export const loginUserService = async body => {

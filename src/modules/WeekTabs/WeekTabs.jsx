@@ -1,30 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
 import s from './WeekTabs.module.scss';
 
-const daysOfWeek = [
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday',
-];
+const WeekTabs = ({ weekDays }) => {
+  const currentWeekDay = new Date().toLocaleString('en-US', {
+    weekday: 'long',
+  });
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedRadio, setSelectedRadio] = useState(searchParams.get('day') || currentWeekDay );
 
-const WeekTabs = () => {
-  const [selectedRadio, setSelectedRadio] = useState('Monday');
 
   const isRadioSelected = value => selectedRadio === value;
 
+  useEffect(
+    () => {
+      setSearchParams({ day: selectedRadio });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
   const handleChange = event => {
     const { value } = event.target;
+    setSearchParams({ day: value });
     setSelectedRadio(value);
   };
 
   return (
     <div className={s.box}>
       <ul className={s.weekTabs}>
-        {daysOfWeek.map(day => (
+        {weekDays.map(day => (
           <li className={s.weekTabs__item} key={day}>
             <input
               id={day}
@@ -43,6 +49,6 @@ const WeekTabs = () => {
       </ul>
     </div>
   );
-}
+};
 
 export default WeekTabs;

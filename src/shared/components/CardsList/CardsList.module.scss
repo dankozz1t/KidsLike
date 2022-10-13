@@ -1,15 +1,36 @@
+@import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
+
 .cards_list {
-    max-width: 280px;
-    padding-bottom: 40px;
-    margin: 0 auto 0;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: flex-end;
+  margin-top: -20px;
+  width: 100%;
+
+  @include media(tablet) {
+    margin-top: -30px;
+    margin-left: -20px;
   }
 
-  .card_item {
-    width: 280px;
-    height: 260px;
-    font-size: 0px;
-    background-color: #ffffff;
-    margin-bottom: 30px;
-    border-radius: 10px;
+  @include media(desktop) {
+    margin-top: 0px;
   }
+}
+
+.card_item {
+  margin-top: 20px;
+  filter: drop-shadow(4px 6px 15px rgba(0, 0, 0, 0.1));
+
+  @include media(tablet) {
+    margin-top: 30px;
+    flex-basis: calc((100% - 40px) / 2);
+  }
+
+  @include media(desktop) {
+    margin-top: 20px;
+    flex-basis: 288px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}

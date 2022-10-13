@@ -1,22 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import s from './UserMenu.module.scss';
 import { ReactComponent as LogoAuth } from 'assets/images/icon/icon-auth.svg';
 import UserInfo from '../UserInfo';
 import { useSelector } from 'react-redux';
 import { getUser } from 'redux/auth/auth.selector';
-import { useDispatch } from 'react-redux';
-import { logoutAction } from 'redux/auth/auth.slice';
-import { token } from 'shared/service/http/http';
 import VerticalBar from 'shared/components/VerticalBar/VerticalBar';
+import Modal from 'shared/components/Modal';
+import ModalLogout from 'shared/components/ModalLogout';
+
 
 const UserMenu = () => {
   const { email, balance } = useSelector(getUser);
-  const dispatch = useDispatch();
-  const hadleLogoutClick = () => {
-    dispatch(logoutAction());
-    token.unset();
-  };
+    const [open, setOpen] = useState(false);
+
 
   return (
     <div className={s.subcontainer}>
@@ -47,10 +44,13 @@ const UserMenu = () => {
         <button
           className={s.btnlogout}
           type="button"
-          onClick={hadleLogoutClick}
-        >
+          onClick={() => setOpen(true)}        >
+          
           <LogoAuth />
         </button>
+        <Modal open={open} onClose={() => setOpen(false)}>
+          <ModalLogout onClose={() => setOpen(false)} />
+        </Modal>
       </div>
     </div>
   );

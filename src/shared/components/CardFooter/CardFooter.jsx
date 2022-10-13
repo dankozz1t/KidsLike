@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CardTitle from '../CardTitle';
@@ -16,40 +16,24 @@ import s from './CardFooter.module.scss';
 import DaysList from '../DaysList';
 import { getDaysList } from 'redux/task/task.selector';
 
-const daysList = [
-  { day: 'Mo', isChecked: false, isDisabled: false },
-  { day: 'Tu', isChecked: false, isDisabled: false },
-  { day: 'We', isChecked: false, isDisabled: false },
-  { day: 'Th', isChecked: false, isDisabled: false },
-  { day: 'Fr', isChecked: false, isDisabled: false },
-  { day: 'Sa', isChecked: false, isDisabled: false },
-  { day: 'Su', isChecked: false, isDisabled: false },
-];
-
-const CardFooter = ({ ...taskInfo }) => {
-  const { _id, title, reward, isCompleted } = taskInfo;
+const CardFooter = ({ _id, title, reward, isCompleted }) => {
   const { pathname } = useLocation();
-
-  const currentWeekDay = new Date().toLocaleString('en-US', {
-    weekday: 'long',
-  });
-
   const [searchParams] = useSearchParams();
+
+  const daysList = useSelector(state => getDaysList(state, _id), shallowEqual);
 
   const [show, setShow] = useState(false);
 
-  const daysListTest = useSelector(getDaysList, shallowEqual);
-
   const handleIconAddClick = () => {
     setShow(!show);
-
-    if (show) {
-      console.log('Send');
-    }
   };
 
   const renderElement = () => {
     if (pathname === '/main') {
+      const currentWeekDay = new Date().toLocaleString('en-US', {
+        weekday: 'long',
+      });
+
       if (currentWeekDay === searchParams.get('day')) {
         return <TaskToggle _id={_id} isCompleted={isCompleted} />;
       }
@@ -58,7 +42,7 @@ const CardFooter = ({ ...taskInfo }) => {
     } else if (pathname === '/planning') {
       return (
         <>
-          {show && <DaysList daysList={daysList} />}
+          {show && <DaysList setShow={setShow} _id={_id} daysList={daysList} />}
           <button type="button" className={s.icon} onClick={handleIconAddClick}>
             {show ? <IconOk /> : <IconAdd />}
           </button>

@@ -1,5 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getDates } from 'redux/auth/auth.selector';
+import { getIsPrevDays } from 'shared/components/DaysList/helpers/helpers.function';
 
 export const isLoadingTasks = state => state.task.isLoading;
 export const getTasks = state => state.task.tasks;
@@ -43,29 +44,24 @@ export const getAllTasks = createSelector([getTasks], tasks =>
 );
 
 export const getDaysList = createSelector(
-  [getTasks, getDates],
-  (tasks, days) => {
-    const date = Object.keys(days).map(value => value.slice(0, 3));
-
-    console.log(`  tasks`, tasks);
-    console.log(`  date`, date);
+  [getTasks, getDates, (_, id) => id],
+  (tasks, days, id) => {
+    const weekDaysKeys = Object.keys(days).map(value => value.slice(0, 3));
 
     const tasksDay = [];
 
-    for (let i = 0; i < tasks.length; i++) {
-      const dayItem = [];
-      const currentTask = tasks[i];
-      console.log(`  currentTask`, currentTask);
+    const currentTask = tasks.find(task => task._id === id);
 
-      for (let i = 0; i < currentTask.days.length; i++) {
-        const currentday = currentTask.days[i];
+    for (let i = 0; i < currentTask.days.length; i++) {
+      const currentDay = currentTask.days[i];
 
-        dayItem.push({ day: date[i], isChecked: currentday.isActive });
-      }
-      tasksDay.push(dayItem);
-      // const activeTasks = currentTask.days.find(({ date, isActive }) => date);
+      tasksDay.push({
+        day: weekDaysKeys[i],
+        isChecked: currentDay.isActive,
+        isDisabled: getIsPrevDays(weekDaysKeys, currentDay.date),
+      });
     }
-    console.log(`  tasksDay`, tasksDay);
+
     return tasksDay;
   }
 );

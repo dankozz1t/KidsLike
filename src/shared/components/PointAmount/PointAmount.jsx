@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import s from './PointAmount.module.scss';
 
 const PointAmount = ({ point }) => {
@@ -8,5 +9,9 @@ const PointAmount = ({ point }) => {
     </div>
   );
 };
+
+PointAmount.propTypes = {
+  point: PropTypes.string.isRequired,
+}
 
 export default PointAmount;

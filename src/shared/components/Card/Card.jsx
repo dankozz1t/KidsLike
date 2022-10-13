@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CardBody from '../CardBody';
 import CardFooter from '../CardFooter';
 
@@ -14,5 +15,14 @@ const Card = ({ ...task }) => {
     </article>
   );
 };
+
+Card.propTypes = {
+  task : PropTypes.arrayOf(
+    PropTypes.shape({
+      imgUrl : PropTypes.string.isRequired,
+      title : PropTypes.string.isRequired,
+    })
+  ),
+}
 
 export default Card;

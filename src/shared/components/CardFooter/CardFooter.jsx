@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from "react-router-dom";
+import PropTypes from 'prop-types';
 import CardTitle from '../CardTitle';
 import PointAmount from '../PointAmount';
 import TaskToggle from '../TaskToggle';
@@ -28,5 +29,14 @@ const CardFooter = ({ ...taskInfo }) => {
       </div>
     );
   };
+
+  CardFooter.propTypes = {
+    taskInfo: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        reward: PropTypes.string.isRequired,
+      })
+    )
+  }
   
   export default CardFooter;

@@ -61,12 +61,7 @@ const taskSlice = createSlice({
     [toggleTaskStatusThunk.fulfilled]: (state, { payload }) => {
       state.balance = payload.updatedBalance;
       state.rewardsGained = payload.updatedWeekGainedRewards;
-      // eslint-disable-next-line array-callback-return
-      state.tasks.map((task, idx) => {
-        if (task._id === payload.updatedTask.id) {
-          state.tasks[idx].days = payload.updatedTask.days;
-        }
-      });
+      state.tasks = payload.data;
       state.isLoading = false;
     },
     [toggleTaskStatusThunk.rejected]: state => {

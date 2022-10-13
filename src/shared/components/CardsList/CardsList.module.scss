@@ -8,15 +8,13 @@
   margin-top: -20px;
   width: 100%;
 
-
   @include media(tablet) {
     margin-top: -30px;
     margin-left: -20px;
   }
 
   @include media(desktop) {
-    margin-top: -20px;
-    
+    margin-top: 0px;
   }
 }
 
@@ -34,6 +32,5 @@
     flex-basis: 288px;
     margin-left: 15px;
     margin-right: 15px;
-  
   }
 }

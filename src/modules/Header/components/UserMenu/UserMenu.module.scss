@@ -6,6 +6,7 @@
   align-items: center;
   margin-right: 40px;
 }
+
 .link {
   text-decoration: none;
   color: $secondary-text-color;
@@ -14,9 +15,11 @@
   line-height: 1.25;
   letter-spacing: 0.04em;
 }
+
 .verticalBar {
   color: $secondary-text-color;
 }
+
 .box {
   display: flex;
   gap: 16px;
@@ -31,6 +34,7 @@
   color: $tertiary-text-color;
   width: 55px;
 }
+
 .boxbalance {
   display: flex;
   gap: 8px;
@@ -46,10 +50,13 @@
   line-height: 1.21;
   letter-spacing: 0.04em;
 }
+
 .subcontainer {
+  margin-left: 45px;
   display: flex;
   justify-content: space-between;
 }
+
 .btnlogout {
   border: none;
   outline: none;

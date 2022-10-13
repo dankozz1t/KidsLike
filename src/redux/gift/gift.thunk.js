@@ -5,8 +5,11 @@ export const getGiftsThunk = createAsyncThunk(
   'gift/getGifts', async (_, { rejectWithValue }) => {
     try {
       const resp = await getGiftsService();
-      return resp.ruGifts;
+      console.log(resp.data.ruGifts);
+
+      return resp.data.ruGifts;
     } catch (e) {
+      console.log(e);
       return rejectWithValue();
     };
   }

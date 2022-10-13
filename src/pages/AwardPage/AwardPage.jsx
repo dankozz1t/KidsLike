@@ -6,17 +6,24 @@ import ModalContentGetGifts from 'shared/components/ModalContentGetGifts';
 import AwardHead from 'modules/AwardHead';
 import AwardList from 'modules/AwardList';
 import CardsList from 'shared/components/CardsList';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getGiftsThunk, buyGiftsThunk } from '../../redux/gift/gift.thunk';
 
 const AwardPage = () => {
-  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
   const gifts = useSelector(getGifts);
-  const buyedGiftsIds = useState(getBuyedGiftsIds);
+  const buyedGiftsIds = useSelector(getBuyedGiftsIds);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    dispatch(getGiftsThunk());
+  }, [dispatch]);
 
   return (
     <>
       <AwardHead />
-      <CardsList tasks={} />
+      {/* <CardsList tasks={} /> */}
       <button type="button" onClick={() => setOpen(true)}>
         Open
       </button>

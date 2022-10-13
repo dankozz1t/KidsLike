@@ -21,21 +21,38 @@
 .planForWeek {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 18px;
 }
+.actualWeek {
+  display: flex;
+  align-items: center;
+}
 
+.tasks {
+  display: flex;
+  //   justify-content: flex-end;
+}
 .tasksForPoints {
   display: flex;
   margin-right: 258px;
   align-items: center;
 }
 
-.weekDate {
+.actualWeekDscr {
+  margin-right: 10px;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.04em;
+}
+
+.actualWeekDate {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25;
+
+  letter-spacing: 0.2em;
 }
 
 .plannedPoints {

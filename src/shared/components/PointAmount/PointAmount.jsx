@@ -11,7 +11,7 @@ const PointAmount = ({ point }) => {
 };
 
 PointAmount.propTypes = {
-  point: PropTypes.string.isRequired,
-}
+  point: PropTypes.number.isRequired,
+};
 
 export default PointAmount;

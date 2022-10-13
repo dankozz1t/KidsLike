@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import s from './TaskToggle.module.scss';
+import PropTypes from 'prop-types';
 import { ReactComponent as CheckSymbol } from './images/check-symbol.svg';
 import { ReactComponent as Attention } from './images/attention.svg';
 import { useDispatch, useSelector } from 'react-redux';
@@ -41,4 +42,10 @@ const TaskToggle = ({ _id, isCompleted }) => {
     </label>
   );
 };
+
+TaskToggle.propTypes = {
+  id: PropTypes.string,
+  isCompleted: PropTypes.bool,
+};
+
 export default TaskToggle;

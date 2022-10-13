@@ -32,7 +32,6 @@ const taskSlice = createSlice({
       state.isLoading = true;
     },
     [createTaskThunk.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.tasks.push(payload);
       state.isLoading = false;
     },

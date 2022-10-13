@@ -9,8 +9,10 @@ export const createTaskThunk = createAsyncThunk(
   'task/create',
   async (body, { rejectWithValue }) => {
     try {
-      const resp = await createTaskService(body);
-      const { title, reward, imageUrl, id, days } = resp;
+      const { data } = await createTaskService(body);
+
+      const { title, reward, imageUrl, id, days } = data;
+
       return { title, reward, imageUrl, _id: id, days };
     } catch (e) {
       return rejectWithValue();

@@ -2,18 +2,79 @@
 @import 'src/shared/styles/variables.scss';
 
 .cards_wrapper {
-    display: flex;
-    margin-right: -60px;
+  display: flex;
+  margin-right: -60px;
 
-    @include media(mobile-only) {
-        max-width: 280px;
-    }
+  @include media(mobile-only) {
+    max-width: 280px;
+  }
 
-    @include media(tablet) {
-        max-width: 704px;
-    }
+  @include media(tablet) {
+    max-width: 704px;
+  }
 
-    @include media(desktop) {
-        max-width:1280px;
-    }
+  @include media(desktop) {
+    max-width: 1280px;
+  }
+}
+
+.planForWeek {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.tasksForPoints {
+  display: flex;
+  margin-right: 258px;
+  align-items: center;
+}
+
+.weekDate {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.04em;
+}
+
+.plannedPoints {
+  margin: 0 5px;
+  display: flex;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  background-color: #8ec63f;
+
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.AddTasks {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  color: #a6abb9;
+}
+
+.btnAddTasks {
+  border: none;
+  background-color: transparent;
 }

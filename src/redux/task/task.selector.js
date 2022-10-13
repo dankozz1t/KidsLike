@@ -1,4 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
+import { getDates } from 'redux/auth/auth.selector';
 
 export const isLoadingTasks = state => state.task.isLoading;
 export const getTasks = state => state.task.tasks;
@@ -39,4 +40,32 @@ export const getAllTasks = createSelector([getTasks], tasks =>
     reward,
     title,
   }))
+);
+
+export const getDaysList = createSelector(
+  [getTasks, getDates],
+  (tasks, days) => {
+    const date = Object.keys(days).map(value => value.slice(0, 3));
+
+    console.log(`  tasks`, tasks);
+    console.log(`  date`, date);
+
+    const tasksDay = [];
+
+    for (let i = 0; i < tasks.length; i++) {
+      const dayItem = [];
+      const currentTask = tasks[i];
+      console.log(`  currentTask`, currentTask);
+
+      for (let i = 0; i < currentTask.days.length; i++) {
+        const currentday = currentTask.days[i];
+
+        dayItem.push({ day: date[i], isChecked: currentday.isActive });
+      }
+      tasksDay.push(dayItem);
+      // const activeTasks = currentTask.days.find(({ date, isActive }) => date);
+    }
+    console.log(`  tasksDay`, tasksDay);
+    return tasksDay;
+  }
 );

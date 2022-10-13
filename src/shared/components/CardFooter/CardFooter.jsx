@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CardTitle from '../CardTitle';
@@ -10,17 +10,20 @@ import { ReactComponent as IconDanger } from 'assets/images/icon/icon-danger.svg
 import { ReactComponent as IconOk } from 'assets/images/icon/icon-ok.svg';
 import { ReactComponent as IconAdd } from 'assets/images/icon/icon-add.svg';
 
+import { shallowEqual, useSelector } from 'react-redux';
+
 import s from './CardFooter.module.scss';
 import DaysList from '../DaysList';
+import { getDaysList } from 'redux/task/task.selector';
 
 const daysList = [
-  { day: 'Mo', status: false },
-  { day: 'Tu', status: false },
-  { day: 'We', status: false },
-  { day: 'Th', status: false },
-  { day: 'Fr', status: false },
-  { day: 'Sa', status: false },
-  { day: 'Su', status: false },
+  { day: 'Mo', isChecked: false, isDisabled: false },
+  { day: 'Tu', isChecked: false, isDisabled: false },
+  { day: 'We', isChecked: false, isDisabled: false },
+  { day: 'Th', isChecked: false, isDisabled: false },
+  { day: 'Fr', isChecked: false, isDisabled: false },
+  { day: 'Sa', isChecked: false, isDisabled: false },
+  { day: 'Su', isChecked: false, isDisabled: false },
 ];
 
 const CardFooter = ({ ...taskInfo }) => {
@@ -34,6 +37,8 @@ const CardFooter = ({ ...taskInfo }) => {
   const [searchParams] = useSearchParams();
 
   const [show, setShow] = useState(false);
+
+  const daysListTest = useSelector(getDaysList, shallowEqual);
 
   const handleIconAddClick = () => {
     setShow(!show);

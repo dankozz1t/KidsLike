@@ -10,7 +10,9 @@ const CardsList = ({ tasks }) => {
   return (
     <ul className={s.cards_list}>
       {tasks.map(task => {
-        const { _id: id } = task;
+        let id;
+        task.id ? (id = task.id) : (id = task._id);
+        // const { _id: id } = task;
         return (
           <li key={id} className={s.card_item}>
             <Card {...task} />

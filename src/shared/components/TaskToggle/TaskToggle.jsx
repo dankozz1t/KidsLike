@@ -22,7 +22,7 @@ const TaskToggle = ({ id }) => {
 };
 
 TaskToggle.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 }
 
 export default TaskToggle;

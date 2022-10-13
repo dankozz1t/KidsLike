@@ -14,14 +14,12 @@ import { useLocation } from 'react-router-dom';
 import { getGifts } from 'redux/gift/gift.selector';
 import { toggleSelectGift } from '../../../redux/gift/gift.slice';
 
-const TaskToggle = ({ _id, isCompleted }) => {
-  const [checked, setChecked] = useState(isCompleted);
+const TaskToggle = ({ _id, isCompleted, isSelected }) => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const dates = useSelector(getDates);
   const gifts = useSelector(getGifts);
-
   const currentWeekDay = new Date().toLocaleString('en-US', {
     weekday: 'long',
   });
@@ -36,9 +34,6 @@ const TaskToggle = ({ _id, isCompleted }) => {
         })
       )
         .unwrap()
-        .then(() => {
-          setChecked(!checked);
-        })
         .catch(error => {
           toast.error(error.message);
         })
@@ -60,7 +55,7 @@ const TaskToggle = ({ _id, isCompleted }) => {
         className={s.checkbox}
         type="checkbox"
         onChange={handleToggleChange}
-        checked={checked}
+        checked={isSelected || isCompleted}
       />
 
       {isLoading && (

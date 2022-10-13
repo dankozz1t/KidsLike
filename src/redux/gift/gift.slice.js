@@ -9,6 +9,10 @@ const giftSlice = createSlice({
     toggleSelectGift(state, { payload }) {
       state.gifts[payload].isSelected = !state.gifts[payload].isSelected;
     },
+    refreshBoughtGiftsIds(state, { payload }) {
+      state.boughtGiftsIds = [];
+      state.gifts = payload;
+    },
   },
   extraReducers: {
     [getGiftsThunk.pending]: state => {
@@ -25,7 +29,6 @@ const giftSlice = createSlice({
       state.isLoading = true;
     },
     [buyGiftsThunk.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.boughtGiftsIds = payload.purchasedGiftIds;
       state.isLoading = false;
     },
@@ -35,5 +38,5 @@ const giftSlice = createSlice({
   },
 });
 
-export const { toggleSelectGift } = giftSlice.actions;
+export const { toggleSelectGift, refreshBoughtGiftsIds } = giftSlice.actions;
 export const giftReducer = giftSlice.reducer;

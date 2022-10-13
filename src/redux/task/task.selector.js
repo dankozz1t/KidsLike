@@ -52,7 +52,7 @@ export const getDaysList = createSelector(
 
     const currentTask = tasks.find(task => task._id === id);
 
-    for (let i = 0; i < currentTask.days.length; i++) {
+    for (let i = 0; i < currentTask?.days?.length; i++) {
       const currentDay = currentTask.days[i];
 
       tasksDay.push({

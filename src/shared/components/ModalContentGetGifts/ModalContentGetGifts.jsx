@@ -3,16 +3,10 @@ import modalcat from 'assets/images/modal-image/modal-cat.png';
 
 import s from './ModalContentGetGifts.module.scss';
 
-const ModalContentGetGifts = awards => {
+const ModalContentGetGifts = ({ awards }) => {
   const modalTitle = (
     <h1 className={s.modalTitle}>Congratulations! You get:</h1>
   );
-  awards = [
-    { image: '#/https', name: 'sweets' },
-    { image: '#/https', name: 'movie date' },
-    { image: '#/https', name: 'present' },
-    { image: '#/https', name: 'PARTY WITH FRIENDS' },
-  ];
 
   let awardsList = awards.map(award => (
     <li key={award.name} className={s.awardItem}>

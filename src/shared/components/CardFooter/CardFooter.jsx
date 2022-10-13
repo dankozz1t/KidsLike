@@ -27,7 +27,7 @@ const daysList = [
 ];
 
 const CardFooter = ({ ...taskInfo }) => {
-  const { title, isCompleted } = taskInfo;
+  const { title, isCompleted, isSelected } = taskInfo;
   const { pathname } = useLocation();
   let _id;
   taskInfo.id ? (_id = taskInfo.id) : (_id = taskInfo._id);
@@ -68,7 +68,7 @@ const CardFooter = ({ ...taskInfo }) => {
         </>
       );
     } else if (pathname === '/award') {
-      return <TaskToggle _id={_id} isCompleted={isCompleted} />;
+      return <TaskToggle _id={_id} isCompleted={isSelected} />;
     }
   };
 

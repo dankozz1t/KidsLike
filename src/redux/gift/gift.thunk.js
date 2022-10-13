@@ -19,7 +19,7 @@ export const buyGiftsThunk = createAsyncThunk(
   'gift/buyGifts', async (body, { rejectWithValue }) => {
     try {
       const resp = await buyGiftsService(body);
-      const { updatedBalance, purchasedGiftIds } = resp;
+      const { updatedBalance, purchasedGiftIds } = resp.data;
       return { updatedBalance, purchasedGiftIds };
     } catch (e) {
       return rejectWithValue();

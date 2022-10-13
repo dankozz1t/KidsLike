@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Footer from 'modules/Footer';
 import Header from './modules/Header';
 
 import Container from 'shared/components/Container';
@@ -19,8 +18,8 @@ const PlanningPage = lazy(() => import('pages/PlanningPage'));
 const ClientsRoutes = () => {
   return (
     <>
+      <Header />
       <Container>
-        <Header />
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<PublicRoute redirectTo="/auth" />}>
@@ -51,7 +50,6 @@ const ClientsRoutes = () => {
             </Route>
           </Routes>
         </Suspense>
-        <Footer />
       </Container>
     </>
   );

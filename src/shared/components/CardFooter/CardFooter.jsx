@@ -24,9 +24,12 @@ const daysList = [
 ];
 
 const CardFooter = ({ ...taskInfo }) => {
-  const { _id, title, reward, isCompleted } = taskInfo;
+  const { title, isCompleted } = taskInfo;
   const { pathname } = useLocation();
-
+  let _id;
+  taskInfo.id ? (_id = taskInfo.id) : (_id = taskInfo._id);
+  let reward;
+  taskInfo.reward ? (reward = taskInfo.reward) : (reward = taskInfo.price);
   const currentWeekDay = new Date().toLocaleString('en-US', {
     weekday: 'long',
   });
@@ -59,6 +62,8 @@ const CardFooter = ({ ...taskInfo }) => {
           </button>
         </>
       );
+    } else if (pathname === '/award') {
+      return <TaskToggle _id={_id} isCompleted={isCompleted} />;
     }
   };
 
@@ -76,7 +81,8 @@ const CardFooter = ({ ...taskInfo }) => {
 CardFooter.propTypes = {
   taskInfo: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string.isRequired,
+      id: PropTypes.number,
+      _id: PropTypes.string,
       reward: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       isCompleted: PropTypes.bool.isRequired,

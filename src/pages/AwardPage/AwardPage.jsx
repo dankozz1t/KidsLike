@@ -23,7 +23,7 @@ const AwardPage = () => {
   return (
     <>
       <AwardHead />
-      {/* <CardsList tasks={} /> */}
+      <CardsList tasks={gifts} />
       <button type="button" onClick={() => setOpen(true)}>
         Open
       </button>

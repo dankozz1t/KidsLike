@@ -23,7 +23,8 @@ const CardsList = ({ tasks }) => {
 CardsList.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string.isRequired,
+      id: PropTypes.number,
+      _id: PropTypes.string,
     })
   ).isRequired,
   task: PropTypes.arrayOf(),

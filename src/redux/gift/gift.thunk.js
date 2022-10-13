@@ -1,15 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getGiftsService, buyGiftsService } from 'shared/service/gift.service';
+import { token } from 'shared/service/http/http';
 
 export const getGiftsThunk = createAsyncThunk(
-  'gift/getGifts', async (_, { rejectWithValue }) => {
+  'gift/getGifts', async (_, { rejectWithValue, getState }) => {
     try {
+      const currentToken = getState().auth.token;
+      token.set(currentToken);
       const resp = await getGiftsService();
-      console.log(resp.data.ruGifts);
-
       return resp.data.ruGifts;
     } catch (e) {
-      console.log(e);
       return rejectWithValue();
     };
   }

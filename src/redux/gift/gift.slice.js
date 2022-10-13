@@ -11,7 +11,6 @@ const giftSlice = createSlice({
       state.isLoading = true;
     },
     [getGiftsThunk.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.gifts = payload;
       state.isLoading = false;
     },

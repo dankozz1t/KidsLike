@@ -3,15 +3,16 @@ import iconAddTasks from 'assets/images/icon/icon-addTasks.svg';
 import { selectEndWeekDate, selectStartWeekDate } from 'redux/auth/auth.selector';
 import { getRewardsPlanned } from 'redux/task/task.selector';
 import { shallowEqual, useSelector } from 'react-redux';
-
+import Modal from 'shared/components/Modal';
+import ModalContentCreateTask from 'shared/components/ModalContentCreateTask';
 import s from './PlanningPoints.module.scss'
 
 
 const PlanningPoints = () => {
     const [open, setOpen] = useState(false);
     const plannedPoints = useSelector(getRewardsPlanned || 0, shallowEqual);
-    const startDate = useSelector(selectStartWeekDate);
-    const endDate = useSelector(selectEndWeekDate);
+    const startDate = useSelector(selectStartWeekDate, shallowEqual);
+    const endDate = useSelector(selectEndWeekDate, shallowEqual);
 
     const configuredStartDate = () => {
         const date = new Date(startDate);
@@ -60,6 +61,9 @@ const PlanningPoints = () => {
                 </div>
         
             </div>
+            <Modal open={open} onClose={() => setOpen(false)}>
+                <ModalContentCreateTask />
+            </Modal>
         </>
     )
 };

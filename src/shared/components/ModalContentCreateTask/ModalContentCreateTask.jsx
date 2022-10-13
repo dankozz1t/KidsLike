@@ -33,7 +33,7 @@ const dispatch = useDispatch()
         e.preventDefault();
         
         
-        // if (image.size > 204800) {
+        // if (image.size > 2048000) {
         //     return
         // }
         
@@ -60,7 +60,6 @@ const dispatch = useDispatch()
                 onClick={() => imageInputRef.current?.click()}>
                 <img className={s.modalImage} src={modalImage} alt="" />
             </button>
-            {/* {<img className={s.modalImage} src={modalImage} alt="modalImage" />} */}
 
             <form className={s.modalForm} onSubmit={onHandleSubmit}>
                 <input

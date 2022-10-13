@@ -1,11 +1,8 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .wrapper {
-  width: calc(100% - 229px);
-  padding-top: 32px ;
-  padding-bottom: 47px;
-
-  background-color: $main-content-bg-color;
+  height: 100%;
 }
 
 .wrapper__header {
@@ -47,4 +44,23 @@
   letter-spacing: 0.2em;
 
   color: $primary-text-color;
+}
+
+.cards_wrapper {
+  display: flex;
+  padding-top: 40px;
+  margin-left: 60px;
+  margin-right: -32px;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+  }
+
+  @include media(tablet) {
+    max-width: 704px;
+  }
+
+  @include media(desktop) {
+    max-width: 968px;
+  }
 }

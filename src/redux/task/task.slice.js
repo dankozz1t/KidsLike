@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getUserThunk, loginThunk } from '../auth/auth.thunk';
-import { createTaskThunk, addTaskToProvidedDaysThunk, toggleTaskStatusThunk } from '../task/task.thunk';
+import { buyGiftsThunk } from '../gift/gift.thunk';
+import { getUserInfoThunk, loginThunk } from '../auth/auth.thunk';
+import {
+  createTaskThunk,
+  addTaskToProvidedDaysThunk,
+  toggleTaskStatusThunk,
+} from '../task/task.thunk';
 import taskInitialState from './task.initial-state';
 
 const taskSlice = createSlice({
@@ -8,7 +13,10 @@ const taskSlice = createSlice({
   initialState: taskInitialState,
 
   extraReducers: {
-    [getUserThunk.fulfilled]: (state, { payload }) => {
+    [buyGiftsThunk.fulfilled]: (state, { payload }) => {
+      state.balance = payload.updatedBalance;
+    },
+    [getUserInfoThunk.fulfilled]: (state, { payload }) => {
       state.balance = payload.user.balance;
       state.rewardsGained = payload.week.rewardsGained;
       state.rewardsPlanned = payload.week.rewardsPlanned;
@@ -25,7 +33,7 @@ const taskSlice = createSlice({
     },
     [createTaskThunk.fulfilled]: (state, { payload }) => {
       console.log(payload);
-      state.push(payload);
+      state.tasks.push(payload);
       state.isLoading = false;
     },
     [createTaskThunk.rejected]: state => {
@@ -40,7 +48,7 @@ const taskSlice = createSlice({
       state.tasks.map((task, idx) => {
         if (task._id === payload.updatedTask.id) {
           state.tasks[idx].days = payload.updatedTask.days;
-        };
+        }
       });
       state.isLoading = false;
     },
@@ -53,12 +61,7 @@ const taskSlice = createSlice({
     [toggleTaskStatusThunk.fulfilled]: (state, { payload }) => {
       state.balance = payload.updatedBalance;
       state.rewardsGained = payload.updatedWeekGainedRewards;
-      // eslint-disable-next-line array-callback-return
-      state.tasks.map((task, idx) => {
-        if (task._id === payload.updatedTask.id) {
-          state.tasks[idx].days = payload.updatedTask.days;
-        };
-      });
+      state.tasks = payload.data;
       state.isLoading = false;
     },
     [toggleTaskStatusThunk.rejected]: state => {

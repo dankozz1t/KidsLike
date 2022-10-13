@@ -11,9 +11,11 @@ const Header = () => {
   const isLoggedIn = useSelector(getLoggedIn);
   return (
     <header className={s.header}>
-      <Logo classFor="Header" />
+      <div className={s.wrapper}>
+        <Logo classFor="Header" />
 
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      </div>
     </header>
   );
 };

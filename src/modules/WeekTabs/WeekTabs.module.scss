@@ -3,6 +3,8 @@
 
 .box {
   @include media(mobile) {
+    display: flex;
+    height: 70px;
   }
   @include media(tablet) {
     display: flex;
@@ -20,11 +22,28 @@
 }
 
 .weekTabs {
-  padding-left: 48px;
+  @include media(mobile) {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin: 0 6px;
+  }
+  @include media(tablet) {
+    margin-left: 28px;
+    &__item:not(:last-child) {
+      margin-left: 16px;
+    }
 
+  }
+
+  @include media(desktop) {
+    display: block;
+    padding-left: 48px;
   &__item:not(:last-child) {
     margin-bottom: 8px;
+    margin-left: 0;
   }
+}
 }
 
 .weekTabs__input {

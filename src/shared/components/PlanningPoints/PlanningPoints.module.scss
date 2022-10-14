@@ -19,23 +19,77 @@
 // }
 
 .planForWeek {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 18px;
+  //   @include media(mobile-only) {
+  //     max-width: 280px;
+  //   }
+
+  @include media(tablet) {
+    max-width: 704px;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  @include media(desktop) {
+    max-width: 1280px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 18px;
+  }
 }
 .actualWeek {
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  @include media(tablet) {
+    max-width: 704px;
+  }
+
+  @include media(desktop) {
+  }
 }
 
 .tasks {
-  display: flex;
+  //   @include media(mobile-only) {
+  //     max-width: 280px;
+  //   }
+
+  @include media(tablet) {
+    max-width: 704px;
+    flex-direction: column;
+  }
+
+  @include media(desktop) {
+    max-width: 1280px;
+    width: 808px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .tasksForPoints {
   display: flex;
-  margin-right: 258px;
   align-items: center;
+
+  //   @include media(mobile-only) {
+  //     max-width: 280px;
+  //   }
+
+  @include media(tablet) {
+    justify-content: center;
+  }
+
+  @include media(desktop) {
+    // margin-right: 258px;
+  }
 }
 
 .actualWeekDscr {
@@ -54,16 +108,21 @@
   letter-spacing: 0.2em;
 }
 
-.plannedPoints {
+.box {
+  background-color: #8ec63f;
+  // width: 100%;
+  padding-top: 6%; /* 1:1 Aspect Ratio */
+  width: min-content;
+  position: relative;
+  border-radius: 50%;
   margin: 0 5px;
   display: flex;
-  padding: 15px;
-
-  border-radius: 50%;
-  background-color: #8ec63f;
-
   align-items: center;
   justify-content: center;
+}
+
+.plannedPoints {
+  padding: 5px;
 
   font-weight: 700;
   font-size: 14px;
@@ -74,8 +133,20 @@
 
 .AddTasks {
   display: flex;
-  justify-content: right;
   align-items: center;
+  //   @include media(mobile-only) {
+  //     max-width: 280px;
+  //   }
+
+  @include media(tablet) {
+    max-width: 704px;
+    justify-content: center;
+  }
+
+  @include media(desktop) {
+    max-width: 1280px;
+    justify-content: right;
+  }
 }
 
 .description {
@@ -87,9 +158,27 @@
   letter-spacing: 0.04em;
 
   color: #a6abb9;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+    display: none;
+  }
+
+  @include media(tablet) {
+    max-width: 704px;
+  }
+
+  @include media(desktop) {
+    max-width: 1280px;
+  }
 }
 
 .btnAddTasks {
   border: none;
   background-color: transparent;
+  @include media(mobile-only) {
+    position: absolute;
+    bottom: 17px;
+    right: 20px;
+  }
 }

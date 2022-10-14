@@ -7,8 +7,8 @@
   padding-top: 20px;
   margin-bottom: 60px;
 
-  @include media(mobile) {
-    width: 290px;
+  @include media(mobile-only) {
+    max-width: 290px;
   }
 
   @include media(tablet) {
@@ -56,6 +56,7 @@
 }
 
 .text {
+  display: none;
   max-width: 230px;
   font-weight: 400;
   font-size: 12px;
@@ -65,6 +66,26 @@
   color: $secondary-text-color;
   margin-top: 20px;
   margin-bottom: 20px;
+
+  @include media(desktop) {
+    display: block;
+  }
+}
+
+.text__mobile_table {
+  max-width: 230px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+
+  color: $secondary-text-color;
+  margin-top: 20px;
+  margin-bottom: 35px;
+
+  @include media(desktop) {
+    display: none;
+  }
 }
 
 .label__text {

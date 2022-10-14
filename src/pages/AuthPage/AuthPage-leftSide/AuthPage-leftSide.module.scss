@@ -4,6 +4,7 @@
 .block {
   width: 100%;
   overflow: hidden;
+  // position: relative;
 
   @include media(tablet) {
     position: relative;
@@ -48,9 +49,10 @@
   }
 
   .thumb__img2 {
-    width: 600px;
+    width: 320px;
     height: 98px;
     margin-left: -5px;
+    border-radius: 6px;
 
     @include media(tablet) {
       position: absolute;

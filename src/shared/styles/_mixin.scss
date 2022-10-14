@@ -35,6 +35,24 @@
     }
   }
 
+  @if $type == 'desktop1' {
+    @media screen and (min-width: $desktop1) {
+      @content;
+    }
+  }
+
+  @if $type == 'desktop2' {
+    @media screen and (min-width: $desktop2) {
+      @content;
+    }
+  }
+
+  @if $type == 'desktop3' {
+    @media screen and (min-width: $desktop3) {
+      @content;
+    }
+  }
+
   @if $type == 'retina' {
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),

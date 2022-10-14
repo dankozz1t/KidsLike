@@ -4,12 +4,26 @@
 .cards_wrapper {
   display: flex;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
   
   padding-bottom: 0;
 
   @include media(desktop) {
+    width: 1248px;
     padding-bottom: 27px;
+  }
 
+  @include media(desktop1) {
+    width: 1568px;
+  }
+
+  @include media(desktop2) {
+    width: 1888px;
+  }
+
+  @include media(desktop3) {
+    width: 2208px;
   }
 }

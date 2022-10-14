@@ -7,7 +7,9 @@ const CardsList = ({ tasks }) => {
   return (
     <ul className={s.cards_list}>
       {tasks.map(task => {
-        const { _id: id } = task;
+        let id;
+        task.id ? (id = task.id) : (id = task._id);
+        // const { _id: id } = task;
         return (
           <li key={id} className={s.card_item}>
             <Card {...task} />
@@ -21,7 +23,8 @@ const CardsList = ({ tasks }) => {
 CardsList.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string.isRequired,
+      id: PropTypes.number,
+      _id: PropTypes.string,
     })
   ).isRequired,
   task: PropTypes.arrayOf(),

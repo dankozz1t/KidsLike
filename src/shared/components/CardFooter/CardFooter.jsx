@@ -16,8 +16,14 @@ import s from './CardFooter.module.scss';
 import DaysList from '../DaysList';
 import { getDaysList } from 'redux/task/task.selector';
 
-const CardFooter = ({ _id, title, reward, isCompleted }) => {
+const CardFooter = ({ ...taskInfo }) => {
+  const { title, isCompleted, isSelected } = taskInfo;
   const { pathname } = useLocation();
+  let _id;
+  taskInfo.id ? (_id = taskInfo.id) : (_id = taskInfo._id);
+  let reward;
+  taskInfo.reward ? (reward = taskInfo.reward) : (reward = taskInfo.price);
+
   const [searchParams] = useSearchParams();
 
   const daysList = useSelector(state => getDaysList(state, _id), shallowEqual);
@@ -48,6 +54,8 @@ const CardFooter = ({ _id, title, reward, isCompleted }) => {
           </button>
         </>
       );
+    } else if (pathname === '/award') {
+      return <TaskToggle _id={_id} isCompleted={isSelected} />;
     }
   };
 
@@ -65,7 +73,8 @@ const CardFooter = ({ _id, title, reward, isCompleted }) => {
 CardFooter.propTypes = {
   taskInfo: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string.isRequired,
+      id: PropTypes.number,
+      _id: PropTypes.string,
       reward: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       isCompleted: PropTypes.bool.isRequired,

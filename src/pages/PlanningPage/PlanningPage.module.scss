@@ -2,18 +2,9 @@
 @import 'src/shared/styles/variables.scss';
 
 .cards_wrapper {
-  display: flex;
-  margin-right: -60px;
-
-  @include media(mobile-only) {
-    max-width: 280px;
-  }
-
-  @include media(tablet) {
-    max-width: 704px;
-  }
-
+  width: 100%;
+  padding-bottom: 0;
   @include media(desktop) {
-    max-width: 1280px;
+    padding-bottom: 27px;
   }
 }

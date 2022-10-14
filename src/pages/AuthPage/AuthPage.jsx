@@ -12,7 +12,9 @@ const AuthPage = () => {
         <div className={s.form}>
           <AuthForm />
         </div>
-        <Footer />
+        <div className={s.footer}>
+          <Footer />
+        </div>
       </div>
     </main>
   );

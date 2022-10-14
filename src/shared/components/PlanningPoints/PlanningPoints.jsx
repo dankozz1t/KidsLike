@@ -14,11 +14,8 @@ const PlanningPoints = () => {
     const startDate = useSelector(selectStartWeekDate, shallowEqual);
     const endDate = useSelector(selectEndWeekDate, shallowEqual);
 
-    const configuredStartDate = () => {
-        const date = new Date(startDate);
-        const day = date.getDate();
-        return day;
-    };
+
+    const configuredStartDate = () => new Date(startDate).getDate();
   
     const configuredEndDate = () => {
         const date = new Date(endDate);

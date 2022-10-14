@@ -31,22 +31,13 @@ const dispatch = useDispatch()
 
     const onHandleSubmit = (e) => {
         e.preventDefault();
-        
-        
-        // if (image.size > 2048000) {
-        //     return
-        // }
-        
+
         const body = new FormData()
         
         body.append('title', taskName)
         body.append('reward', reward)
         body.append('file', image)
-        console.log(taskName);
-        console.log(reward);
-        console.log(image);
         dispatch(createTaskThunk(body));
-        console.log(body);
         setTaskName('');
         setReward('');
     };

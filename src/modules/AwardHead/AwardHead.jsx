@@ -8,7 +8,7 @@ const AwardHead = () => {
     <div className={s.wrapper}>
       <div className={s.title}>
         <GiftIcon />
-        <p>MY PRIZES</p>
+        <p className={s.title2}>MY PRIZES</p>
       </div>
       <ProgressBar />
     </div>

@@ -1,14 +1,13 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { getGifts, getBoughtGiftsIds } from '../../redux/gift/gift.selector';
+import { getGiftsThunk, buyGiftsThunk } from '../../redux/gift/gift.thunk';
+import { refreshBoughtGiftsIds } from 'redux/gift/gift.slice';
 import Modal from 'shared/components/Modal';
 import ModalContentGetGifts from 'shared/components/ModalContentGetGifts';
 import AwardHead from 'modules/AwardHead';
 import CardsList from 'shared/components/CardsList';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { getGiftsThunk, buyGiftsThunk } from '../../redux/gift/gift.thunk';
-import { refreshBoughtGiftsIds } from 'redux/gift/gift.slice';
 import Button from 'shared/components/Button';
 import s from './AwardPage.module.scss';
 

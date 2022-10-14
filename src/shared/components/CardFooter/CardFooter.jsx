@@ -16,16 +16,6 @@ import s from './CardFooter.module.scss';
 import DaysList from '../DaysList';
 import { getDaysList } from 'redux/task/task.selector';
 
-const daysList = [
-  { day: 'Mo', status: false },
-  { day: 'Tu', status: false },
-  { day: 'We', status: false },
-  { day: 'Th', status: false },
-  { day: 'Fr', status: false },
-  { day: 'Sa', status: false },
-  { day: 'Su', status: false },
-];
-
 const CardFooter = ({ ...taskInfo }) => {
   const { title, isCompleted, isSelected } = taskInfo;
   const { pathname } = useLocation();
@@ -33,9 +23,6 @@ const CardFooter = ({ ...taskInfo }) => {
   taskInfo.id ? (_id = taskInfo.id) : (_id = taskInfo._id);
   let reward;
   taskInfo.reward ? (reward = taskInfo.reward) : (reward = taskInfo.price);
-  const currentWeekDay = new Date().toLocaleString('en-US', {
-    weekday: 'long',
-  });
 
   const [searchParams] = useSearchParams();
 

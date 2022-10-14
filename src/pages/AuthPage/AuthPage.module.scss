@@ -2,7 +2,9 @@
 @import 'src/shared/styles/mixin.scss';
 
 .main {
-  background-color: #fafafa;
+  // background-color: #fafafa;
+  width: $desktop;
+  margin: 0 auto;
   height: 100%;
 
   @include media(mobile) {
@@ -28,13 +30,11 @@
   @include media(desktop) {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-
-    padding-left: 6px;
     padding-top: 20px;
+    padding-left: 20px;
 
     .form {
-      padding-right: 123px;
+      padding-left: 150px;
       margin-bottom: 40px;
     }
   }

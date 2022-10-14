@@ -74,7 +74,7 @@
     display: block;
     text-decoration: none;
     color: $primary-bg-color;
-  
+
     font-weight: 500;
     font-size: 12px;
     line-height: 1.25;
@@ -103,7 +103,6 @@
     right: 20px;
 
     &:hover {
-      fill: $secondary-text-color;
       transform: scale(1.1);
     }
   }

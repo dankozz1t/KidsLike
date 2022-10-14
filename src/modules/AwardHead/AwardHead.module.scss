@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.2em;
+}

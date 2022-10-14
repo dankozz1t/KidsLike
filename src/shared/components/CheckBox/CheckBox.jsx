@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './CheckBox.module.scss';
 
-const CheckBox = ({ value, label, checked, id, onChange}) => {
-
+const CheckBox = ({ value, label, checked, id, onChange, disabled }) => {
   return (
     <div className={styles.box}>
       <label htmlFor={id} className={styles.label}>
@@ -14,6 +13,7 @@ const CheckBox = ({ value, label, checked, id, onChange}) => {
           value={value}
           onChange={onChange}
           className={styles.input}
+          disabled={disabled}
         />
         <span className={styles.icon}></span>
         {label}
@@ -23,6 +23,3 @@ const CheckBox = ({ value, label, checked, id, onChange}) => {
 };
 
 export default CheckBox;
-
-
-

@@ -15,15 +15,4 @@
     padding-bottom: 27px;
   }
 
-  @include media(desktop1) {
-    width: 1568px;
-  }
-
-  @include media(desktop2) {
-    width: 1888px;
-  }
-
-  @include media(desktop3) {
-    width: 2208px;
-  }
 }

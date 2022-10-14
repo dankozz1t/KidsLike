@@ -2,9 +2,15 @@
 @import 'src/shared/styles/variables.scss';
 
 .cards_wrapper {
+  display: block;
   width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: 0;
+
   @include media(desktop) {
     padding-bottom: 27px;
+    width: 1248px;
   }
 }

@@ -1,10 +1,27 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .weekTabInfo__week {
-  margin-bottom: 32px;
+  font-size: 14px;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.22;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  text-align: center;
 
   color: $primary-text-color;
+
+  @include media(mobile-only) {
+    margin-bottom: 20px;
+  }
+
+  @include media(tablet) {
+    min-width: 171px;
+  }
+
+  @include media(desktop) {
+    margin-bottom: 32px;
+
+    font-size: 18px;
+    line-height: 1.22;
+  }
 }

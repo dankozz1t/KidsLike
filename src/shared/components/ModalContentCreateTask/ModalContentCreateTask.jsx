@@ -7,9 +7,6 @@ import modalImage from 'assets/images/modal-image/modal-image.svg';
 import modalEditInput from 'assets/images/modal-image/edit-24px 2.svg';
 
 import s from './ModalContentCreateTask.module.scss';
-import { useRef } from "react";
-import { useDispatch } from "react-redux";
-import { createTaskThunk } from "redux/task/task.thunk";
 import { toast } from 'react-toastify';
 
 

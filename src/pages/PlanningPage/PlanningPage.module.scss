@@ -3,17 +3,16 @@
 
 .cards_wrapper {
   display: flex;
-  margin-right: -60px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
-  @include media(mobile-only) {
-    max-width: 280px;
-  }
-
-  @include media(tablet) {
-    max-width: 704px;
-  }
+  
+  padding-bottom: 0;
 
   @include media(desktop) {
-    max-width: 1280px;
+    width: 1248px;
+    padding-bottom: 27px;
   }
+
 }

@@ -19,7 +19,6 @@
 }
 
 .label {
-
   &:hover,
   &:focus {
     cursor: pointer;
@@ -53,4 +52,8 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.input:disabled ~ .icon {
+  background-color: darkblue;
 }

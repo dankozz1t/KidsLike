@@ -1,28 +1,46 @@
 @import 'src/shared/styles/variables.scss';
-
-.boxButton {
-  display: flex;
-  gap: 8px;
-}
+@import 'src/shared/styles/mixin.scss';
 
 .form {
-  padding: 40px;
-  box-sizing: border-box;
-  min-width: 400px;
-  
   background-color: $primary-bg-color;
-  border-radius: 6px;
-  box-shadow: 4px 6px 15px $secondary-text-color;
+
+  padding-top: 20px;
+  margin-bottom: 60px;
+
+  @include media(mobile) {
+    width: 280px;
+  }
+
+  @include media(tablet) {
+    width: 394px;
+    padding: 40px 32px;
+    margin-bottom: 20px;
+
+    border-radius: 6px;
+    box-shadow: 4px 6px 15px $secondary-text-color;
+  }
+
+  @include media(desktop) {
+    padding: 40px;
+    margin-bottom: 40px;
+  }
 }
 
 .hero__title {
-  max-width: 360px;
+  font-style: normal;
   font-weight: 600;
-  font-size: 30px;
-  line-height: 37px;
-
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
   color: $primary-text-color;
+
   margin-bottom: 32px;
+
+  @include media(tablet) {
+    max-width: 360px;
+    font-size: 30px;
+    line-height: 37px;
+  }
 }
 
 .title {
@@ -101,4 +119,10 @@
   &:focus {
     border: solid 1px $secondary-text-color;
   }
+}
+
+.boxButton {
+  display: flex;
+  justify-content: space-between;
+  // gap: 8px;
 }

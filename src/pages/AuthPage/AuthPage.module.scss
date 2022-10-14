@@ -1,18 +1,55 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .main {
-  display: flex;
-  justify-content: space-between;
   background-color: #fafafa;
+  height: 100%;
+
+  @include media(mobile) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .form {
+      padding-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @include media(tablet) {
+    .form {
+      padding-top: 50px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @include media(desktop) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding-left: 6px;
+    padding-top: 20px;
+
+    .form {
+      padding-right: 123px;
+      margin-bottom: 40px;
+    }
+  }
 }
 
-.right__side {
-  display: flex;
-  flex-direction: column;
-}
+.footer {
+  display: none;
 
-.form {
-  padding-top: 50px;
-  padding-right: 123px;
-  margin-bottom: 40px;
+  @include media(tablet) {
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include media(desktop) {
+    justify-content: flex-end;
+  }
 }

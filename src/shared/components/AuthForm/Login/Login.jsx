@@ -139,7 +139,7 @@ const Login = () => {
 
         <div className={s.boxButton}>
           <Button type="button" onClick={login}>
-            Log In
+            <div className={s.btn__title}>Log In</div>
           </Button>
           <Button type="button" onClick={registration}>
             Register

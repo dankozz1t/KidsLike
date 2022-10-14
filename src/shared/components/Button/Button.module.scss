@@ -1,23 +1,38 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .btn {
   display: inline-block;
-  padding: 15px 57px;
+  color: white;
 
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  padding: 15px 45px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   border: none;
   border-radius: 6px;
-
-  color: white;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-
   transition: all ease-in 150ms;
+
+  @include media(tablet) {
+    padding: 18px 57px;
+  }
+
+  @include media(desktop) {
+    padding: 18px 53px;
+  }
 }
 
 .grey {
   background-color: $tertiary-bg-color;
-  padding: 13px 40px;
+  padding: 13px 30px;
 
-  &:hover{
+  &:hover {
     box-shadow: $active-shadow;
   }
 }
@@ -25,7 +40,7 @@
 .yellow {
   background-color: $secondary-bg-color;
 
-  &:hover{
-      box-shadow: $active-shadow;
+  &:hover {
+    box-shadow: $active-shadow;
   }
 }

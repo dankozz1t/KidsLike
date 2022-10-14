@@ -1,11 +1,12 @@
-import { useSelector } from 'react-redux';
+import { shallowEqual, useSelector } from 'react-redux';
 import { getWeekRange } from 'redux/auth/auth.selector';
+
+import Loader from 'shared/components/Loader';
 
 import s from './CurrentWeekRange.module.scss';
 
 const CurrentWeekRange = () => {
-
-  const weekRange = useSelector(getWeekRange);
+  const weekRange = useSelector(getWeekRange, shallowEqual);
 
   const getCurrentWeekRange = () => {
     if (typeof weekRange.currentMonth === 'object') {
@@ -15,7 +16,13 @@ const CurrentWeekRange = () => {
     ${weekRange.currentMonth}`;
   };
 
-  return <p className={s.weekTabInfo__week}>{getCurrentWeekRange()}</p>;
+  return weekRange ? (
+    <p className={s.weekTabInfo__week}>{getCurrentWeekRange()}</p>
+  ) : (
+    <div className={s.weekTabInfo__week}>
+      <Loader height="20" />
+    </div>
+  );
 };
 
 export default CurrentWeekRange;

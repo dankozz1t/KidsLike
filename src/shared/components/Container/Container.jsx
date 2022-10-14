@@ -1,9 +1,18 @@
 import React from 'react';
 import s from './Container.module.scss';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
+import classNames from 'classnames';
 
 const Container = ({ children }) => {
-  return <div className={s.container}>{children}</div>;
+  const { pathname } = useLocation();
+  let classes = classNames(`${s.container} ${s.containerPadding}`);
+
+  if (pathname === '/main') {
+    classes = s.container;
+  }
+
+  return <div className={classes}>{children}</div>;
 };
 
 Container.propTypes = {

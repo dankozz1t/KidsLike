@@ -48,8 +48,9 @@
   }
 
   .thumb__img2 {
-    width: 372px;
+    width: 600px;
     height: 98px;
+    margin-left: -5px;
 
     @include media(tablet) {
       position: absolute;

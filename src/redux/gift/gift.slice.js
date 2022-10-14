@@ -5,13 +5,20 @@ import giftInitialState from './gift.initial-state';
 const giftSlice = createSlice({
   name: 'gift',
   initialState: giftInitialState,
-
+  reducers: {
+    toggleSelectGift(state, { payload }) {
+      state.gifts[payload].isSelected = !state.gifts[payload].isSelected;
+    },
+    refreshBoughtGiftsIds(state, { payload }) {
+      state.boughtGiftsIds = [];
+      state.gifts = payload;
+    },
+  },
   extraReducers: {
     [getGiftsThunk.pending]: state => {
       state.isLoading = true;
     },
     [getGiftsThunk.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.gifts = payload;
       state.isLoading = false;
     },
@@ -22,14 +29,14 @@ const giftSlice = createSlice({
       state.isLoading = true;
     },
     [buyGiftsThunk.fulfilled]: (state, { payload }) => {
-      console.log(payload);
-      state.buyedGiftsIds = payload.purchasedGiftIds;
+      state.boughtGiftsIds = payload.purchasedGiftIds;
       state.isLoading = false;
     },
     [buyGiftsThunk.rejected]: state => {
       state.isLoading = false;
     },
-  }
+  },
 });
 
+export const { toggleSelectGift, refreshBoughtGiftsIds } = giftSlice.actions;
 export const giftReducer = giftSlice.reducer;

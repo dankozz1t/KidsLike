@@ -1,6 +1,6 @@
 const taskInitialState = {
   gifts: [],
-  buyedGiftsIds: [],
+  boughtGiftsIds: [],
   isLoading: false
 };
 

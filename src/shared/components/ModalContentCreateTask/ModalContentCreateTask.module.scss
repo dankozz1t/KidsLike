@@ -9,11 +9,16 @@
   border-radius: 6px;
 }
 
-.modalImage {
-  width: 20px;
+.addImageBtn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
   position: absolute;
   top: 97px;
   right: 16px;
+}
+.modalImage {
+  width: 20px;
 }
 
 .modalForm {

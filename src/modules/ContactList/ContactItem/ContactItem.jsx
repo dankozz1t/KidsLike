@@ -22,6 +22,36 @@ const ContactItem = ({ item }) => {
         <p className={s.position}>{item.position}</p>
         <p className={s.about}>{item.about}</p>
       </div>
+      <ul class="social-list invite-block__social-list">
+        <li>
+          <a href="" className={s.socialListItem}>
+            <svg width="20px" height="20px">
+              <use href="./images/symbol-defs.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="" className={s.socialListItem}>
+            <svg width="20px" height="20px">
+              <use href="./images/symbol-defs.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="" className={s.socialListItem}>
+            <svg width="20px" height="20px">
+              <use href="./images/symbol-defs.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="" className={s.socialListItem}>
+            <svg width="20px" height="20px">
+              <use href="./images/symbol-defs.svg#icon-linkedin"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </li>
   );
 };

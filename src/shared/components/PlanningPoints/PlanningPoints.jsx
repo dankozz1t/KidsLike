@@ -46,7 +46,7 @@ const PlanningPoints = () => {
                     <div className={s.tasksForPoints}>
                         <span className={s.description}>Defined tasks for</span>
                         <div className={s.box}>
-                            <div className={s.plannedPoints}>{plannedPoints}</div>
+                            <div className={plannedPoints < 100 ? s.plannedPoints : s.AAAplannedPoints}>{plannedPoints}</div>
                         </div>
                         <span className={s.description}>points</span>
                         <span className={s.uperDescription}>POINTS</span>

@@ -33,7 +33,7 @@ const ModalContentCreateTask = () => {
   const onHandleSubmit = e => {
     e.preventDefault();
 
-    if (image.size > 204800) {
+    if (image.size > 2048000) {
       return toast.error('Too big size image');
     }
 

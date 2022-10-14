@@ -1,3 +1,6 @@
+@import 'src/shared/styles/mixin.scss';
+@import 'src/shared/styles/variables.scss';
+
 .modal_background {
   position: fixed;
   top: 0;
@@ -16,27 +19,60 @@
   display: flex;
   flex-direction: column;
   width: 608px;
-  height: 375px;
+  // height: 375px;
+  padding: 75px 0 55px 0;
   justify-content: flex-end;
   align-items: center;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+    width: 100%;
+    max-height: 100%;
+    justify-content: flex-start;
+  }
 }
 
 .modalcat {
   width: 200px;
   position: absolute;
   left: 204px;
-  bottom: 260px;
+  bottom: 280px;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+    width: 132px;
+    left: 73px;
+    top: -100px;
+  }
 }
 
 .modalTitle {
-  margin-bottom: 32px;
+  margin-top: 55px;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+
+    margin-top: 0px;
+    padding: 0 45px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+  }
 }
 .awardList {
   display: flex;
   gap: 24px;
-  margin-bottom: 40px;
-  margin-top: 0;
+  margin-top: 40px;
   padding: 0px;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 24px;
+  }
 }
 
 .awardItem {

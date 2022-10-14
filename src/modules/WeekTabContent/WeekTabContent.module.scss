@@ -6,6 +6,10 @@
 }
 
 .wrapper__header {
+  @include media(mobile) {
+    padding: 0 43px;
+  }
+
   display: flex;
   justify-content: space-between;
   padding-left: 107px;
@@ -13,8 +17,14 @@
 }
 
 .weekTabInfo {
-  display: flex;
-  flex-direction: column;
+  @include media(mobile) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 171px;
+  }
 }
 
 .weekTabInfo__week {

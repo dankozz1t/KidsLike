@@ -5,9 +5,9 @@
   @include media(mobile) {
     display: flex;
     flex-direction: column;
+    padding: 0 20px;
   }
   @include media(desktop) {
-    display: flex;
     flex-direction: row;
     justify-content: flex-start;
   }
@@ -27,11 +27,18 @@
   overflow: hidden;
 }
 .box {
-  width: calc(100% - 229px);
+  @include media(mobile-only) {
+    background-color: $primary-bg-color;
+    padding-top: 0;
+  }
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding-top: 32px;
   padding-bottom: 47px;
   background-color: $main-content-bg-color;
   padding-bottom: 40px;
+  @include media(desktop) {
+    width: calc(100% - 229px);
+  }
 }

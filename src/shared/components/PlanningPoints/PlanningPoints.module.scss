@@ -1,28 +1,7 @@
 @import 'src/shared/styles/mixin.scss';
 @import 'src/shared/styles/variables.scss';
 
-// .cards_wrapper {
-//   display: flex;
-//   margin-right: -60px;
-
-//   @include media(mobile-only) {
-//     max-width: 280px;
-//   }
-
-//   @include media(tablet) {
-//     max-width: 704px;
-//   }
-
-//   @include media(desktop) {
-//     max-width: 1280px;
-//   }
-// }
-
 .planForWeek {
-  //   @include media(mobile-only) {
-  //     max-width: 280px;
-  //   }
-
   @include media(tablet) {
     max-width: 704px;
     flex-direction: column;
@@ -30,7 +9,7 @@
   }
 
   @include media(desktop) {
-    max-width: 1280px;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -47,13 +26,6 @@
     max-width: 280px;
     flex-direction: column;
     margin-top: 20px;
-  }
-
-  @include media(tablet) {
-    max-width: 704px;
-  }
-
-  @include media(desktop) {
   }
 }
 
@@ -87,17 +59,9 @@
   display: flex;
   align-items: center;
 
-  //   @include media(mobile-only) {
-  //     max-width: 280px;
-  //   }
-
   @include media(tablet) {
     max-width: 704px;
     justify-content: center;
-  }
-
-  @include media(desktop) {
-    // margin-right: 258px;
   }
 }
 
@@ -115,12 +79,6 @@
   line-height: 1.25;
   letter-spacing: 0.2em;
 }
-
-// .box {
-//   // width: 100%;
-//   padding-top: 6%; /* 1:1 Aspect Ratio */
-//   position: relative;
-// }
 
 .plannedPoints {
   display: flex;
@@ -144,9 +102,6 @@
 .AddTasks {
   display: flex;
   align-items: center;
-  //   @include media(mobile-only) {
-  //     max-width: 280px;
-  //   }
 
   @include media(tablet) {
     max-width: 704px;
@@ -172,14 +127,6 @@
   @include media(mobile-only) {
     max-width: 280px;
     display: none;
-  }
-
-  @include media(tablet) {
-    max-width: 704px;
-  }
-
-  @include media(desktop) {
-    max-width: 1280px;
   }
 }
 
@@ -207,6 +154,7 @@
 .btnAddTasks {
   border: none;
   background-color: transparent;
+
   @include media(mobile-only) {
     position: absolute;
     bottom: 17px;

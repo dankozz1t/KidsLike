@@ -7,6 +7,8 @@ import modalImage from 'assets/images/modal-image/modal-image.svg';
 import modalEditInput from 'assets/images/modal-image/edit-24px 2.svg';
 
 import s from './ModalContentCreateTask.module.scss';
+import { toast } from 'react-toastify';
+
 
 const ModalContentCreateTask = () => {
   const dispatch = useDispatch();
@@ -32,7 +34,7 @@ const ModalContentCreateTask = () => {
     e.preventDefault();
 
     if (image.size > 204800) {
-      return;
+      return toast.error('Too big size image');
     }
 
     const body = new FormData();
@@ -57,7 +59,6 @@ const ModalContentCreateTask = () => {
       >
         <img className={s.modalImage} src={modalImage} alt="" />
       </button>
-      {/* {<img className={s.modalImage} src={modalImage} alt="modalImage" />} */}
 
       <form className={s.modalForm} onSubmit={onHandleSubmit}>
         <input

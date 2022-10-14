@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import s from './DaysList.module.scss';
 import CheckBox from 'shared/components/CheckBox/CheckBox.jsx';

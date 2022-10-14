@@ -55,5 +55,9 @@
 }
 
 .input:disabled ~ .icon {
+  background-image: none;
   background-color: darkblue;
+  border: 1px solid darkblue;
+  cursor: not-allowed;
 }
+

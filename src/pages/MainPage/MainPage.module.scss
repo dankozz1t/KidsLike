@@ -2,9 +2,10 @@
 @import 'src/shared/styles/mixin.scss';
 
 .wrapper {
-  @include media(mobile) {
+  @include media(mobile-only) {
     display: flex;
     flex-direction: column;
+    padding: 0 20px;
   }
   @include media(desktop) {
     display: flex;
@@ -27,11 +28,19 @@
   overflow: hidden;
 }
 .box {
-  width: calc(100% - 229px);
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding-top: 32px;
   padding-bottom: 47px;
   background-color: $main-content-bg-color;
   padding-bottom: 40px;
+  @include media(mobile-only){
+    background-color: $primary-bg-color;
+    padding-top: 0;
+  }
+
+  @include media(desktop){
+  width: calc(100% - 229px);
+  }
 }

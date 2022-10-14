@@ -6,7 +6,7 @@
 }
 
 .wrapper__header {
-  @include media(mobile) {
+  @include media(mobile-only) {
     padding: 0 43px;
   }
 
@@ -17,7 +17,7 @@
 }
 
 .weekTabInfo {
-  @include media(mobile) {
+  @include media(mobile-only) {
     display: flex;
     flex-direction: column;
     justify-content: center;

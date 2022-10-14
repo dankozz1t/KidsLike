@@ -2,10 +2,14 @@
 @import 'src/shared/styles/mixin.scss';
 
 .box {
-  @include media(mobile) {
-    display: flex;
+  display: flex;
+  @include media(mobile-only) {
+    justify-content: center;
     padding: 20px 0;
   }
+  @media screen and (max-width: 319px) {
+    width: 100%;
+    }
   @include media(tablet) {
     justify-content: space-between;
     align-items: baseline;
@@ -22,31 +26,36 @@
 }
 
 .weekTabs {
-  @include media(mobile) {
-    display: flex;
+  display: flex;
+
+  @include media(mobile-only) {
     align-items: center;
     margin: 0 6px;
     width: 269px;
-
-    &__item:not(:last-child) {
-      margin-right: 4px;
-    }
   }
+
+
   @include media(tablet) {
     margin: 0;
     width: 376px;
-    &__item:not(:last-child) {
-      margin-right: 16px;
-    }
   }
 
   @include media(desktop) {
     display: block;
     padding-left: 48px;
-    &__item:not(:last-child) {
-      margin-bottom: 8px;
-      margin-right: 0;
-    }
+  }
+}
+
+.weekTabs__item:not(:last-child) {
+  @include media(mobile-only) {
+    margin-right: 4px;
+  }
+  @include media(tablet) {
+    margin-right: 16px;
+  }
+  @include media(desktop) {
+    margin-bottom: 8px;
+    margin-right: 0;
   }
 }
 
@@ -67,34 +76,40 @@
 }
 
 .weekTabs__label {
-  @include media(mobile-only) {
-    background-color: rgba(255, 187, 51, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 4px;
+
+  text-align: center;
+  transform: scale(1);
+  transition: transform;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.1);
   }
 
-  @include media(mobile) {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  &:hover span,
+  &:focus span {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 
+
+  @include media(mobile-only) {
     width: 35px;
     height: 24px;
-    border-radius: 4px;
     padding: 0 6px;
-    text-align: center;
-    transform: scale(1);
-    transition: transform;
-
-    &:hover,
-    &:focus {
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-
-    &:hover span,
-    &:focus span {
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
+    background-color: rgba(255, 187, 51, 0.5);
   }
+  @media screen and (max-width: 319px) {
+    width: 32px;
+    height: 24px;
+    // padding: 0 6px;
+    //   background-color: rgba(255, 187, 51, 0.5);
+    }
 
   @include media(tablet) {
     width: 40px;
@@ -113,19 +128,19 @@
 }
 
 .weekTabs__name {
-  @include media(mobile) {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: 0.04em;
-    color: $primary-text-color;
-  }
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  color: $primary-text-color;
 
   @include media(tablet) {
     width: 26px;
   }
   @include media(desktop) {
     padding-left: 20px;
+
     font-size: 14px;
     line-height: 1.21;
   }

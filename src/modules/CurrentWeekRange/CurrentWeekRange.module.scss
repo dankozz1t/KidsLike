@@ -2,33 +2,26 @@
 @import 'src/shared/styles/mixin.scss';
 
 .weekTabInfo__week {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  text-align: center;
+
+  color: $primary-text-color;
+
   @include media(mobile-only) {
     margin-bottom: 20px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.21;
-    letter-spacing: 0.04em;
-    text-align: center;
-
-    color: $primary-text-color;
   }
-  @include media(tablet){
+
+  @include media(tablet) {
     min-width: 171px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.21;
-    letter-spacing: 0.04em;
   }
 
   @include media(desktop) {
     margin-bottom: 32px;
 
-    font-weight: 400;
     font-size: 18px;
     line-height: 1.22;
-    letter-spacing: 0.04em;
-    text-align: center;
-
-    color: $primary-text-color;
   }
 }

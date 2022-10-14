@@ -2,51 +2,102 @@
   "contacts": [
     {
       "id": 1,
-      "firstName": "First name",
-      "lastName": "Last name",
-      "position": "Front-End Developer ",
-      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
-      "photo": "../../assets/images/contacts/contact-1.jpg"
+      "firstName": "Alex-Taylor",
+      "lastName": "Danko",
+      "position": "Team Leader",
+      "about": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+      "photo": "../../assets/images/contacts/contact-1.jpg",
+      "socialLinks": {
+        "email": "mailto:alexdankoxxl@gmail.com",
+        "telegram": "https://t.me/dankozz1",
+        "linkedIn": "https://github.com/dankozz1t",
+        "gitHub": "https://www.linkedin.com/in/dankozz1"
+      }
     },
     {
       "id": 2,
-      "firstName": "First name",
-      "lastName": "Last name",
-      "position": "Front-End Developer ",
-      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
-      "photo": "../../assets/images/contacts/contact-2.jpg"
+      "firstName": "Mike",
+      "lastName": "Bakuzov",
+      "position": "Scrum Master",
+      "about": "Codes for people, not machines. I'm glad that AI has not yet learned to code and write websites.",
+      "photo": "../../assets/images/contacts/contact-2.jpg",
+      "socialLinks": {
+        "email": "mailto:bakuzov@gmail.com",
+        "telegram": "https://t.me/bakuzov",
+        "linkedIn": "www.linkedin.com/in/mykhailo-bakuzov-0b036b132",
+        "gitHub": "https://github.com/bakuzov"
+      }
     },
     {
       "id": 3,
-      "firstName": "First name",
-      "lastName": "Last name",
+      "firstName": "Andrii",
+      "lastName": "Galickyi",
       "position": "Front-End Developer ",
-      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
+      "about": "To be born a fool is not a disgrace, but to die a fool is a shame.",
       "photo": "../../assets/images/contacts/contact-3.jpg"
+      ,
+      "socialLinks": {
+        "email": "mailto:galickyav@gmail.com",
+        "telegram": "https://t.me/galytskyi_andrii",
+        "linkedIn": "https://www.linkedin.com/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D0%B3%D0%B0%D0%BB%D0%B8%D1%86%D0%BA%D0%B8%D0%B9-239002103",
+        "gitHub": "https://github.com/Zorotool"
+      }
     },
     {
       "id": 4,
-      "firstName": "First name",
-      "lastName": "Last name",
+      "firstName": "Arthur",
+      "lastName": "Korchack",
       "position": "Front-End Developer ",
-      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
-      "photo": "../../assets/images/contacts/contact-4.jpg"
+      "about": "Not only is every code a shit code, but every shit code is a code.",
+      "photo": "../../assets/images/contacts/contact-4.jpg",
+      "socialLinks": {
+        "email": "mailto:korchak.arthur@gmail.com",
+        "telegram": "https://t.me/arthur_korchak",
+        "linkedIn": "https://www.linkedin.com/in/arthur-korchak",
+        "gitHub": "https://github.com/ArthurKorchak"
+      }
     },
     {
       "id": 5,
-      "firstName": "First name",
-      "lastName": "Last name",
+      "firstName": "Olena",
+      "lastName": "Yatseniuk",
       "position": "Front-End Developer ",
-      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
-      "photo": "../../assets/images/contacts/contact-5.jpg"
+      "about": "Code is like humor. When you have to explain it, it’s bad.",
+      "photo": "../../assets/images/contacts/contact-5.jpg",
+      "socialLinks": {
+        "email": "mailto:elena.yatsenyuk@gmail.com",
+        "telegram": "https://t.me/Hellen_ya",
+        "linkedIn": "https://www.linkedin.com/in/olena-yatseniuk",
+        "gitHub": "https://github.com/OlenaYatseniuk"
+      }
     },
     {
       "id": 6,
-      "firstName": "First name",
-      "lastName": "Last name",
+      "firstName": "Denis",
+      "lastName": "Mirgoyazov",
       "position": "Front-End Developer ",
-      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
-      "photo": "../../assets/images/contacts/contact-6.jpg"
+      "about": " ",
+      "photo": "../../assets/images/contacts/contact-6.jpg",
+      "socialLinks": {
+        "email": "mailto:denis.mirgoyazov@gmail.com",
+        "telegram": "https://t.me/denis_mirg",
+        "linkedIn": "https://www.linkedin.com/in/denis-myrhoiazov",
+        "gitHub": "https://github.com/Myrhoiazov"
+      }
+    },
+    {
+      "id": 7,
+      "firstName": "Vitalii",
+      "lastName": "Shpuntov",
+      "position": "Front-End Developer ",
+      "about": "What man has done man can do.",
+      "photo": "../../assets/images/contacts/contact-7.jpg",
+      "socialLinks": {
+        "email": "mailto:v.shpuntoff@gmail.com",
+        "telegram": "https://t.me/Vitalii_Shpuntov",
+        "linkedIn": "https://www.linkedin.com/in/vitalii-shpuntov",
+        "gitHub": "https://github.com/Shpuntoff"
+      }
     }
   ]
 }

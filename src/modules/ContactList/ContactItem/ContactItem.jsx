@@ -6,11 +6,17 @@ import img3 from '../../../assets/images/contacts/contact-3.jpg';
 import img4 from '../../../assets/images/contacts/contact-4.jpg';
 import img5 from '../../../assets/images/contacts/contact-5.jpg';
 import img6 from '../../../assets/images/contacts/contact-6.jpg';
+import img7 from '../../../assets/images/contacts/contact-7.jpg';
+
+import { ReactComponent as MailIcon } from '../../../assets/images/icon/icon-mail.svg';
+import { ReactComponent as TelegramIcon } from '../../../assets/images/icon/icon-telegram.svg';
+import { ReactComponent as LinkedinIcon } from '../../../assets/images/icon/icon-linkedin.svg';
+import { ReactComponent as GithubIcon } from '../../../assets/images/icon/icon-github.svg';
 
 import s from './ContactItem.module.scss';
 
 const ContactItem = ({ item }) => {
-  const photos = [img1, img2, img3, img4, img5, img6];
+  const photos = [img1, img2, img3, img4, img5, img6, img7];
 
   return (
     <li className={s.wrapper}>
@@ -22,33 +28,25 @@ const ContactItem = ({ item }) => {
         <p className={s.position}>{item.position}</p>
         <p className={s.about}>{item.about}</p>
       </div>
-      <ul class="social-list invite-block__social-list">
+      <ul className={s.socialList}>
         <li>
-          <a href="" className={s.socialListItem}>
-            <svg width="20px" height="20px">
-              <use href="./images/symbol-defs.svg#icon-instagram"></use>
-            </svg>
+          <a href={item.socialLinks.email} className={s.socialListItem}>
+            <MailIcon className={s.icon} />
           </a>
         </li>
         <li>
-          <a href="" className={s.socialListItem}>
-            <svg width="20px" height="20px">
-              <use href="./images/symbol-defs.svg#icon-twitter"></use>
-            </svg>
+          <a href={item.socialLinks.telegram} className={s.socialListItem}>
+            <TelegramIcon className={s.icon} />
           </a>
         </li>
         <li>
-          <a href="" className={s.socialListItem}>
-            <svg width="20px" height="20px">
-              <use href="./images/symbol-defs.svg#icon-facebook"></use>
-            </svg>
+          <a href={item.socialLinks.linkedIn} className={s.socialListItem}>
+            <LinkedinIcon className={s.icon} />
           </a>
         </li>
         <li>
-          <a href="" className={s.socialListItem}>
-            <svg width="20px" height="20px">
-              <use href="./images/symbol-defs.svg#icon-linkedin"></use>
-            </svg>
+          <a href={item.socialLinks.gitHub} className={s.socialListItem}>
+            <GithubIcon className={s.icon} />
           </a>
         </li>
       </ul>

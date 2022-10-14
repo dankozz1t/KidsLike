@@ -1,9 +1,11 @@
 .contactList {
-  display: grid;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 32px;
-  grid-row-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 1248px;
+  gap: 20px 32px;
   padding: 0;
   margin: 0;
 }

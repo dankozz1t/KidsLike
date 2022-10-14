@@ -7,12 +7,13 @@
   width: 288px;
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  display: block;
 }
 
 img {
   width: 100%;
   height: 257px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .description {
@@ -42,4 +43,23 @@ img {
   font-size: 12px;
   line-height: 1.25;
   letter-spacing: 0.04em;
+  min-height: 60px;
+}
+
+.socialList {
+  display: flex;
+  margin: auto;
+  gap: 10px;
+  width: 210px;
+  padding: 0 20px 15px 20px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  fill: #43a8fa;
+
+  &:hover, &:focus {
+    fill: #fac14f;
+  }
 }

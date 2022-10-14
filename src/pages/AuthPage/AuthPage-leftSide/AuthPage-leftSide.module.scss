@@ -110,7 +110,6 @@
     display: none;
 
     @include media(tablet) {
-      // position: absolute;
       display: block;
       transform: translate(77%, 10%);
 

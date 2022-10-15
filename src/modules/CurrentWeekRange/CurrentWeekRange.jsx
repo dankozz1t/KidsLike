@@ -1,3 +1,4 @@
+import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import { getWeekRange } from 'redux/auth/auth.selector';
 
@@ -25,4 +26,4 @@ const CurrentWeekRange = () => {
   );
 };
 
-export default CurrentWeekRange;
+export default  React.memo(CurrentWeekRange);

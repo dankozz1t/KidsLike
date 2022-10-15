@@ -85,8 +85,8 @@
   align-items: center;
   justify-content: center;
   margin: 0 5px;
-  min-width: 30px;
-  min-height: 30px;
+  min-width: 50px;
+  min-height: 50px;
 
   padding: 5px;
 
@@ -130,7 +130,7 @@
   }
 }
 
-.uperDescription {
+.userDescription {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.25;
@@ -154,6 +154,13 @@
 .btnAddTasks {
   border: none;
   background-color: transparent;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
 
   @include media(mobile-only) {
     position: absolute;

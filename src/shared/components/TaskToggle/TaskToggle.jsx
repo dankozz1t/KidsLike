@@ -1,25 +1,32 @@
 import React, { useState } from 'react';
-import s from './TaskToggle.module.scss';
-import PropTypes from 'prop-types';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+
 import { ReactComponent as CheckSymbol } from './images/check-symbol.svg';
 import { ReactComponent as Attention } from './images/attention.svg';
-import { useDispatch, useSelector } from 'react-redux';
+
+import { getDates } from 'redux/auth/auth.selector';
+import { getGifts } from 'redux/gift/gift.selector';
+import { toggleSelectGift } from 'redux/gift/gift.slice';
 import { toggleTaskStatusThunk } from 'redux/task/task.thunk';
+
+import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 
 import Loader from 'shared/components/Loader';
 
-import { getDates } from 'redux/auth/auth.selector';
-import { toast } from 'react-toastify';
-import { useLocation } from 'react-router-dom';
-import { getGifts } from 'redux/gift/gift.selector';
-import { toggleSelectGift } from '../../../redux/gift/gift.slice';
+import s from './TaskToggle.module.scss';
 
 const TaskToggle = ({ _id, isCompleted, isSelected }) => {
   const [isLoading, setIsLoading] = useState(false);
+
+  const dates = useSelector(getDates, shallowEqual);
+  const gifts = useSelector(getGifts, shallowEqual);
+
   const dispatch = useDispatch();
+
   const { pathname } = useLocation();
-  const dates = useSelector(getDates);
-  const gifts = useSelector(getGifts);
+
   const currentWeekDay = new Date().toLocaleString('en-US', {
     weekday: 'long',
   });
@@ -60,9 +67,10 @@ const TaskToggle = ({ _id, isCompleted, isSelected }) => {
 
       {isLoading && (
         <div className={s.loader}>
-          <Loader width="25" />
+          <Loader height="25" color="#5679D7" />
         </div>
       )}
+
       <span className={`${s.slider} ${s.round}`}>
         <CheckSymbol className={s.check_symbol} width="10" height="10" />
         <Attention className={s.attention} width="5" height="12" />
@@ -74,6 +82,7 @@ const TaskToggle = ({ _id, isCompleted, isSelected }) => {
 TaskToggle.propTypes = {
   id: PropTypes.string,
   isCompleted: PropTypes.bool,
+  isSelected: PropTypes.bool,
 };
 
 export default TaskToggle;

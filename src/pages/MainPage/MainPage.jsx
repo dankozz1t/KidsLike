@@ -1,22 +1,21 @@
-import { useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useMemo } from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
 import WeekTabContent from 'modules/WeekTabContent';
 import WeekTabs from 'modules/WeekTabs';
+import Footer from 'modules/Footer';
 
 import { getDates } from 'redux/auth/auth.selector';
-import Footer from 'modules/Footer';
 
 import s from './MainPage.module.scss';
 
 const QUERY_DAY = 'day';
 
 const MainPage = () => {
-  const dates = useSelector(getDates);
+  const dates = useSelector(getDates, shallowEqual);
 
   const [searchParams] = useSearchParams();
-
   const selectedDay = searchParams.get(QUERY_DAY);
 
   const weekDays = useMemo(() => {

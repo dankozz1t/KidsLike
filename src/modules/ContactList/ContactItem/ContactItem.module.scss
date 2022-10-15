@@ -1,18 +1,38 @@
+@import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
+
 * {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
 }
 
 .wrapper {
-  width: 288px;
+  max-width: 288px;
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  display: block;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+  }
+  
+  @include media(tablet-only) {
+    max-width: 320px;
+  }
 }
 
 img {
   width: 100%;
-  height: 257px;
+  max-height: 257px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  @include media(mobile-only) {
+    max-height: 246px;
+    }
+  
+  @include media(tablet-only) {
+    max-height: 320px;
+  }
 }
 
 .description {
@@ -42,4 +62,23 @@ img {
   font-size: 12px;
   line-height: 1.25;
   letter-spacing: 0.04em;
+  min-height: 60px;
+}
+
+.socialList {
+  display: flex;
+  margin: auto;
+  gap: 10px;
+  width: 210px;
+  padding: 0 20px 15px 20px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  fill: #43a8fa;
+
+  &:hover, &:focus {
+    fill: #fac14f;
+  }
 }

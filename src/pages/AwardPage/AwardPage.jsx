@@ -1,22 +1,32 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getGifts, getBoughtGiftsIds } from '../../redux/gift/gift.selector';
-import { getGiftsThunk, buyGiftsThunk } from '../../redux/gift/gift.thunk';
+import React,{ useState, useEffect } from 'react';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+
+import { getGifts, getBoughtGiftsIds } from 'redux/gift/gift.selector';
+import { getGiftsThunk, buyGiftsThunk } from 'redux/gift/gift.thunk';
 import { refreshBoughtGiftsIds } from 'redux/gift/gift.slice';
-import Modal from 'shared/components/Modal';
-import ModalContentGetGifts from 'shared/components/ModalContentGetGifts';
+import { getBalance } from 'redux/task/task.selector';
+
 import AwardHead from 'modules/AwardHead';
-import CardsList from 'shared/components/CardsList';
+import Modal from 'shared/components/Modal';
+
+import ModalContentGetGifts from 'shared/components/ModalContentGetGifts';
 import Button from 'shared/components/Button';
+import CardsList from 'shared/components/CardsList';
+
+import { toast } from 'react-toastify';
+
 import s from './AwardPage.module.scss';
+import CardListLoader from 'shared/components/CardListLoader';
 
 const AwardPage = () => {
-  const dispatch = useDispatch();
-  const gifts = useSelector(getGifts);
-  const boughtGiftsIds = useSelector(getBoughtGiftsIds);
-  const [open, setOpen] = useState(false);
+  const boughtGiftsIds = useSelector(getBoughtGiftsIds, shallowEqual);
+  const balance = useSelector(getBalance, shallowEqual);
+  const gifts = useSelector(getGifts, shallowEqual);
+
   const [dataForModal, setDataForModal] = useState([]);
+  const [open, setOpen] = useState(false);
+  
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getGiftsThunk());
@@ -44,7 +54,23 @@ const AwardPage = () => {
       }
       return acc;
     }, []);
-    dispatch(buyGiftsThunk({ giftIds: selectedGiftsIds }));
+
+    if (selectedGiftsIds.length > 0) {
+      const totalPrice = gifts.reduce((acc, gift) => {
+        if (gift.isSelected) {
+          return acc + gift.price;
+        }
+        return acc;
+      }, 0);
+
+      if (balance >= totalPrice) {
+        dispatch(buyGiftsThunk({ giftIds: selectedGiftsIds }));
+      } else {
+        toast.error('Not enough points to make a purchase!');
+      }
+    } else {
+      toast.info('Nothing is selected!');
+    }
   };
 
   const handleModalClose = () => {
@@ -56,9 +82,9 @@ const AwardPage = () => {
   };
 
   return (
-    <div className={s.awardPage_wrapper}>
+    <div className={s.wrapper}>
       <AwardHead />
-      <CardsList tasks={gifts} />
+      {gifts.length ? <CardsList tasks={gifts} /> : <CardListLoader />}
       <div className={s.button}>
         <Button children={'Confirm'} onClick={buyHandler} />
       </div>

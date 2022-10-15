@@ -4,18 +4,16 @@
 .cards_list {
   display: flex;
   flex-wrap: wrap;
-  align-self: flex-end;
-  gap: 20px 0;
-  padding: 32px 0 40px;
-  width: 100%;
+  gap: 20px 32px;
+  padding-top: 40px;
+  width: 1248px;
 
-  @include media(tablet) {
-    padding: 40px 0 40px;
-    gap: 20px 32px;
+  @include media(mobile-only) {
+    width: 280px;
   }
-
-  @include media(desktop) {
-    padding: 40px 0 47px;
+  
+  @include media(tablet-only) {
+    width: 704px;
   }
 }
 .card_item {

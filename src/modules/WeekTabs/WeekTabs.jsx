@@ -1,7 +1,9 @@
-import CurrentWeekRange from 'modules/CurrentWeekRange';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useSearchParams } from 'react-router-dom';
+
+import CurrentWeekRange from 'modules/CurrentWeekRange';
+import Loader from 'shared/components/Loader';
 
 import s from './WeekTabs.module.scss';
 
@@ -11,7 +13,6 @@ const WeekTabs = ({ weekDays }) => {
   const currentWeekDay = new Date().toLocaleString('en-US', {
     weekday: 'long',
   });
-
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedRadio, setSelectedRadio] = useState(
     searchParams.get('day') || currentWeekDay
@@ -19,13 +20,9 @@ const WeekTabs = ({ weekDays }) => {
 
   const isRadioSelected = value => selectedRadio === value;
 
-  useEffect(
-    () => {
-      setSearchParams({ day: selectedRadio });
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+  useEffect(() => {
+    setSearchParams({ day: selectedRadio });
+  }, [selectedRadio, setSearchParams]);
 
   const handleChange = event => {
     const { value } = event.target;
@@ -33,7 +30,7 @@ const WeekTabs = ({ weekDays }) => {
     setSelectedRadio(value);
   };
 
-  return (
+  const data = weekDays.length ? (
     <div className={s.box}>
       {isTablet && <CurrentWeekRange />}
       <ul className={s.weekTabs}>
@@ -57,7 +54,11 @@ const WeekTabs = ({ weekDays }) => {
         ))}
       </ul>
     </div>
+  ) : (
+    <Loader width="229" color="#5679D7" />
   );
+
+  return <div className={s.box}>{data}</div>;
 };
 
 export default WeekTabs;

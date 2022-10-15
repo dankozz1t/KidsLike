@@ -4,25 +4,16 @@
 .cards_list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 0;
-  padding: 32px 0 40px;
-  max-width: 1248px;
+  gap: 20px 32px;
+  padding-top: 40px;
+  width: 1248px;
 
   @include media(mobile-only) {
-    max-width: 280px;
+    width: 280px;
   }
   
   @include media(tablet-only) {
-    max-width: 704px;
-  }
-
-  @include media(tablet) {
-    padding: 40px 0 40px;
-    gap: 20px 32px;
-  }
-
-  @include media(desktop) {
-    padding: 40px 0 47px;
+    width: 704px;
   }
 }
 

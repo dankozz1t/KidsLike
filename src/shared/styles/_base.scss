@@ -1,3 +1,6 @@
+@import 'src/shared/styles/mixin.scss';
+@import 'src/shared/styles/variables.scss';
+
 *,
 *::before,
 *::after {
@@ -7,6 +10,10 @@
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
+
+  @include media(mobile-only) {
+    overflow: auto;
+  }
 }
 
 html {

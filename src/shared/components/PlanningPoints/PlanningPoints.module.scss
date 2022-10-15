@@ -39,7 +39,7 @@
     position: fixed;
     bottom: 0;
     justify-content: center;
-    z-index: 666;
+    z-index: 2;
   }
 
   @include media(tablet) {
@@ -78,25 +78,6 @@
   font-size: 12px;
   line-height: 1.25;
   letter-spacing: 0.2em;
-}
-
-.AAAplannedPoints {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 5px;
-  min-width: 30px;
-  min-height: 30px;
-
-  padding: 13px 6px;
-
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.21;
-  letter-spacing: 0.04em;
-  color: #ffffff;
-  background-color: #8ec63f;
-  border-radius: 50%;
 }
 
 .plannedPoints {

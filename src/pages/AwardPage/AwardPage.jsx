@@ -56,7 +56,7 @@ const AwardPage = () => {
   };
 
   return (
-    <div className={s.awardPage_wrapper}>
+    <div className={s.wrapper}>
       <AwardHead />
       <CardsList tasks={gifts} />
       <div className={s.button}>

@@ -1,5 +1,21 @@
+@import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
+
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 32px 0 13px;
+  max-width: 1248px;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+  }
+  
+  @include media(tablet-only) {
+    max-width: 704px;
+  }
 }
 
 .button {

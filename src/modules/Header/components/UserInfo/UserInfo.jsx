@@ -1,17 +1,18 @@
 import React from 'react';
+import Loader from 'shared/components/Loader';
 import s from './UserInfo.module.scss';
 
 const UserInfo = ({ email }) => {
-  if (email) {
-    const firstChar = email[0]?.toUpperCase();
-
-    return (
-      <>
-        <div className={s.char}>{firstChar} </div>
-        <p className={s.emailtext}>{email}</p>
-      </>
-    );
+  if (!email) {
+    return <Loader width="60" color="#3e7adc" />;
   }
+
+  return (
+    <>
+      <div className={s.char}>{email[0].toUpperCase()}</div>
+      <p className={s.emailtext}>{email}</p>
+    </>
+  );
 };
 
 export default UserInfo;

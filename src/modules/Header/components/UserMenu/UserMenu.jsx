@@ -15,8 +15,9 @@ import s from './UserMenu.module.scss';
 import Loader from 'shared/components/Loader';
 
 const UserMenu = () => {
-  const { email } = useSelector(getUser, shallowEqual);
   const balance = useSelector(getBalance, shallowEqual);
+  const { email } = useSelector(getUser, shallowEqual);
+  
   const [open, setOpen] = useState(false);
 
   return (

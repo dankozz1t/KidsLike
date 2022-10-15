@@ -1,8 +1,11 @@
 import { shallowEqual, useSelector } from 'react-redux';
-import CardsList from 'shared/components/CardsList';
-import s from './PlanningPage.module.scss';
 import { getAllTasks } from 'redux/task/task.selector';
+import CardListLoader from 'shared/components/CardListLoader';
+
+import CardsList from 'shared/components/CardsList';
 import PlanningPoints from 'shared/components/PlanningPoints/PlanningPoints';
+
+import s from './PlanningPage.module.scss';
 
 const PlanningPage = () => {
   const tasks = useSelector(getAllTasks, shallowEqual);
@@ -10,9 +13,8 @@ const PlanningPage = () => {
   return (
     <>
       <PlanningPoints />
-
       <div className={s.cards_wrapper}>
-        <CardsList tasks={tasks} />
+        {tasks.length ? <CardsList tasks={tasks} /> : <CardListLoader />}
       </div>
     </>
   );

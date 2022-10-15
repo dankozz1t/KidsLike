@@ -1,23 +1,17 @@
-import s from './ProgressBar.module.scss';
-import { Progress } from 'react-sweet-progress';
+import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import { getRewardsGained, getRewardsPlanned } from 'redux/task/task.selector';
 
+import { Progress } from 'react-sweet-progress';
 import 'react-sweet-progress/lib/style.css';
+
+import s from './ProgressBar.module.scss';
 
 const ProgressBar = () => {
   const points = useSelector(getRewardsGained || 0, shallowEqual);
   const plannedPoints = useSelector(getRewardsPlanned || 0, shallowEqual);
 
-  let percent;
-
-  if (plannedPoints) {
-    percent = parseInt((points / plannedPoints) * 100);
-  }
-
-  if (points === 0) {
-    percent = 0;
-  }
+  const percent = parseInt((points / plannedPoints) * 100);
 
   return (
     <div className={s.wrapper}>
@@ -57,4 +51,4 @@ const ProgressBar = () => {
   );
 };
 
-export default ProgressBar;
+export default React.memo(ProgressBar);

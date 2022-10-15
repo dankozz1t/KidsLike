@@ -1,16 +1,18 @@
-import React from 'react';
-import { useState } from 'react';
-import s from './DaysList.module.scss';
-import CheckBox from 'shared/components/CheckBox/CheckBox.jsx';
+import React, { useState }  from 'react';
 import { useDispatch } from 'react-redux';
 import { addTaskToProvidedDaysThunk } from 'redux/task/task.thunk';
-import Loader from '../Loader';
+
+import Loader from 'shared/components/Loader';
+import CheckBox from 'shared/components/CheckBox';
+
+import s from './DaysList.module.scss';
 
 const DaysList = ({ _id, daysList, setShow }) => {
   const [selectedRadio, setSelectedRadio] = useState(daysList);
   const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
+
 
   const handleChange = event => {
     setIsLoading(true);
@@ -52,7 +54,7 @@ const DaysList = ({ _id, daysList, setShow }) => {
     <div className={s.box}>
       {isLoading && (
         <div className={s.loader}>
-          <Loader width="25" />
+          <Loader width="25" color="#3e7adc" />
         </div>
       )}
 

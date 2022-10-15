@@ -8,6 +8,8 @@
   align-items: center;
   padding: 32px 0 13px;
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
   @include media(mobile-only) {
     max-width: 280px;
@@ -15,6 +17,10 @@
   
   @include media(tablet-only) {
     max-width: 704px;
+  }
+
+  @include media(desktop) {
+    width: 1248px;
   }
 }
 

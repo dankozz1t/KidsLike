@@ -3,6 +3,8 @@
 
 .box {
   display: flex;
+  overflow: hidden;
+
   @include media(mobile-only) {
     justify-content: center;
     padding: 20px 0;

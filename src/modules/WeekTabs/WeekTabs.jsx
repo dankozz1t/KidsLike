@@ -7,14 +7,15 @@ import s from './WeekTabs.module.scss';
 
 const WeekTabs = ({ weekDays }) => {
   const isDesktop = useMediaQuery({ minWidth: 1280 });
-  const isTablet = useMediaQuery({maxWidth: 1279, minWidth: 768})
+  const isTablet = useMediaQuery({ maxWidth: 1279, minWidth: 768 });
   const currentWeekDay = new Date().toLocaleString('en-US', {
     weekday: 'long',
   });
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const [selectedRadio, setSelectedRadio] = useState(searchParams.get('day') || currentWeekDay );
-
+  const [selectedRadio, setSelectedRadio] = useState(
+    searchParams.get('day') || currentWeekDay
+  );
 
   const isRadioSelected = value => selectedRadio === value;
 
@@ -34,7 +35,7 @@ const WeekTabs = ({ weekDays }) => {
 
   return (
     <div className={s.box}>
-      {isTablet && <CurrentWeekRange/>}
+      {isTablet && <CurrentWeekRange />}
       <ul className={s.weekTabs}>
         {weekDays.map(day => (
           <li className={s.weekTabs__item} key={day}>
@@ -48,7 +49,9 @@ const WeekTabs = ({ weekDays }) => {
               className={s.weekTabs__input}
             />
             <label htmlFor={day} className={s.weekTabs__label}>
-              <span className={s.weekTabs__name}>{isDesktop ? day : day.slice(0, 2)}</span>
+              <span className={s.weekTabs__name}>
+                {isDesktop ? day : day.slice(0, 2)}
+              </span>
             </label>
           </li>
         ))}

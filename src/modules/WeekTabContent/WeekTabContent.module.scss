@@ -63,8 +63,7 @@
   @include media(tablet) {
     padding: 0 32px;
   }
-  @include media(desktop){
+  @include media(desktop) {
     padding: 0px 16px 0 107px;
   }
-  
 }

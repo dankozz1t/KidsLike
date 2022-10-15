@@ -67,7 +67,7 @@ const TaskToggle = ({ _id, isCompleted, isSelected }) => {
 
       {isLoading && (
         <div className={s.loader}>
-          <Loader width="25" color="#5679D7" />
+          <Loader height="25" color="#5679D7" />
         </div>
       )}
 

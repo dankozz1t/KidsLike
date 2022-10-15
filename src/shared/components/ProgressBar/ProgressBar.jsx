@@ -14,7 +14,7 @@ const ProgressBar = () => {
   const plannedPoints = useSelector(getRewardsPlanned || 0, shallowEqual);
 
   if (!points && !plannedPoints) {
-    return <Loader width="40" />;
+    return <Loader height="40" />;
   }
 
   const percent = parseInt((points / plannedPoints) * 100);

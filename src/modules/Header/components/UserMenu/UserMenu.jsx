@@ -26,7 +26,7 @@ const UserMenu = () => {
         {balance ? (
           <span className={s.balance}>{balance}</span>
         ) : (
-          <Loader width="30" />
+          <Loader width="30" height="auto"/>
         )}
       </div>
       <nav className={s.navigation}>

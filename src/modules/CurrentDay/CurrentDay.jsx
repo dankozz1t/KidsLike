@@ -24,7 +24,7 @@ const CurrentDay = ({ selectedDate }) => {
     return (
       <div style={{ display: 'flex', gap: '20px' }}>
         <p className={s.weekTabInfo__dayWrapper}> My tasks:</p>
-        <Loader width="20" />
+        <Loader height="20" />
       </div>
     );
   }

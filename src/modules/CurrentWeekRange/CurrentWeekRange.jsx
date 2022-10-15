@@ -21,7 +21,7 @@ const CurrentWeekRange = () => {
     <p className={s.weekTabInfo__week}>{getCurrentWeekRange()}</p>
   ) : (
     <div className={s.weekTabInfo__week}>
-      <Loader width="20" />
+      <Loader height="20" />
     </div>
   );
 };

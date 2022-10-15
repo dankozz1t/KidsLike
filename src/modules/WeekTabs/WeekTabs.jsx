@@ -20,13 +20,9 @@ const WeekTabs = ({ weekDays }) => {
 
   const isRadioSelected = value => selectedRadio === value;
 
-  useEffect(
-    () => {
-      setSearchParams({ day: selectedRadio });
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+  useEffect(() => {
+    setSearchParams({ day: selectedRadio });
+  }, [selectedRadio, setSearchParams]);
 
   const handleChange = event => {
     const { value } = event.target;

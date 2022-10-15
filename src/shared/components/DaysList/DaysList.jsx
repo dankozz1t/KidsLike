@@ -13,7 +13,6 @@ const DaysList = ({ _id, daysList, setShow }) => {
 
   const dispatch = useDispatch();
 
-
   const handleChange = event => {
     setIsLoading(true);
     const { name } = event.target;

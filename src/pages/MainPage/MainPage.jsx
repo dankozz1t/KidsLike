@@ -1,12 +1,12 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
 import WeekTabContent from 'modules/WeekTabContent';
 import WeekTabs from 'modules/WeekTabs';
+import Footer from 'modules/Footer';
 
 import { getDates } from 'redux/auth/auth.selector';
-import Footer from 'modules/Footer';
 
 import s from './MainPage.module.scss';
 

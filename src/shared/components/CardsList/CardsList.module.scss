@@ -4,10 +4,17 @@
 .cards_list {
   display: flex;
   flex-wrap: wrap;
-  align-self: flex-end;
   gap: 20px 0;
   padding: 32px 0 40px;
-  width: 100%;
+  max-width: 1248px;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+  }
+  
+  @include media(tablet-only) {
+    max-width: 704px;
+  }
 
   @include media(tablet) {
     padding: 40px 0 40px;
@@ -18,6 +25,7 @@
     padding: 40px 0 47px;
   }
 }
+
 .card_item {
   filter: drop-shadow(4px 6px 15px rgba(0, 0, 0, 0.1));
   flex-basis: 280px;

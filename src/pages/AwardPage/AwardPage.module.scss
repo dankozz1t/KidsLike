@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   padding: 32px 0 13px;
-  max-width: 1248px;
+  max-width: 100%;
 
   @include media(mobile-only) {
     max-width: 280px;

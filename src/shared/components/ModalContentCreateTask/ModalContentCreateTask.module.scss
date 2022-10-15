@@ -1,9 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 280px;
+  max-width: 280px;
   height: 300px;
-  // justify-content: flex-end;
   align-items: center;
   background-color: #ffbc33;
   border-radius: 6px;

@@ -6,6 +6,10 @@
 }
 
 .wrapper__header {
+  @include media(mobile-only) {
+    padding: 0 43px;
+  }
+
   display: flex;
   justify-content: space-between;
   padding-left: 107px;
@@ -13,8 +17,14 @@
 }
 
 .weekTabInfo {
-  display: flex;
-  flex-direction: column;
+  @include media(mobile-only) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 171px;
+  }
 }
 
 .weekTabInfo__week {
@@ -48,19 +58,12 @@
 
 .cards_wrapper {
   display: flex;
-  padding-top: 40px;
-  margin-left: 60px;
-  margin-right: -32px;
-
-  @include media(mobile-only) {
-    max-width: 280px;
-  }
+  padding: 0 20px;
 
   @include media(tablet) {
-    max-width: 704px;
+    padding: 0 32px;
   }
-
   @include media(desktop) {
-    max-width: 968px;
+    padding: 0px 16px 0 107px;
   }
 }

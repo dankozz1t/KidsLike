@@ -7,3 +7,18 @@
   letter-spacing: 0.04em;
   color: $secondary-text-color;
 }
+.char {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  background: #2196f3;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}

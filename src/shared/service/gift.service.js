@@ -5,5 +5,5 @@ export const getGiftsService = async () => {
 };
 
 export const buyGiftsService = async body => {
-  return await privateApi.post('/gift', body);
+  return await privateApi.patch('/gift', body);
 };

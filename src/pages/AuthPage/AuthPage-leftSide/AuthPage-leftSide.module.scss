@@ -1,14 +1,45 @@
+@import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
+
 .block {
-  position: relative;
-  width: 50%;
+  width: 100%;
+  overflow: hidden;
+
+  @include media(tablet) {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  @include media(desktop) {
+    position: relative;
+    width: 50%;
+    overflow: visible;
+  }
 
   .thumb__img1 {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: none;
 
-    width: 372px;
-    height: 306px;
+    @include media(tablet) {
+      display: block;
+      position: absolute;
+      top: 80px;
+      left: -7px;
+      width: 301px;
+      height: 247px;
+    }
+
+    @include media(desktop) {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 372px;
+      height: 306px;
+    }
 
     .img1 {
       display: block;
@@ -17,12 +48,31 @@
   }
 
   .thumb__img2 {
-    position: absolute;
-    top: 148px;
-    left: 237px;
+    width: 320px;
+    height: 98px;
+    margin-left: -5px;
+    border-radius: 6px;
 
-    width: 372px;
-    height: 306px;
+    @include media(tablet) {
+      position: absolute;
+      z-index: 2;
+      display: block;
+      top: 55px;
+      left: 257px;
+
+      width: 222px;
+      height: 98px;
+    }
+
+    @include media(desktop) {
+      position: absolute;
+      z-index: 0;
+      top: 148px;
+      left: 237px;
+
+      width: 372px;
+      height: 306px;
+    }
 
     &.img2 {
       display: block;
@@ -31,9 +81,25 @@
   }
 
   .thumb__img3 {
-    position: absolute;
-    top: 326px;
-    left: 0;
+    display: none;
+
+    @include media(tablet) {
+      display: block;
+      position: absolute;
+      top: 326px;
+      left: 10px;
+
+      width: 372px;
+      height: 306px;
+    }
+
+    @include media(desktop) {
+      display: block;
+
+      position: absolute;
+      top: 326px;
+      left: 0;
+    }
 
     &.img3 {
       display: block;
@@ -42,9 +108,26 @@
   }
 
   .thumb__img4 {
-    position: absolute;
-    top: 442px;
-    left: 230px;
+    display: none;
+
+    @include media(tablet) {
+      display: block;
+      transform: translate(77%, 10%);
+
+      width: 297px;
+      height: 239px;
+    }
+
+    @include media(desktop) {
+      position: absolute;
+      transform: translate(0);
+
+      top: 442px;
+      left: 237px;
+
+      width: 359px;
+      height: 290px;
+    }
 
     &.img4 {
       display: block;

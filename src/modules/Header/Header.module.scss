@@ -1,5 +1,28 @@
+@import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
+
+// @media screen and (min-width: $mobile) {
+//   background-color: rgb(128, 52, 52);
+// }
+
+// @include media(mobile) {
+//   .header {
+//     padding: 22px 0;
+//     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+//     position: relative;
+//     z-index: 9;
+//   }
+//   .wrapper {
+//     max-width: 1280px;
+//     width: 100%;
+//     padding: 0 20px;
+//     display: flex;
+//     justify-content: space-between;
+//   }
+// }
+
 .header {
-  padding: 32px 0;
+  padding: 22px 0;
   align-items: center;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -12,4 +35,22 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+.menuTablet_Desktop {
+  display: none;
+  @include media(tablet) {
+    display: block;
+    @include media(desktop) {
+      display: block;
+    }
+  }
+
+  //  @include media(tablet) {
+  //     padding: 50px 0;
+  //     background-color: aqua;
+  //   }
+  //   @include media(desktop) {
+  //     padding: 80px 0;
+  //     background-color: rgb(231, 216, 9);
+  //   }
 }

@@ -1,0 +1,163 @@
+@import 'src/shared/styles/mixin.scss';
+@import 'src/shared/styles/variables.scss';
+
+.planForWeek {
+  @include media(tablet) {
+    max-width: 704px;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  @include media(desktop) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 18px;
+  }
+}
+.actualWeek {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
+
+.tasks {
+  @include media(mobile-only) {
+    max-width: 280px;
+    display: flex;
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 58px;
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  @include media(tablet) {
+    max-width: 704px;
+    flex-direction: column;
+  }
+
+  @include media(desktop) {
+    max-width: 1280px;
+    width: 808px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.tasksForPoints {
+  display: flex;
+  align-items: center;
+
+  @include media(tablet) {
+    max-width: 704px;
+    justify-content: center;
+  }
+}
+
+.actualWeekDscr {
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.04em;
+}
+
+.actualWeekDate {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.2em;
+}
+
+.plannedPoints {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  min-width: 30px;
+  min-height: 30px;
+
+  padding: 5px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background-color: #8ec63f;
+  border-radius: 50%;
+}
+
+.AddTasks {
+  display: flex;
+  align-items: center;
+
+  @include media(tablet) {
+    max-width: 704px;
+    justify-content: center;
+  }
+
+  @include media(desktop) {
+    max-width: 1280px;
+    justify-content: right;
+  }
+}
+
+.description {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  color: scr#a6abb9;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+    display: none;
+  }
+}
+
+.uperDescription {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: #a6abb9;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+  }
+
+  @include media(tablet) {
+    max-width: 704px;
+    display: none;
+  }
+
+  @include media(desktop) {
+    max-width: 1280px;
+    display: none;
+  }
+}
+.btnAddTasks {
+  border: none;
+  background-color: transparent;
+
+  @include media(mobile-only) {
+    position: absolute;
+    bottom: 17px;
+    right: 0px;
+  }
+}

@@ -19,7 +19,6 @@
 }
 
 .label {
-
   &:hover,
   &:focus {
     cursor: pointer;
@@ -48,9 +47,25 @@
 .input:checked ~ .icon {
   border: 1px solid $primary-bg-color;
   background-color: $primary-bg-color;
-
   background-image: url('../../../assets/images/icon/icon-choice.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.input:disabled ~ .icon {
+  background-color: transparent;
+  border: 1px solid #b8b3b3;
+  cursor: not-allowed;
+}
+
+.input:disabled.input:checked ~ .icon {
+  background-color: #b8b3b3;
+  border: 1px solid #b8b3b3;
+  cursor: not-allowed;
+}
+
+.label:has(.input:disabled) {
+  color: #b8b3b3;
+  cursor: not-allowed;
 }

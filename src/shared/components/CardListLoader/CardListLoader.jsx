@@ -3,7 +3,7 @@ import Skeleton from '../Skeleton';
 
 import s from './CardsListLoader.module.scss';
 
-const CardListLoader = ({ amount = 6 }) => {
+const CardListLoader = ({ amount = 12 }) => {
   return (
     <ul className={s.cards_list}>
       {[...Array(amount)].map((_, i) => (

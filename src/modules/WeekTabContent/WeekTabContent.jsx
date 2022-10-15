@@ -22,12 +22,18 @@ const WeekTabContent = ({ selectedDate }) => {
   let data = null;
 
   if (tasks === null) {
-    data = <NoTasks />;
-  } else {
     data = (
       <div className={s.cards_wrapper}>
-        {tasks.length ? <CardsList tasks={tasks} /> : <CardListLoader />}
+        <CardListLoader />
       </div>
+    );
+  } else {
+    data = tasks.length ? (
+      <div className={s.cards_wrapper}>
+        <CardsList tasks={tasks} />
+      </div>
+    ) : (
+      <NoTasks />
     );
   }
 

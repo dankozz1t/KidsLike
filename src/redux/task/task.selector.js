@@ -11,7 +11,7 @@ export const getRewardsPlanned = state => state.task.rewardsPlanned;
 export const getDaysTasks = createSelector(
   [getTasks, (_, currentDate) => currentDate],
   (tasks, currentDate) => {
-    if (!tasks) {
+    if (!currentDate) {
       return null;
     }
 

@@ -45,8 +45,11 @@ const PlanningPoints = () => {
                 <div className={s.tasks}>
                     <div className={s.tasksForPoints}>
                         <span className={s.description}>Defined tasks for</span>
-                        <div className={s.plannedPoints}>{plannedPoints}</div>
+                        <div className={s.box}>
+                            <div className={s.plannedPoints}>{plannedPoints}</div>
+                        </div>
                         <span className={s.description}>points</span>
+                        <span className={s.uperDescription}>POINTS</span>
                     </div>
       
                     <div className={s.AddTasks}>

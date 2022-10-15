@@ -1,7 +1,7 @@
 const taskInitialState = {
   gifts: [],
   boughtGiftsIds: [],
-  isLoading: false
+  isLoading: false,
 };
 
 export default taskInitialState;

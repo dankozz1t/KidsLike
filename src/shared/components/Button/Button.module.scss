@@ -28,6 +28,11 @@
   }
 }
 
+.btn:disabled {
+  background-color: #fdd178;
+  cursor: no-drop;
+}
+
 .grey {
   background-color: $tertiary-bg-color;
   padding: 13px 30px;

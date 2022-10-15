@@ -7,11 +7,10 @@ import PlanningPoints from 'shared/components/PlanningPoints/PlanningPoints';
 const PlanningPage = () => {
   const tasks = useSelector(getAllTasks, shallowEqual);
 
-
   return (
     <>
       <PlanningPoints />
-   
+
       <div className={s.cards_wrapper}>
         <CardsList tasks={tasks} />
       </div>

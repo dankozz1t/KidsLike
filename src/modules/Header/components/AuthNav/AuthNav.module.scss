@@ -1,10 +1,18 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .navigation {
   display: flex;
   gap: 16px;
   align-items: center;
+  display: none;
+
+  @include media(desktop) {
+    display: flex;
+    align-items: center;
+  }
 }
+
 .link {
   text-decoration: none;
   color: $secondary-text-color;
@@ -15,4 +23,87 @@
 }
 .verticalBar {
   color: $secondary-text-color;
+}
+
+.burger_menu {
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.burger_menu_Login {
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.navigation__wrapper {
+  @include media(mobile-only) {
+    background: transparent;
+  }
+
+  @include media(tablet) {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.2);
+  }
+  @include media(desktop) {
+    background: transparent;
+  }
+}
+
+.navigation__burger {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 274px;
+  height: 100vh;
+
+  padding-top: 94px;
+  background-color: $secondary-bg-color;
+  box-shadow: -15px 0px 20px rgba(0, 0, 0, 0.25);
+
+  @include media(desktop) {
+    display: none;
+  }
+
+  .link__burger {
+    display: block;
+    text-decoration: none;
+    color: $primary-bg-color;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+
+    width: 100%;
+
+    padding: 14px 0;
+    padding-left: 20px;
+
+    border-top: 1px solid $primary-bg-color;
+    border-bottom: 1px solid $primary-bg-color;
+
+    &:hover {
+      color: $primary-text-color;
+    }
+
+    &:last-child {
+      border-top: 1px solid transparent;
+    }
+  }
+
+  .burger_menu_close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }

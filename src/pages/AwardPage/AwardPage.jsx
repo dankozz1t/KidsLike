@@ -56,8 +56,6 @@ const AwardPage = () => {
         }
         return acc;
       }, 0);
-      console.log(totalPrice);
-      console.log(balance);
 
       if (balance >= totalPrice) {
         dispatch(buyGiftsThunk({ giftIds: selectedGiftsIds }));

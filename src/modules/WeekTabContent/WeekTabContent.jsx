@@ -10,7 +10,7 @@ import ProgressBar from 'shared/components/ProgressBar';
 import NoTasks from './NoTasks';
 
 import s from './WeekTabContent.module.scss';
-import Loader from 'shared/components/Loader';
+import CardListLoader from 'shared/components/CardListLoader';
 
 const WeekTabContent = ({ selectedDate }) => {
   const tasks = useSelector(
@@ -28,7 +28,7 @@ const WeekTabContent = ({ selectedDate }) => {
         {tasks.length ? (
           <CardsList tasks={tasks} />
         ) : (
-          <Loader width="250" />
+          <CardListLoader/>
         )}
       </div>
     );
@@ -43,6 +43,7 @@ const WeekTabContent = ({ selectedDate }) => {
         </div>
         <ProgressBar />
       </div>
+      
       {data}
     </div>
   );

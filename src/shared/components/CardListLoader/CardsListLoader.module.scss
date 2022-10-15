@@ -1,0 +1,45 @@
+@import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
+
+.cards_list {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    gap: 20px 0;
+    padding: 32px 0 40px;
+    width: 100%;
+  
+    @include media(tablet) {
+      padding: 40px 0 40px;
+      gap: 20px 32px;
+    }
+  
+    @include media(desktop) {
+      padding: 40px 0 47px;
+    }
+  }
+  .card_item {
+    filter: drop-shadow(4px 6px 15px rgba(0, 0, 0, 0.1));
+    flex-basis: 280px;
+  
+
+    @include media(tablet) {
+      flex-basis: 336px;
+    }
+  
+    @include media(desktop) {
+      flex-basis: 288px;
+    }
+  }
+
+.card__image {
+  width: 288px;
+  height: 194px;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.card_footer {
+  width: 288px;
+  height: 70px;
+  border-radius: 0px 0px 6px 6px;
+}

@@ -1,8 +1,33 @@
-.awardPage_wrapper {
+@import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 32px 0 13px;
+  max-width: 100%;
+
+  @include media(mobile-only) {
+    max-width: 280px;
+  }
+  
+  @include media(tablet-only) {
+    max-width: 704px;
+  }
 }
 
 .button {
   display: flex;
   justify-content: center;
+  margin-top: 60px;
+
+  @include media(mobile-only) {
+    margin-top: 40px;
+  }
+  
+  @include media(tablet-only) {
+    margin-top: 40px;
+  }
 }

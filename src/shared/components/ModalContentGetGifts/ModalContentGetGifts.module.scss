@@ -35,7 +35,7 @@
   width: 200px;
   position: absolute;
   left: 204px;
-  bottom: 280px;
+  top: -115px;
 
   @include media(mobile-only) {
     max-width: 280px;
@@ -62,6 +62,8 @@
 }
 .awardList {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
   margin-top: 40px;
   padding: 0px;

@@ -2,8 +2,6 @@ import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import { getRewardsGained, getRewardsPlanned } from 'redux/task/task.selector';
 
-import Loader from 'shared/components/Loader';
-
 import { Progress } from 'react-sweet-progress';
 import 'react-sweet-progress/lib/style.css';
 
@@ -12,10 +10,6 @@ import s from './ProgressBar.module.scss';
 const ProgressBar = () => {
   const points = useSelector(getRewardsGained || 0, shallowEqual);
   const plannedPoints = useSelector(getRewardsPlanned || 0, shallowEqual);
-
-  if (!points && !plannedPoints) {
-    return <Loader height="40" />;
-  }
 
   const percent = parseInt((points / plannedPoints) * 100);
 

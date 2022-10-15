@@ -4,7 +4,7 @@ import s from './UserInfo.module.scss';
 
 const UserInfo = ({ email }) => {
   if (!email) {
-    return <Loader width="60" height="auto" color="#3e7adc" />;
+    return <Loader width="60" height="20" color="#3e7adc" />;
   }
 
   return (

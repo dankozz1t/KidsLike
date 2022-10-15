@@ -14,8 +14,6 @@ import { ReactComponent as IconDanger } from 'assets/images/icon/icon-danger.svg
 import { ReactComponent as IconOk } from 'assets/images/icon/icon-ok.svg';
 import { ReactComponent as IconAdd } from 'assets/images/icon/icon-add.svg';
 
-import { shallowEqual, useSelector } from 'react-redux';
-
 import s from './CardFooter.module.scss';
 import { toast } from 'react-toastify';
 

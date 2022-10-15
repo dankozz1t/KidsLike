@@ -26,4 +26,4 @@ const CurrentWeekRange = () => {
   );
 };
 
-export default  React.memo(CurrentWeekRange);
+export default React.memo(CurrentWeekRange);

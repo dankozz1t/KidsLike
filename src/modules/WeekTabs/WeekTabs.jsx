@@ -49,7 +49,7 @@ const WeekTabs = ({ weekDays }) => {
       ))}
     </ul>
   ) : (
-    <Loader height="40" color="#5679D7" />
+    <Loader width="229" color="#5679D7" />
   );
 
   return <div className={s.box}>{data}</div>;

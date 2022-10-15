@@ -10,7 +10,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const WeekTabContent = ({ selectedDate }) => {
   const tasks = useSelector(state => getDaysTasks(state, selectedDate));
-  const isTablet = useMediaQuery({maxWidth: 1279, minWidth: 768})
+  const isTablet = useMediaQuery({ maxWidth: 1279, minWidth: 768 });
   return (
     <div className={s.wrapper}>
       <div className={s.wrapper__header}>

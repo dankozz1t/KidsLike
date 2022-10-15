@@ -9,7 +9,6 @@ import modalEditInput from 'assets/images/modal-image/edit-24px 2.svg';
 import s from './ModalContentCreateTask.module.scss';
 import { toast } from 'react-toastify';
 
-
 const ModalContentCreateTask = () => {
   const dispatch = useDispatch();
   const imageInputRef = useRef(null);

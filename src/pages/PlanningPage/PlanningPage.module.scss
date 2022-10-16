@@ -13,4 +13,8 @@
     width: 1248px;
     padding-bottom: 27px;
   }
+
+  @include media(mobile-only) {
+    margin-bottom: 75px;
+  }
 }

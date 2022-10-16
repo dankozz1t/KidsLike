@@ -7,21 +7,29 @@ import 'react-sweet-progress/lib/style.css';
 
 import s from './ProgressBar.module.scss';
 import { useMediaQuery } from 'react-responsive';
+import { useLocation } from 'react-router-dom';
+
+const PATH_NAME = Object.freeze({
+  MAIN: '/main',
+  PLANNING: '/planning',
+  AWARD: '/award',
+});
 
 const ProgressBar = () => {
   const points = useSelector(getRewardsGained || 0, shallowEqual);
   const plannedPoints = useSelector(getRewardsPlanned || 0, shallowEqual);
+  const { pathname } = useLocation();
 
   const percent = parseInt((points / plannedPoints) * 100);
   const isMobile = useMediaQuery({ maxWidth: 767 });
   if(!isMobile){
     return (
       <div className={s.wrapper}>
-        <p className={s.pointsInfo}>
+        <p className={pathname === PATH_NAME.AWARD ? s.pointsInfoAward : s.pointsInfo}>
           Points earned this week:
           <span className={s.points}>{points}</span>
         </p>
-        <p className={s.pointsInfo}>
+        <p className={pathname === PATH_NAME.AWARD ? s.pointsInfoAward : s.pointsInfo}>
           Planned points for this week:
           <span className={s.points}>{plannedPoints}</span>
         </p>
@@ -34,15 +42,12 @@ const ProgressBar = () => {
               percent={percent >= 100 ? 100 : percent}
               theme={{
                 success: {
-                  symbol: '🏄‍',
                   color: 'rgb(223, 105, 180)',
                 },
                 active: {
-                  symbol: '😀',
                   color: '#fbc630',
                 },
                 default: {
-                  symbol: '🤔',
                   color: '#fbc630',
                 },
               }}
@@ -51,7 +56,6 @@ const ProgressBar = () => {
         </div>
       </div>
     );
-
   }
 
 };

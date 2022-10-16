@@ -5,11 +5,10 @@
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  
+
   @include media(tablet-only){
     align-self: center;
   }
-
 }
 
 .pointsInfo {
@@ -24,6 +23,16 @@
   @include media(tablet-only){
     text-align: center;
   }
+}
+
+.pointsInfoAward{
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: right;
+  letter-spacing: 0.04em;
+  color: $tertiary-text-color;
 }
 
 .points {

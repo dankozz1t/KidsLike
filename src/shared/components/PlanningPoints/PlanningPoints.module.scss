@@ -31,13 +31,14 @@
 
 .tasks {
   @include media(mobile-only) {
-    max-width: 280px;
+    // max-width: 280px;
     display: flex;
-    background-color: #f1f1f1;
-    width: 100%;
+    background-color: #E5E5E5;
+    width: 100vw;
     height: 58px;
     position: fixed;
     bottom: 0;
+    left: 0;
     justify-content: center;
     z-index: 2;
   }
@@ -90,7 +91,7 @@
   @include media(tablet-only){
     margin-bottom: 20px;
   }
-  
+
   @include media(not-desktop) {
     border: 1px solid #FFBC33;
     border-radius: 6px;
@@ -182,7 +183,54 @@
 
   @include media(mobile-only) {
     position: absolute;
-    bottom: 17px;
+    bottom: 30px;
     right: 0px;
   }
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+
+  @include media(tablet-only){
+    align-self: center;
+  }
+}
+
+.progressWrapper{
+  @include media(mobile-only){
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 10px;
+  }
+
+}
+.pointsAmount {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: right;
+  letter-spacing: 0.2em;
+  color: $primary-text-color;
+}
+
+.collectedPoints {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: right;
+  letter-spacing: 0.2em;
+  color: $primary-text-color;
+}
+
+.progressTool {
+  display: block;
+  width: 350px;
+  margin-left: 20px;
+  @include media(mobile-only){
+    width: 148px;
+  }
+}
+

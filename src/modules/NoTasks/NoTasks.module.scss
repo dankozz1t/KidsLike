@@ -6,13 +6,18 @@
   flex-direction: column;
   flex-grow: 2;
   align-items: center;
-  margin-top: 99px;
   height: 100%;
   width: 100%;
-  background-image: url('../../../assets/images/main-page/no-tasks.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+
+  @include media(mobile-only) {
+    margin-top: 60px;
+  }
+  @include media(tablet) {
+    margin-top: 100px;
+  }
+  @include media(desktop) {
+    margin-top: 99px;
+  }
 }
 
 .title {
@@ -23,4 +28,17 @@
   text-align: center;
   letter-spacing: 0.04em;
   color: $primary-text-color;
+}
+
+.link{
+  text-decoration: none;
+  @include media(mobile-only) {
+    margin-bottom: 60px;
+  }
+  @include media(tablet) {
+    margin-bottom: 111px;
+  }
+  @include media(desktop) {
+    margin-bottom: 39px;
+  }
 }

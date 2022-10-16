@@ -5,8 +5,8 @@
   @include media(mobile-only) {
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
   }
+  
   @include media(desktop) {
     display: flex;
     flex-direction: row;
@@ -27,6 +27,7 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 .box {
   width: 100%;
   display: flex;
@@ -40,7 +41,7 @@
     background-color: $primary-bg-color;
     padding-top: 0;
   }
-  
+
   @include media(tablet-only){
     padding-top: 40px;
   }

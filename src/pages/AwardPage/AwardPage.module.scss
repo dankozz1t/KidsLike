@@ -28,6 +28,8 @@
   display: flex;
   justify-content: center;
   margin-top: 60px;
+  transform: scale(1);
+  transition: transform 0.3s;
 
   @include media(mobile-only) {
     margin-top: 40px;
@@ -35,6 +37,12 @@
 
   @include media(tablet-only) {
     margin-top: 40px;
+  }
+  
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.1);
   }
 }
 

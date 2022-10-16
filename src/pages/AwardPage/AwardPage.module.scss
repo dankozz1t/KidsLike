@@ -14,11 +14,8 @@
   @include media(mobile-only) {
     max-width: 280px;
   }
-  <<<<<<<
-    HEAD
-    =======>>>>>>>6226c886deea1f4a07361846253ac509688232cb
-    @include
-    media(tablet-only) {
+    @include media(tablet-only) {
+
     max-width: 704px;
   }
 

@@ -40,6 +40,10 @@
     background-color: $primary-bg-color;
     padding-top: 0;
   }
+  
+  @include media(tablet-only){
+    padding-top: 40px;
+  }
 
   @include media(desktop) {
     width: calc(100% - 229px);

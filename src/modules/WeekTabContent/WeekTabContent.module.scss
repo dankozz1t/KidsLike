@@ -10,10 +10,21 @@
     padding: 0 43px;
   }
 
-  display: flex;
-  justify-content: space-between;
-  padding-left: 107px;
-  padding-right: 16px;
+  @include media(tablet) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 43px;
+  }
+
+  @include media(desktop) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 107px;
+    padding-right: 16px;
+  }
 }
 
 .weekTabInfo {

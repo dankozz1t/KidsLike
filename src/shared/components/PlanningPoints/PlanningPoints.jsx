@@ -47,7 +47,7 @@ const PlanningPoints = () => {
     <>
       <div className={s.planForWeek}>
         <div className={s.actualWeek}>
-          <span className={s.actualWeekDscr}>Plan for the week</span>
+          <span className={s.actualWeekDscr}>Plan for the week:</span>
           <div className={s.actualWeekDate}>
             {startingDate} <span> - </span> {endingDate}{' '}
           </div>

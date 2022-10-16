@@ -71,6 +71,14 @@
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.04em;
+
+  @include media(mobile-only) {
+    margin-bottom: 8px;
+  }
+
+  @include media(tablet-only) {
+    margin-bottom: 20px;
+  }
 }
 
 .actualWeekDate {
@@ -78,6 +86,16 @@
   font-size: 12px;
   line-height: 1.25;
   letter-spacing: 0.2em;
+
+  @include media(tablet-only){
+    margin-bottom: 20px;
+  }
+  
+  @include media(not-desktop) {
+    border: 1px solid #FFBC33;
+    border-radius: 6px;
+    padding: 7px 15px;
+  }
 }
 
 .plannedPoints {

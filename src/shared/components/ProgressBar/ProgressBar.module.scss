@@ -1,9 +1,15 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .wrapper {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
+  
+  @include media(tablet-only){
+    align-self: center;
+  }
+
 }
 
 .pointsInfo {
@@ -14,10 +20,16 @@
   text-align: right;
   letter-spacing: 0.04em;
   color: $tertiary-text-color;
+
+  @include media(tablet-only){
+    text-align: center;
+  }
 }
 
 .points {
   margin-left: 12px;
+  font-weight: 700;
+  color: $primary-text-color;
 }
 
 .progressWrapper {

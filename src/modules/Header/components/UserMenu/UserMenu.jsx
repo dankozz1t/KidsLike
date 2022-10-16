@@ -17,14 +17,14 @@ import Loader from 'shared/components/Loader';
 const UserMenu = () => {
   const balance = useSelector(getBalance, shallowEqual);
   const { email } = useSelector(getUser, shallowEqual);
-  
+
   const [open, setOpen] = useState(false);
 
   return (
     <div className={s.subcontainer}>
       <div className={s.boxbalance}>
         <p className={s.text}>Score balance:</p>
-        {balance ? (
+        {balance !== null ? (
           <span className={s.balance}>{balance}</span>
         ) : (
           <Loader width="30" height="20" />

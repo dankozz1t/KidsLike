@@ -31,7 +31,7 @@ const WeekTabs = ({ weekDays }) => {
   };
 
   const data = weekDays.length ? (
-    <div className={s.box}>
+    <>
       {isTablet && <CurrentWeekRange />}
       <ul className={s.weekTabs}>
         {weekDays.map(day => (
@@ -53,7 +53,7 @@ const WeekTabs = ({ weekDays }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   ) : (
     <Loader width="229" color="#5679D7" />
   );

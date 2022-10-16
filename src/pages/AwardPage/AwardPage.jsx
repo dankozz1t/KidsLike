@@ -17,6 +17,8 @@ import { toast } from 'react-toastify';
 
 import s from './AwardPage.module.scss';
 import CardListLoader from 'shared/components/CardListLoader';
+import { useMediaQuery } from 'react-responsive';
+import PlanningPoints from 'shared/components/PlanningPoints/PlanningPoints';
 
 const AwardPage = () => {
   const boughtGiftsIds = useSelector(getBoughtGiftsIds, shallowEqual);
@@ -25,7 +27,8 @@ const AwardPage = () => {
 
   const [dataForModal, setDataForModal] = useState([]);
   const [open, setOpen] = useState(false);
-  
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -91,6 +94,7 @@ const AwardPage = () => {
       <Modal open={open} onClose={handleModalClose}>
         <ModalContentGetGifts awards={dataForModal} />
       </Modal>
+      {isMobile && <PlanningPoints/>}
     </div>
   );
 };

@@ -9,6 +9,8 @@ import Footer from 'modules/Footer';
 import { getDates } from 'redux/auth/auth.selector';
 
 import s from './MainPage.module.scss';
+import PlanningPoints from 'shared/components/PlanningPoints/PlanningPoints';
+import { useMediaQuery } from 'react-responsive';
 
 const QUERY_DAY = 'day';
 
@@ -17,6 +19,7 @@ const MainPage = () => {
 
   const [searchParams] = useSearchParams();
   const selectedDay = searchParams.get(QUERY_DAY);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const weekDays = useMemo(() => {
     return Object.keys(dates);
@@ -29,6 +32,7 @@ const MainPage = () => {
         <WeekTabs weekDays={weekDays} />
         <div className={s.box}>
           <WeekTabContent selectedDate={dates[selectedDay]} />
+          {isMobile && <PlanningPoints/>}
           <Footer />
         </div>
       </div>

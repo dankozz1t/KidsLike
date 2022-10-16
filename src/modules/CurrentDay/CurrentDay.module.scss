@@ -1,4 +1,5 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
 
 .weekTabInfo__dayWrapper {
   font-weight: 500;
@@ -7,9 +8,22 @@
   letter-spacing: 0.04em;
 
   color: $tertiary-text-color;
+  
+  @include media(mobile-only){
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @include media(tablet-only){
+    margin-top: 24px;
+  }
 }
 
 .weekTabInfo__day {
+  @include media(mobile-only){
+    margin-top: 4px;
+  }
   margin-left: 20px;
 
   font-weight: 700;

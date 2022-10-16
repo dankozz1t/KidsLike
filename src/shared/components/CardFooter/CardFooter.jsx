@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import { shallowEqual, useSelector } from 'react-redux';
-import { getDaysList } from 'redux/task/task.selector';
+
 import PropTypes from 'prop-types';
 
-import CardTitle from '../CardTitle';
-import PointAmount from '../PointAmount';
-import TaskToggle from '../TaskToggle';
-import DaysList from '../DaysList';
+import CardTitle from 'shared/components/CardTitle';
+import PointAmount from 'shared/components/PointAmount';
+import TaskToggle from 'shared/components/TaskToggle';
+import ButtonAddPlanning from 'shared/components/ButtonAddPlanning';
 
 import { ReactComponent as IconSuccess } from 'assets/images/icon/icon-success.svg';
 import { ReactComponent as IconDanger } from 'assets/images/icon/icon-danger.svg';
-import { ReactComponent as IconOk } from 'assets/images/icon/icon-ok.svg';
-import { ReactComponent as IconAdd } from 'assets/images/icon/icon-add.svg';
+
+import { toast } from 'react-toastify';
 
 import s from './CardFooter.module.scss';
-import { toast } from 'react-toastify';
 
 const PATH_NAME = Object.freeze({
   MAIN: '/main',
@@ -28,18 +26,11 @@ const CardFooter = ({ ...taskInfo }) => {
   const { pathname } = useLocation();
 
   const [searchParams] = useSearchParams();
-  const [show, setShow] = useState(false);
 
   let _id;
   taskInfo.id ? (_id = taskInfo.id) : (_id = taskInfo._id);
   let reward;
   taskInfo.reward ? (reward = taskInfo.reward) : (reward = taskInfo.price);
-
-  const daysList = useSelector(state => getDaysList(state, _id), shallowEqual);
-
-  const handleIconAddClick = () => {
-    setShow(!show);
-  };
 
   const renderElement = () => {
     switch (pathname) {
@@ -56,20 +47,7 @@ const CardFooter = ({ ...taskInfo }) => {
       }
 
       case PATH_NAME.PLANNING: {
-        return (
-          <>
-            {show && (
-              <DaysList setShow={setShow} _id={_id} daysList={daysList} />
-            )}
-            <button
-              type="button"
-              className={s.icon}
-              onClick={handleIconAddClick}
-            >
-              {show ? <IconOk /> : <IconAdd />}
-            </button>
-          </>
-        );
+        return <ButtonAddPlanning _id={_id} />;
       }
 
       case PATH_NAME.AWARD: {

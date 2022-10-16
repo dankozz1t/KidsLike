@@ -18,7 +18,7 @@ const CurrentDay = ({ selectedDate }) => {
     return formatDay;
   };
 
-  const currentDay = getCurrentDay(selectedDate);
+  const currentDay = getCurrentDay(selectedDate)?.toUpperCase();
 
   if (!currentDay) {
     return (

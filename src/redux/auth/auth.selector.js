@@ -13,6 +13,10 @@ export const selectEndWeekDate = state => state?.auth?.week?.endWeekDate;
 export const getWeekRange = createSelector(
   [selectStartWeekDate, selectEndWeekDate],
   (start, end) => {
+    if (!start && !end) {
+      return null;
+    }
+
     const startDate = new Date(start).getDate();
     const endDate = new Date(end).getDate();
     const startMonth = new Date(start).toLocaleString('en-US', {

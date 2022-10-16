@@ -1,61 +1,61 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
-import CardTitle from '../CardTitle';
-import PointAmount from '../PointAmount';
-import TaskToggle from '../TaskToggle';
+
+import CardTitle from 'shared/components/CardTitle';
+import PointAmount from 'shared/components/PointAmount';
+import TaskToggle from 'shared/components/TaskToggle';
+import ButtonAddPlanning from 'shared/components/ButtonAddPlanning';
 
 import { ReactComponent as IconSuccess } from 'assets/images/icon/icon-success.svg';
 import { ReactComponent as IconDanger } from 'assets/images/icon/icon-danger.svg';
-import { ReactComponent as IconOk } from 'assets/images/icon/icon-ok.svg';
-import { ReactComponent as IconAdd } from 'assets/images/icon/icon-add.svg';
 
-import { shallowEqual, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import s from './CardFooter.module.scss';
-import DaysList from '../DaysList';
-import { getDaysList } from 'redux/task/task.selector';
+
+const PATH_NAME = Object.freeze({
+  MAIN: '/main',
+  PLANNING: '/planning',
+  AWARD: '/award',
+});
 
 const CardFooter = ({ ...taskInfo }) => {
   const { title, isCompleted, isSelected } = taskInfo;
   const { pathname } = useLocation();
+
+  const [searchParams] = useSearchParams();
+
   let _id;
   taskInfo.id ? (_id = taskInfo.id) : (_id = taskInfo._id);
   let reward;
   taskInfo.reward ? (reward = taskInfo.reward) : (reward = taskInfo.price);
 
-  const [searchParams] = useSearchParams();
-
-  const daysList = useSelector(state => getDaysList(state, _id), shallowEqual);
-
-  const [show, setShow] = useState(false);
-
-  const handleIconAddClick = () => {
-    setShow(!show);
-  };
-
   const renderElement = () => {
-    if (pathname === '/main') {
-      const currentWeekDay = new Date().toLocaleString('en-US', {
-        weekday: 'long',
-      });
+    switch (pathname) {
+      case PATH_NAME.MAIN: {
+        const currentWeekDay = new Date().toLocaleString('en-US', {
+          weekday: 'long',
+        });
 
-      if (currentWeekDay === searchParams.get('day')) {
-        return <TaskToggle _id={_id} isCompleted={isCompleted} />;
+        if (currentWeekDay === searchParams.get('day')) {
+          return <TaskToggle _id={_id} isCompleted={isCompleted} />;
+        }
+
+        return isCompleted ? <IconSuccess /> : <IconDanger />;
       }
 
-      return isCompleted ? <IconSuccess /> : <IconDanger />;
-    } else if (pathname === '/planning') {
-      return (
-        <>
-          {show && <DaysList setShow={setShow} _id={_id} daysList={daysList} />}
-          <button type="button" className={s.icon} onClick={handleIconAddClick}>
-            {show ? <IconOk /> : <IconAdd />}
-          </button>
-        </>
-      );
-    } else if (pathname === '/award') {
-      return <TaskToggle _id={_id} isCompleted={isSelected} />;
+      case PATH_NAME.PLANNING: {
+        return <ButtonAddPlanning _id={_id} />;
+      }
+
+      case PATH_NAME.AWARD: {
+        return <TaskToggle _id={_id} isCompleted={isSelected} />;
+      }
+
+      default:
+        return toast.error('NotFound');
     }
   };
 

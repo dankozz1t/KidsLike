@@ -1,26 +1,36 @@
-import React from 'react';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getGifts, getBoughtGiftsIds } from '../../redux/gift/gift.selector';
-import { getGiftsThunk, buyGiftsThunk } from '../../redux/gift/gift.thunk';
+import React, { useState, useEffect } from 'react';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
+
+import { getGifts, getBoughtGiftsIds } from 'redux/gift/gift.selector';
+import { getGiftsThunk, buyGiftsThunk } from 'redux/gift/gift.thunk';
 import { refreshBoughtGiftsIds } from 'redux/gift/gift.slice';
-import Modal from 'shared/components/Modal';
-import ModalContentGetGifts from 'shared/components/ModalContentGetGifts';
-import AwardHead from 'modules/AwardHead';
-import CardsList from 'shared/components/CardsList';
-import Button from 'shared/components/Button';
-import s from './AwardPage.module.scss';
 import { getBalance } from 'redux/task/task.selector';
 
+import AwardHead from 'modules/AwardHead';
+import Footer from 'modules/Footer';
+
+import Modal from 'shared/components/Modal';
+import Button from 'shared/components/Button';
+import CardsList from 'shared/components/CardsList';
+import CardListLoader from 'shared/components/CardListLoader';
+import ModalContentGetGifts from 'shared/components/ModalContentGetGifts';
+import PlanningPoints from 'shared/components/PlanningPoints/PlanningPoints';
+
+import { toast } from 'react-toastify';
+
+import s from './AwardPage.module.scss';
+
 const AwardPage = () => {
-  const dispatch = useDispatch();
-  const gifts = useSelector(getGifts);
-  const boughtGiftsIds = useSelector(getBoughtGiftsIds);
-  const balance = useSelector(getBalance);
-  const [open, setOpen] = useState(false);
+  const boughtGiftsIds = useSelector(getBoughtGiftsIds, shallowEqual);
+  const balance = useSelector(getBalance, shallowEqual);
+  const gifts = useSelector(getGifts, shallowEqual);
+
   const [dataForModal, setDataForModal] = useState([]);
+  const [open, setOpen] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getGiftsThunk());
@@ -76,16 +86,22 @@ const AwardPage = () => {
   };
 
   return (
-    <div className={s.wrapper}>
-      <AwardHead />
-      <CardsList tasks={gifts} />
-      <div className={s.button}>
-        <Button children={'Confirm'} onClick={buyHandler} />
+    <>
+      <div className={s.wrapper}>
+        <AwardHead />
+        {gifts.length ? <CardsList tasks={gifts} /> : <CardListLoader />}
+        <div className={s.button}>
+          <Button children={'Confirm'} onClick={buyHandler} />
+        </div>
+        <Modal open={open} onClose={handleModalClose}>
+          <ModalContentGetGifts awards={dataForModal} />
+        </Modal>
+        {isMobile && <PlanningPoints />}
       </div>
-      <Modal open={open} onClose={handleModalClose}>
-        <ModalContentGetGifts awards={dataForModal} />
-      </Modal>
-    </div>
+      <div className={s.footer}>
+        <Footer />
+      </div>
+    </>
   );
 };
 

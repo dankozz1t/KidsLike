@@ -58,12 +58,14 @@ const PlanningPoints = () => {
   return (
     <>
       <div className={s.planForWeek}>
-      {pathname === PATH_NAME.PLANNING && <div className={s.actualWeek}>
-          <span className={s.actualWeekDscr}>Plan for the week:</span>
-          <div className={s.actualWeekDate}>
-            {startingDate} <span> - </span> {endingDate}
+        {pathname === PATH_NAME.PLANNING && (
+          <div className={s.actualWeek}>
+            <span className={s.actualWeekDscr}>Plan for the week:</span>
+            <div className={s.actualWeekDate}>
+              {startingDate} <span> - </span> {endingDate}
+            </div>
           </div>
-        </div>}
+        )}
         <div className={s.tasks}>
           {pathname === PATH_NAME.PLANNING ? (
             <div className={s.tasksForPoints}>

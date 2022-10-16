@@ -1,16 +1,15 @@
 import React, { useMemo } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import { getDates } from 'redux/auth/auth.selector';
 
 import WeekTabContent from 'modules/WeekTabContent';
 import WeekTabs from 'modules/WeekTabs';
 import Footer from 'modules/Footer';
-
-import { getDates } from 'redux/auth/auth.selector';
+import PlanningPoints from 'shared/components/PlanningPoints/PlanningPoints';
 
 import s from './MainPage.module.scss';
-import PlanningPoints from 'shared/components/PlanningPoints/PlanningPoints';
-import { useMediaQuery } from 'react-responsive';
 
 const QUERY_DAY = 'day';
 
@@ -32,7 +31,7 @@ const MainPage = () => {
         <WeekTabs weekDays={weekDays} />
         <div className={s.box}>
           <WeekTabContent selectedDate={dates[selectedDay]} />
-          {isMobile && <PlanningPoints/>}
+          {isMobile && <PlanningPoints />}
           <Footer />
         </div>
       </div>

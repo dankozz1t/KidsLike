@@ -17,7 +17,6 @@ import Loader from 'shared/components/Loader';
 const UserMenu = () => {
   const balance = useSelector(getBalance, shallowEqual);
   const { email } = useSelector(getUser, shallowEqual);
-
   const [open, setOpen] = useState(false);
 
   return (

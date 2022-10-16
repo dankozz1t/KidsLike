@@ -22,20 +22,29 @@ const ProgressBar = () => {
 
   const percent = parseInt((points / plannedPoints) * 100);
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  if(!isMobile){
+  if (!isMobile) {
     return (
       <div className={s.wrapper}>
-        <p className={pathname === PATH_NAME.AWARD ? s.pointsInfoAward : s.pointsInfo}>
+        <p
+          className={
+            pathname === PATH_NAME.AWARD ? s.pointsInfoAward : s.pointsInfo
+          }
+        >
           Points earned this week:
           <span className={s.points}>{points}</span>
         </p>
-        <p className={pathname === PATH_NAME.AWARD ? s.pointsInfoAward : s.pointsInfo}>
+        <p
+          className={
+            pathname === PATH_NAME.AWARD ? s.pointsInfoAward : s.pointsInfo
+          }
+        >
           Planned points for this week:
           <span className={s.points}>{plannedPoints}</span>
         </p>
         <div className={s.progressWrapper}>
           <span className={s.pointsAmount}>
-            <span className={s.collectedPoints}>{points}</span> / {plannedPoints}
+            <span className={s.collectedPoints}>{points}</span> /{' '}
+            {plannedPoints}
           </span>
           <div className={s.progressTool}>
             <Progress
@@ -57,7 +66,6 @@ const ProgressBar = () => {
       </div>
     );
   }
-
 };
 
 export default React.memo(ProgressBar);

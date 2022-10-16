@@ -1,5 +1,6 @@
-import React,{ useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
 
 import { getGifts, getBoughtGiftsIds } from 'redux/gift/gift.selector';
 import { getGiftsThunk, buyGiftsThunk } from 'redux/gift/gift.thunk';
@@ -7,18 +8,18 @@ import { refreshBoughtGiftsIds } from 'redux/gift/gift.slice';
 import { getBalance } from 'redux/task/task.selector';
 
 import AwardHead from 'modules/AwardHead';
-import Modal from 'shared/components/Modal';
+import Footer from 'modules/Footer';
 
-import ModalContentGetGifts from 'shared/components/ModalContentGetGifts';
+import Modal from 'shared/components/Modal';
 import Button from 'shared/components/Button';
 import CardsList from 'shared/components/CardsList';
+import CardListLoader from 'shared/components/CardListLoader';
+import ModalContentGetGifts from 'shared/components/ModalContentGetGifts';
+import PlanningPoints from 'shared/components/PlanningPoints/PlanningPoints';
 
 import { toast } from 'react-toastify';
 
 import s from './AwardPage.module.scss';
-import CardListLoader from 'shared/components/CardListLoader';
-import { useMediaQuery } from 'react-responsive';
-import PlanningPoints from 'shared/components/PlanningPoints/PlanningPoints';
 
 const AwardPage = () => {
   const boughtGiftsIds = useSelector(getBoughtGiftsIds, shallowEqual);
@@ -85,17 +86,22 @@ const AwardPage = () => {
   };
 
   return (
-    <div className={s.wrapper}>
-      <AwardHead />
-      {gifts.length ? <CardsList tasks={gifts} /> : <CardListLoader />}
-      <div className={s.button}>
-        <Button children={'Confirm'} onClick={buyHandler} />
+    <>
+      <div className={s.wrapper}>
+        <AwardHead />
+        {gifts.length ? <CardsList tasks={gifts} /> : <CardListLoader />}
+        <div className={s.button}>
+          <Button children={'Confirm'} onClick={buyHandler} />
+        </div>
+        <Modal open={open} onClose={handleModalClose}>
+          <ModalContentGetGifts awards={dataForModal} />
+        </Modal>
+        {isMobile && <PlanningPoints />}
       </div>
-      <Modal open={open} onClose={handleModalClose}>
-        <ModalContentGetGifts awards={dataForModal} />
-      </Modal>
-      {isMobile && <PlanningPoints/>}
-    </div>
+      <div className={s.footer}>
+        <Footer />
+      </div>
+    </>
   );
 };
 

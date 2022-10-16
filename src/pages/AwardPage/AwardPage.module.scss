@@ -14,7 +14,7 @@
   @include media(mobile-only) {
     max-width: 280px;
   }
-  
+
   @include media(tablet-only) {
     max-width: 704px;
   }
@@ -32,8 +32,22 @@
   @include media(mobile-only) {
     margin-top: 40px;
   }
-  
+
   @include media(tablet-only) {
     margin-top: 40px;
+  }
+}
+
+.footer {
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include media(desktop) {
+    justify-content: flex-end;
   }
 }

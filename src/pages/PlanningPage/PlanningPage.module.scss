@@ -18,3 +18,17 @@
     margin-bottom: 75px;
   }
 }
+
+.footer {
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include media(desktop) {
+    justify-content: flex-end;
+  }
+}

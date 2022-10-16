@@ -19,7 +19,7 @@
 .card_item {
   flex-basis: 280px;
   transform: scale(1);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @include media(tablet) {
     flex-basis: 336px;

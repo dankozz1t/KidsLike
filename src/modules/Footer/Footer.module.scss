@@ -9,11 +9,7 @@
 }
 .box {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 40px 0;
-}
-.bar {
-  color: red;
 }

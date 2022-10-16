@@ -8,7 +8,7 @@ import CurrentDay from 'modules/CurrentDay';
 import CurrentWeekRange from 'modules/CurrentWeekRange';
 
 import ProgressBar from 'shared/components/ProgressBar';
-import NoTasks from './NoTasks';
+import NoTasks from '../NoTasks';
 import s from './WeekTabContent.module.scss';
 import CardListLoader from 'shared/components/CardListLoader';
 

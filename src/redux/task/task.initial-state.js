@@ -1,6 +1,6 @@
 const taskInitialState = {
   tasks: [],
-  balance: 0,
+  balance: null,
   rewardsGained: 0,
   rewardsPlanned: 0,
   isLoading: false

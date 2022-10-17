@@ -3,8 +3,7 @@
  [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=This+is+our+team+experience)](https://git.io/typing-svg)
 
 # Web application  - "[**Kids Likes**](<https://kidslikes.netlify.app/>)"
-
-![Demonstration]()
+![Demonstration](https://github.com/dankozz1t/KidsLike/blob/dev/public/demo1_kidslike.jpg)
 
 - Look at [**Layout (Figma)**](<https://www.figma.com/file/aQWz6d1sJAFYOQS3o1pg1Z/%D0%A2%D1%80%D0%B5%D0%BA%D0%B5%D1%80-%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D1%85-%D0%BF%D1%80%D0%B8%D0%B2%D1%8B%D1%87%D0%B5%D0%BA-(Copy)-(Copy)?node-id=0%3A1>)
 - Look at [**Web application (netlify)**](<https://kidslikes.netlify.app/>)
@@ -12,6 +11,7 @@
 ## STACK - React, JavaScript, HTML/SCSS (redux-toolkit, redux-persist, react-router, axios)
 ### (react-responsive, react-sweet-progress, classnames, react-toastify, react-loader-spinner)
 
+![Demonstration](https://github.com/dankozz1t/KidsLike/blob/dev/public/demo2_kidslike.gif)
 ---
 ### Through this work, we have learned
 > * React

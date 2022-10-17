@@ -61,6 +61,23 @@
 [![GitHub](https://img.shields.io/badge/GitHub-grey?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/dankozz1t)
 [![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white)](https://github.com/bakuzov)
 
+[![Olena Yatseniuk](https://img.shields.io/badge/Developer-Olena_Yatseniuk-purple?style=for-the-badge&logo=Contacts&logoColor=white)](#)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olena-yatseniuk)
+[![GitHub](https://img.shields.io/badge/GitHub-grey?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/OlenaYatseniuk)
+[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/Hellen_ya)
+[![Email](https://img.shields.io/badge/elena.yatsenyuk@gmail.com-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:elena.yatsenyuk@gmail.com)
+
+[![Arthur Korchack](https://img.shields.io/badge/Developer-Arthur_Korchack-purple?style=for-the-badge&logo=Contacts&logoColor=white)](#)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arthur-korchak)
+[![GitHub](https://img.shields.io/badge/GitHub-grey?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/ArthurKorchak)
+[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/arthur_korchak)
+[![Email](https://img.shields.io/badge/korchak.arthur@gmail.com-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:korchak.arthur@gmail.com)
+
+[![Denis Mirgoyazov](https://img.shields.io/badge/Developer-Denis_Mirgoyazov-purple?style=for-the-badge&logo=Contacts&logoColor=white)](#)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/denis-myrhoiazov)
+[![GitHub](https://img.shields.io/badge/GitHub-grey?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/Myrhoiazov)
+[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/denis_mirg)
+[![Email](https://img.shields.io/badge/denis.mirgoyazov@gmail.com-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:denis.mirgoyazov@gmail.com)
 
 [![Andrii Galickyi](https://img.shields.io/badge/Developer-Andrii_Galickyi-purple?style=for-the-badge&logo=Contacts&logoColor=white)](#)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D0%B3%D0%B0%D0%BB%D0%B8%D1%86%D0%BA%D0%B8%D0%B9-239002103)
@@ -68,27 +85,8 @@
 [![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/galytskyi_andrii)
 [![Email](https://img.shields.io/badge/galickyav@gmail.com-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:galickyav@gmail.com)
 
-
-[![Arthur Korchack](https://img.shields.io/badge/Developer-Arthur_Korchack-purple?style=for-the-badge&logo=Contacts&logoColor=white)](#)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arthur-korchak)
-[![GitHub](https://img.shields.io/badge/GitHub-grey?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/ArthurKorchak)
-[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/arthur_korchak)
-[![Email](https://img.shields.io/badge/galickyav@gmail.com-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:korchak.arthur@gmail.com)
-
-[![Olena Yatseniuk](https://img.shields.io/badge/Developer-Olena_Yatseniuk-purple?style=for-the-badge&logo=Contacts&logoColor=white)](#)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olena-yatseniuk)
-[![GitHub](https://img.shields.io/badge/GitHub-grey?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/OlenaYatseniuk)
-[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/Hellen_ya)
-[![Email](https://img.shields.io/badge/galickyav@gmail.com-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:elena.yatsenyuk@gmail.com)
-
-[![Denis Mirgoyazov](https://img.shields.io/badge/Developer-Denis_Mirgoyazov-purple?style=for-the-badge&logo=Contacts&logoColor=white)](#)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/denis-myrhoiazov)
-[![GitHub](https://img.shields.io/badge/GitHub-grey?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/Myrhoiazov)
-[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/denis_mirg)
-[![Email](https://img.shields.io/badge/galickyav@gmail.com-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:denis.mirgoyazov@gmail.com)
-
 [![Vitalii Shpuntov](https://img.shields.io/badge/Developer-Vitalii_Shpuntov-purple?style=for-the-badge&logo=Contacts&logoColor=white)](#)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitalii-shpuntov)
 [![GitHub](https://img.shields.io/badge/GitHub-grey?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/Shpuntoff)
 [![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/Vitalii_Shpuntov)
-[![Email](https://img.shields.io/badge/galickyav@gmail.com-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:v.shpuntoff@gmail.com)
+[![Email](https://img.shields.io/badge/v.shpuntoff@gmail.com-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:v.shpuntoff@gmail.com)

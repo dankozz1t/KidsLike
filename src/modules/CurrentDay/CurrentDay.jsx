@@ -1,24 +1,10 @@
 import React from 'react';
+import { getCurrentDay } from './helpers/helpers.function';
 import Loader from 'shared/components/Loader';
 
 import s from './CurrentDay.module.scss';
 
 const CurrentDay = ({ selectedDate }) => {
-  const getCurrentDay = date => {
-    if (!date) {
-      return null;
-    }
-
-    const day = new Date(date).toLocaleString('en-GB', {
-      weekday: 'long',
-      day: 'numeric',
-      month: 'numeric',
-      year: 'numeric',
-    });
-    const formatDay = day.replaceAll('/', '-');
-    return formatDay;
-  };
-
   const currentDay = getCurrentDay(selectedDate)?.toUpperCase();
 
   if (!currentDay) {

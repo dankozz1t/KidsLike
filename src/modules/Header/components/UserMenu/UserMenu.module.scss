@@ -1,10 +1,44 @@
 @import 'src/shared/styles/variables.scss';
+@import 'src/shared/styles/mixin.scss';
+
+.burger_menu {
+  margin-left: auto;
+
+  @include media(tablet) {
+    margin-right: 32px;
+    margin-left: auto;
+  }
+
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.subcontainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.boxbalance {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 45px;
+}
 
 .navigation {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  margin-right: 40px;
+  @include media(mobile) {
+    display: none;
+  }
+
+  @include media(desktop) {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-right: 40px;
+    margin-left: auto;
+  }
 }
 
 .link {
@@ -28,9 +62,16 @@
 }
 
 .box {
-  display: flex;
-  gap: 16px;
-  align-items: center;
+  display: none;
+  @include media(tablet) {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.logo__auth {
+  fill: #858598;
 }
 
 .text {
@@ -42,13 +83,6 @@
   width: 55px;
 }
 
-.boxbalance {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-right: 440px;
-}
-
 .balance {
   display: flex;
   align-items: center;
@@ -56,12 +90,6 @@
   font-size: 14px;
   line-height: 1.21;
   letter-spacing: 0.04em;
-}
-
-.subcontainer {
-  margin-left: 45px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .btnlogout {
@@ -76,4 +104,101 @@
     transform: scale(1.1);
     stroke: $secondary-text-color;
   }
+}
+
+.modal_nav {
+  @include media(mobile) {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  @include media(desktop) {
+    background-color: transparent;
+  }
+}
+
+.modal_nav_wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 274px;
+  height: 100vh;
+
+  padding-top: 14px;
+  background-color: $secondary-bg-color;
+  box-shadow: -15px 0px 20px rgba(0, 0, 0, 0.25);
+
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.burger_menu_close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.box__mobile {
+  padding-left: 20px;
+
+  @include media(mobile) {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+.navigation__mobile {
+  padding-top: 80px;
+}
+
+.link__mobile {
+  display: block;
+  text-decoration: none;
+  color: $primary-bg-color;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+
+  width: 100%;
+
+  padding: 14px 0;
+  padding-left: 20px;
+
+  border-top: 1px solid $primary-bg-color;
+
+  &:hover {
+    color: $primary-text-color;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $primary-bg-color;
+  }
+}
+
+.btnlogout__modal {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.icon__logout {
+  fill: white;
 }

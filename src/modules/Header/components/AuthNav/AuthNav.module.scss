@@ -1,15 +1,24 @@
 @import 'src/shared/styles/variables.scss';
 @import 'src/shared/styles/mixin.scss';
 
+.burger_menu {
+  margin-left: auto;
+
+  @include media(tablet) {
+    display: none;
+  }
+}
+
 .navigation {
   display: flex;
   gap: 16px;
   align-items: center;
   display: none;
 
-  @include media(desktop) {
+  @include media(tablet) {
     display: flex;
     align-items: center;
+    margin-left: auto;
   }
 }
 
@@ -21,37 +30,25 @@
   line-height: 1.25;
   letter-spacing: 0.04em;
 }
+
 .verticalBar {
   color: $secondary-text-color;
 }
 
-.burger_menu {
-  @include media(desktop) {
-    display: none;
-  }
-}
-
-.burger_menu_Login {
-  @include media(desktop) {
-    display: none;
-  }
-}
-
 .navigation__wrapper {
-  @include media(mobile-only) {
-    background: transparent;
-  }
-
-  @include media(tablet) {
+  @include media(mobile) {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
+
     bottom: 0;
 
     background: rgba(0, 0, 0, 0.2);
   }
-  @include media(desktop) {
-    background: transparent;
+
+  @include media(tablet) {
+    background-color: transparent;
   }
 }
 
@@ -59,6 +56,8 @@
   position: fixed;
   top: 0;
   right: 0;
+  bottom: 0;
+
   width: 274px;
   height: 100vh;
 
@@ -66,7 +65,7 @@
   background-color: $secondary-bg-color;
   box-shadow: -15px 0px 20px rgba(0, 0, 0, 0.25);
 
-  @include media(desktop) {
+  @include media(tablet) {
     display: none;
   }
 

@@ -84,7 +84,7 @@ const PlanningPoints = () => {
               </span>
               <div className={s.progressTool}>
                 <Progress
-                  percent={percent >= 100 ? 100 : percent}
+                  percent={points ? (percent >= 100 ? 100 : percent) : 0}
                   theme={{
                     success: {
                       color: 'rgb(223, 105, 180)',

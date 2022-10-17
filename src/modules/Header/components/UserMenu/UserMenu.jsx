@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { shallowEqual, useSelector } from 'react-redux';
+import { ReactComponent as CloseBurgerMenu } from 'assets/images/icon/icon-BurgerClose.svg';
+import { ReactComponent as LogoAuth } from 'assets/images/icon/icon-auth.svg';
+import { ReactComponent as IconBurgerMenu } from 'assets/images/icon/icon-burgerMenu.svg';
+import { getBalance } from 'redux/task/task.selector';
 import { getUser } from 'redux/auth/auth.selector';
+
+import UserInfo from '../UserInfo';
+import Loader from 'shared/components/Loader';
 import Modal from 'shared/components/Modal';
 import ModalLogout from 'shared/components/ModalLogout';
-import { ReactComponent as IconBurgerMenu } from 'assets/images/icon/icon-burgerMenu.svg';
-import { ReactComponent as CloseBurgerMenu } from 'assets/images/icon/icon-BurgerClose.svg';
 import BurgerMenu from 'shared/components/BurgerMenu/BurgerMenu';
 import VerticalBar from 'shared/components/VerticalBar/VerticalBar';
-import UserInfo from '../UserInfo';
-
-import { ReactComponent as LogoAuth } from 'assets/images/icon/icon-auth.svg';
 
 import s from './UserMenu.module.scss';
-import Loader from 'shared/components/Loader';
 
 const UserMenu = () => {
-  const { email, balance } = useSelector(getUser);
+  const { email } = useSelector(getUser, shallowEqual);
+  const balance = useSelector(getBalance, shallowEqual);
+
   const [open, setOpen] = useState(false);
   const [isShowNav, setIsShowNav] = useState(false);
 

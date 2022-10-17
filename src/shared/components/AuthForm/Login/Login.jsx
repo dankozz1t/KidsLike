@@ -92,7 +92,9 @@ const Login = () => {
         <p className={s.text}>
           Or log in with e-mail and password after registering:
         </p>
-        <p className={s.text__mobile_table}>You can login with Google Account:</p>
+        <p className={s.text__mobile_table}>
+          You can login with Google Account:
+        </p>
         <label className={s.label__input}>
           {emailRequared ? (
             <span className={s.label__text}>

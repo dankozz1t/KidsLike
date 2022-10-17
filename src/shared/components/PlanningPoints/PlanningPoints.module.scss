@@ -32,7 +32,7 @@
 .tasks {
   @include media(mobile-only) {
     display: flex;
-    background-color: #E5E5E5;
+    background-color: #e5e5e5;
     width: 100vw;
     height: 58px;
     position: fixed;
@@ -87,12 +87,12 @@
   line-height: 1.25;
   letter-spacing: 0.2em;
 
-  @include media(tablet-only){
+  @include media(tablet-only) {
     margin-bottom: 20px;
   }
 
   @include media(not-desktop) {
-    border: 1px solid #FFBC33;
+    border: 1px solid #ffbc33;
     border-radius: 6px;
     padding: 7px 15px;
   }
@@ -169,6 +169,7 @@
     display: none;
   }
 }
+
 .btnAddTasks {
   border: none;
   background-color: transparent;
@@ -192,19 +193,18 @@
   flex-direction: column;
   align-self: flex-end;
 
-  @include media(tablet-only){
+  @include media(tablet-only) {
     align-self: center;
   }
 }
 
-.progressWrapper{
-  @include media(mobile-only){
+.progressWrapper {
+  @include media(mobile-only) {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     margin-bottom: 10px;
   }
-
 }
 .pointsAmount {
   font-weight: 400;
@@ -228,8 +228,7 @@
   display: block;
   width: 350px;
   margin-left: 20px;
-  @include media(mobile-only){
+  @include media(mobile-only) {
     width: 148px;
   }
 }
-

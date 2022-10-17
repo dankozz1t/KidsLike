@@ -1,7 +1,9 @@
 import React from 'react';
-import s from './Footer.module.scss';
+
 import Logo from 'shared/components/Logo';
 import VerticalBar from 'shared/components/VerticalBar/VerticalBar';
+
+import s from './Footer.module.scss';
 
 const Footer = () => {
   let today = new Date();

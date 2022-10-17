@@ -1,4 +1,5 @@
-import ProgressBar from '../../shared/components/ProgressBar';
+import React from 'react';
+import ProgressBar from 'shared/components/ProgressBar';
 import { ReactComponent as GiftIcon } from 'assets/images/icon/icon-gifts.svg';
 
 import s from './AwardHead.module.scss';

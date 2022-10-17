@@ -1,11 +1,6 @@
 @import 'src/shared/styles/variables.scss';
 @import 'src/shared/styles/mixin.scss';
 
-* {
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-}
-
 .wrapper {
   max-width: 288px;
   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
@@ -14,13 +9,13 @@
   @include media(mobile-only) {
     max-width: 280px;
   }
-  
+
   @include media(tablet-only) {
     max-width: 320px;
   }
 }
 
-img {
+.img {
   width: 100%;
   max-height: 257px;
   border-top-left-radius: 6px;
@@ -28,8 +23,8 @@ img {
 
   @include media(mobile-only) {
     max-height: 246px;
-    }
-  
+  }
+
   @include media(tablet-only) {
     max-height: 320px;
   }
@@ -78,7 +73,8 @@ img {
   height: 35px;
   fill: #43a8fa;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     fill: #fac14f;
   }
 }

@@ -1,12 +1,13 @@
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { toast } from 'react-toastify';
-import { loginThunk, registerThunk } from 'redux/auth/auth.thunk';
-import s from './Login.module.scss';
-import Button from 'shared/components/Button';
-
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginThunk, registerThunk } from 'redux/auth/auth.thunk';
+
+import Button from 'shared/components/Button';
 import GoogleIcon from 'shared/components/Google/GoogleIcon';
+
+import { toast } from 'react-toastify';
+import s from './Login.module.scss';
 
 const emailRegexp = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 const initialValue = {

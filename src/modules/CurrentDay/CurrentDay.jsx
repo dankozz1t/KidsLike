@@ -1,5 +1,6 @@
 import React from 'react';
 import Loader from 'shared/components/Loader';
+
 import s from './CurrentDay.module.scss';
 
 const CurrentDay = ({ selectedDate }) => {

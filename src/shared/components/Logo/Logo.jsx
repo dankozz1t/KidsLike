@@ -1,6 +1,8 @@
 import React from 'react';
-import { ReactComponent as LogoVictory } from 'assets/images/icon/icon-logo-victory.svg';
 import { Link } from 'react-router-dom';
+
+import { ReactComponent as LogoVictory } from 'assets/images/icon/icon-logo-victory.svg';
+
 import s from './Logo.module.scss';
 
 const Logo = ({ classFor }) => {

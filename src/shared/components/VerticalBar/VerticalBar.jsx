@@ -1,4 +1,5 @@
 import React from 'react';
+
 import s from './VerticalBar.module.scss';
 
 const VerticalBar = ({ classFor }) => {

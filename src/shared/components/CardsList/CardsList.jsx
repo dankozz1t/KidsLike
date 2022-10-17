@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
+
 import s from './CardsList.module.scss';
 
 const CardsList = ({ tasks }) => {

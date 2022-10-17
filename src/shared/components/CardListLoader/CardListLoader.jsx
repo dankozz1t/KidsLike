@@ -10,7 +10,10 @@ const CardListLoader = ({ amount = 12 }) => {
         <li key={i} className={s.card_item}>
           <article>
             <Skeleton className={s.card__image} />
-            <Skeleton className={s.card_footer} gradient="linear-gradient(90deg, #f8d99c, #ffbc33, #f8d99c)"/>
+            <Skeleton
+              className={s.card_footer}
+              gradient="linear-gradient(90deg, #f8d99c, #ffbc33, #f8d99c)"
+            />
           </article>
         </li>
       ))}

@@ -13,7 +13,6 @@
 
     .form {
       padding-top: 20px;
-      margin-bottom: 20px;
     }
   }
 
@@ -22,11 +21,11 @@
     flex-direction: column-reverse;
     .form {
       padding-top: 50px;
-      margin-bottom: 20px;
       display: flex;
 
       align-items: center;
       justify-content: center;
+      margin-bottom: 60px;
     }
   }
 
@@ -39,7 +38,6 @@
 
     .form {
       padding-left: 150px;
-      margin-bottom: 40px;
     }
   }
 }
@@ -51,9 +49,15 @@
     display: block;
     display: flex;
     justify-content: center;
+    margin-bottom: 40px;
   }
 
   @include media(desktop) {
     justify-content: flex-end;
   }
+}
+
+
+.footer__elem{
+  margin-left: auto;
 }

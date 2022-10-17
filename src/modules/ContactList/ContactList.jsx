@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactItem from './ContactItem';
+
 import contactList from './Contacts.json';
 
 import s from './ContactList.module.scss';

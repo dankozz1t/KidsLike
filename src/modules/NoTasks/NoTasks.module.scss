@@ -12,9 +12,11 @@
   @include media(mobile-only) {
     margin-top: 60px;
   }
+
   @include media(tablet) {
     margin-top: 100px;
   }
+
   @include media(desktop) {
     margin-top: 99px;
   }
@@ -34,15 +36,19 @@
   text-decoration: none;
   transform: scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   @include media(mobile-only) {
     margin-bottom: 60px;
   }
+
   @include media(tablet) {
     margin-bottom: 111px;
   }
+
   @include media(desktop) {
     margin-bottom: 39px;
   }
+
   &:hover,
   &:focus {
     cursor: pointer;

@@ -8,6 +8,11 @@ import {
 } from 'redux/auth/auth.selector';
 import { getRewardsGained, getRewardsPlanned } from 'redux/task/task.selector';
 
+import {
+  configuredEndDate,
+  configuredStartDate,
+} from './helpers/helpers.function';
+
 import Modal from 'shared/components/Modal';
 import ModalContentCreateTask from 'shared/components/ModalContentCreateTask';
 import Loader from 'shared/components/Loader';
@@ -37,23 +42,8 @@ const PlanningPoints = () => {
     return <Loader width="229" />;
   }
 
-  const configuredStartDate = () => new Date(startDate).getDate();
-
-  const configuredEndDate = () => {
-    const date = new Date(endDate);
-    const day = date.getDate();
-    let month = date.getMonth() + 1;
-    const year = date.getFullYear();
-
-    if (month.toString().length === 1) {
-      month = '0' + month;
-    }
-
-    return `${day}.${month}.${year}`;
-  };
-
-  const startingDate = configuredStartDate();
-  const endingDate = configuredEndDate();
+  const startingDate = configuredStartDate(startDate);
+  const endingDate = configuredEndDate(endDate);
 
   return (
     <>

@@ -1,9 +1,10 @@
 import React from 'react';
-import Logo from 'shared/components/Logo';
 import { useSelector } from 'react-redux';
 import { getLoggedIn } from 'redux/auth/auth.selector';
+
 import UserMenu from './components/UserMenu/UserMenu';
 import AuthNav from './components/AuthNav/AuthNav';
+import Logo from 'shared/components/Logo';
 
 import s from './Header.module.scss';
 

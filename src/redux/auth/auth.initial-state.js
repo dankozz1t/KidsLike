@@ -1,4 +1,3 @@
-
 const authInitialState = {
   user: {},
   token: '',

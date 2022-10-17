@@ -11,10 +11,7 @@ export const getIsPrevDays = (dateKeys, currentDay) => {
     .filter((_, index, array) => {
       const currentWeekDay = getShortWeekDay(new Date());
 
-      if (index < array.indexOf(currentWeekDay)) {
-        return true;
-      }
-      return false;
+      return index < array.indexOf(currentWeekDay);
     })
     .includes(getShortWeekDay(new Date(currentDay)));
 };

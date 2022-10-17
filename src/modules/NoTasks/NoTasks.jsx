@@ -1,13 +1,16 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+
 import Button from 'shared/components/Button';
+
 import s from './NoTasks.module.scss';
 
-import noTasksDesktop1x from '../../assets/images/main-page/no-tasks-desktop@1x.png';
-import noTasksDesktop2x from '../../assets/images/main-page/no-tasks-desktop@2x.png';
-import noTasksTablet1x from '../../assets/images/main-page/no-tasks-tablet@1x.png';
-import noTasksTablet2x from '../../assets/images/main-page/no-tasks-tablet@2x.png';
-import noTasksMobile1x from '../../assets/images/main-page/no-tasks-mobile@1x.png';
-import noTasksMobile2x from '../../assets/images/main-page/no-tasks-mobile@2x.png';
+import noTasksDesktop1x from 'assets/images/main-page/no-tasks-desktop@1x.png';
+import noTasksDesktop2x from 'assets/images/main-page/no-tasks-desktop@2x.png';
+import noTasksTablet1x from 'assets/images/main-page/no-tasks-tablet@1x.png';
+import noTasksTablet2x from 'assets/images/main-page/no-tasks-tablet@2x.png';
+import noTasksMobile1x from 'assets/images/main-page/no-tasks-mobile@1x.png';
+import noTasksMobile2x from 'assets/images/main-page/no-tasks-mobile@2x.png';
 
 const NoTasks = () => {
   return (

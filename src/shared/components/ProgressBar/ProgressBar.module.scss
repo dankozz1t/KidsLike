@@ -6,7 +6,7 @@
   flex-direction: column;
   align-self: flex-end;
 
-  @include media(tablet-only){
+  @include media(tablet-only) {
     align-self: center;
   }
 }
@@ -20,12 +20,12 @@
   letter-spacing: 0.04em;
   color: $tertiary-text-color;
 
-  @include media(tablet-only){
+  @include media(tablet-only) {
     text-align: center;
   }
 }
 
-.pointsInfoAward{
+.pointsInfoAward {
   margin-bottom: 12px;
   font-weight: 500;
   font-size: 12px;

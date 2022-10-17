@@ -1,42 +1,47 @@
-import { useEffect } from "react";
-import { useMemo } from "react";
-import { createPortal } from "react-dom";
-import s from './modal.module.scss';
+import React, { useEffect, useMemo } from 'react';
+import { createPortal } from 'react-dom';
+
 import modalClose from 'assets/images/modal-image/modal-close.svg';
 
-const modalRootElement = document.querySelector("#modal");
+import s from './modal.module.scss';
 
-const Modal = ({children, onClose, open}) => {
-   
+const modalRootElement = document.querySelector('#modal');
 
-    const element = useMemo(() => document.createElement('div'), []);
+const Modal = ({ children, onClose, open }) => {
+  const element = useMemo(() => document.createElement('div'), []);
 
-    useEffect(() => {
-        if (open) {
-            window.addEventListener("keydown", handleEsc);
-            modalRootElement.appendChild(element);
-    
-            return () => {
-                modalRootElement.removeChild(element);
-            };
-        }
-    });
+  useEffect(() => {
+    if (open) {
+      window.addEventListener('keydown', handleEsc);
+      modalRootElement.appendChild(element);
 
-    const handleEsc = (e) => e.code === "Escape" && onClose();
-    const handleClick = (e) => e.target === e.currentTarget && onClose();
-    const onBtnClose = () => onClose();
-
-    if (open) {       
-        return createPortal(
-            <div className={s.modal_background} onClick = {handleClick} >
-                <div className={s.modal_card}>
-                    <img className={s.modal_close} onClick = {onBtnClose} src={modalClose} alt="modalClose" />
-                    {children}
-                    </div>
-            </div>,
-            element);
+      return () => {
+        modalRootElement.removeChild(element);
+      };
     }
-    return null;
+  });
+
+  const handleEsc = e => e.code === 'Escape' && onClose();
+  const handleClick = e => e.target === e.currentTarget && onClose();
+  const onBtnClose = () => onClose();
+
+  if (open) {
+    return createPortal(
+      <div className={s.modal_background} onClick={handleClick}>
+        <div className={s.modal_card}>
+          <img
+            className={s.modal_close}
+            onClick={onBtnClose}
+            src={modalClose}
+            alt="modalClose"
+          />
+          {children}
+        </div>
+      </div>,
+      element
+    );
+  }
+  return null;
 };
 
 export default Modal;

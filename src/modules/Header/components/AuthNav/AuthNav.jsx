@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import s from './AuthNav.module.scss';
-import VerticalBar from 'shared/components/VerticalBar/VerticalBar';
-import BurgerMenu from 'shared/components/BurgerMenu/BurgerMenu';
-import { useState } from 'react';
+
 import { ReactComponent as IconBurgerMenu } from 'assets/images/icon/icon-burgerMenu.svg';
 import { ReactComponent as CloseBurgerMenu } from 'assets/images/icon/icon-BurgerClose.svg';
+
+import VerticalBar from 'shared/components/VerticalBar/VerticalBar';
+import BurgerMenu from 'shared/components/BurgerMenu/BurgerMenu';
+
+import s from './AuthNav.module.scss';
 
 const AuthNav = () => {
   const [isShow, setIsShow] = useState(false);

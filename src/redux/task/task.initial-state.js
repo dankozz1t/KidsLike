@@ -3,7 +3,7 @@ const taskInitialState = {
   balance: null,
   rewardsGained: 0,
   rewardsPlanned: 0,
-  isLoading: false
+  isLoading: false,
 };
 
 export default taskInitialState;

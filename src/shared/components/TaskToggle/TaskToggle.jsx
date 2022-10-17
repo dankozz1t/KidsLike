@@ -15,6 +15,7 @@ import PropTypes from 'prop-types';
 
 import Loader from 'shared/components/Loader';
 
+import classNames from 'classnames';
 import s from './TaskToggle.module.scss';
 
 const TaskToggle = ({ _id, isCompleted, isSelected }) => {
@@ -71,7 +72,7 @@ const TaskToggle = ({ _id, isCompleted, isSelected }) => {
         </div>
       )}
 
-      <span className={`${s.slider} ${s.round}`}>
+      <span className={classNames(s.slider, s.round)}>
         <CheckSymbol className={s.check_symbol} width="10" height="10" />
         <Attention className={s.attention} width="5" height="12" />
       </span>

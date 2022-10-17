@@ -6,8 +6,8 @@ import modalRobot from 'assets/images/modal-image/modal-robot.png';
 import modalImage from 'assets/images/modal-image/modal-image.svg';
 import modalEditInput from 'assets/images/modal-image/edit-24px 2.svg';
 
-import s from './ModalContentCreateTask.module.scss';
 import { toast } from 'react-toastify';
+import s from './ModalContentCreateTask.module.scss';
 
 const ModalContentCreateTask = () => {
   const dispatch = useDispatch();

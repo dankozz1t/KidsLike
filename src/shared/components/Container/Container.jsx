@@ -1,8 +1,9 @@
 import React from 'react';
-import s from './Container.module.scss';
-import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
+import s from './Container.module.scss';
 
 const Container = ({ children }) => {
   const { pathname } = useLocation();

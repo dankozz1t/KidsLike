@@ -9,7 +9,7 @@
 - Подивись на [**Веб-додаток (netlify)**](<https://kidslikes.netlify.app/>)
 
 ## Технології - React, JavaScript, HTML/SCSS (redux-toolkit, redux-persist, react-router, axios)
-### (react-responsive, react-sweet-progress, classnames, react-toastify, react-loader-spinner)
+### (react-responsive, react-sweet-progress, classnames, react-toastify, react-loader-spinner) 
 
 ![Демонстрація](https://github.com/dankozz1t/KidsLike/blob/dev/public/demo2_kidslike.gif)
 ---
